@@ -1,0 +1,543 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Chapter 3: Using text editors and IDEs &#8212; Pyntroduction To Python 1.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="_static/documentation_options.js?v=a681ed88"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter3';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Chapter 4: Data Types" href="chapter4.html" />
+    <link rel="prev" title="Chapter 2: Using the terminal and Python interpreter" href="chapter2.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Pyntroduction To Python 1.0 documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter1.html">Chapter 1: Installation &amp; Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter2.html">Chapter 2: Using the terminal and Python interpreter</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Chapter 3: Using text editors and IDEs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter4.html">Chapter 4: Data Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter5.html">Chapter 5: Working with strings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter6.html">Chapter 6: Working with lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter7.html">Chapter 7: Working with dictionaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter8.html">Chapter 8: Conditional statements: if, elif, else</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter9.html">Chapter 9: Loops, for and while, break and continue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter10.html">Chapter 10: Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter11.html">Chapter 11: Built-in Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter12.html">Chapter 12: Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter13.html">Chapter 13: Practice Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="final.html">Thank you for reading</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/chapter3.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Chapter 3: Using text editors and IDEs</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#notepad">Notepad</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-an-integrated-development-environment-ide">What is an Integrated Development Environment (IDE)?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sublime-text">Sublime Text</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pycharm-by-jetbrains">PyCharm (by JetBrains)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visual-studio-code-vs-code">Visual Studio Code (VS Code)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#which-text-editor-should-i-use">Which text editor should I use?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="chapter-3-using-text-editors-and-ides">
+<h1>Chapter 3: Using text editors and IDEs<a class="headerlink" href="#chapter-3-using-text-editors-and-ides" title="Link to this heading">#</a></h1>
+<p>Although Python can be used directly from a terminal like the Windows PowerShell, in many cases the programs can get so long and complex that the use of a text editor is necessary. Even if the program is not too long in extension, using a text editor can come in handy in many cases.</p>
+<p>In this article you are going to see how to run Python programs written in text editors, and which editors are the most common in the industry.</p>
+<section id="notepad">
+<h2>Notepad<a class="headerlink" href="#notepad" title="Link to this heading">#</a></h2>
+<p>The first text editor you can try is one of the most common and popular in Windows: Notepad. This text editor is installed in Windows by default, so you don’t need to install any extra software for this case. Go ahead and open the Notepad software. Let’s also open the Windows PowerShell too, because the terminal is needed to execute the program you will write in the text editor.</p>
+<p>In Notepad, write some Python code to test. I will just write 1+1 to start testing something really simple.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span><span class="o">+</span><span class="mi">1</span>
+</pre></div>
+</div>
+<p>Let’s save the file and give it a name. For example you can give the file a name like <strong>firstPythonProgram.txt</strong>. Note that the extension .txt is the default when working with notepad. But in order for Python to be able to run the program, the file needs to have a different file extension. In the case of Python programs the extension is <strong>.py</strong>, so the file should be named as <strong>firstPythonProgram.py</strong>. You can save the file on the Desktop or inside a new folder named <strong>DeusDevExercises</strong>, or the name you wish.</p>
+<blockquote>
+<div><p><strong>Changing file extensions on Windows</strong>. Changing a file extension on Windows is not trivial, specially if you don’t have much experience working with computer programs. If you don’t know how to change the file extension in Windows you can read <a class="reference external" href="https://www.partitionwizard.com/partitionmanager/change-file-extension-windows-10.html">this article</a>.</p>
+</div></blockquote>
+<p>To run the program you wrote on the text file, go to the terminal and write <code class="docutils literal notranslate"><span class="pre">python</span></code> followed by the name of the file. This will not open the Python interpreter like it used to when writing just <code class="docutils literal notranslate"><span class="pre">python</span></code>. This command will instead execute the program written in the file. Open a Windows PowerShell (terminal) and run the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PS</span> <span class="n">C</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">youruser</span><span class="o">&gt;</span> <span class="n">cd</span> <span class="n">Desktop</span><span class="o">/</span><span class="n">DeusDevExercises</span>
+<span class="n">PS</span> <span class="n">C</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">youruser</span>\<span class="n">Desktop</span>\<span class="n">DeusDevExercises</span><span class="o">&gt;</span> <span class="n">python</span> <span class="n">firstPythonProgram</span><span class="o">.</span><span class="n">py</span>
+<span class="n">PS</span> <span class="n">C</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">youruser</span>\<span class="n">Desktop</span>\<span class="n">DeusDevExercises</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>First you need to <em>change directory</em> to where the text file is located. Use the <code class="docutils literal notranslate"><span class="pre">cd</span></code> (<em>change directory</em>) command to move to a different directory, for example <strong>Desktop/DeusDevExercises</strong> if you created the folder in the Desktop (it is possible that you need to look for a folder named <strong>OneDrive</strong> before <strong>Desktop</strong> depending on the version of Windows).</p>
+<p>As you can see, after running <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">firstPythonProgram.py</span></code> nothing happened. This is because working with files is different than working directly on the Python interpreter. With the Python interpreter the output is shown automatically, but when working with files you have to explicitly tell the script to <em>print</em> the output to the screen.</p>
+<p>This is where the <code class="docutils literal notranslate"><span class="pre">print()</span></code> function comes in. Edit the Python file to look like the following:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Execute the script again in PowerShell, and you will see the output printed on the screen.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PS</span> <span class="n">C</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">youruser</span>\<span class="n">Desktop</span>\<span class="n">DeusDevExercises</span><span class="o">&gt;</span> <span class="n">python</span> <span class="n">firstPythonProgram</span><span class="o">.</span><span class="n">py</span>
+<span class="mi">2</span>
+</pre></div>
+</div>
+<p>Amazing! Let’s write a more complex script, using a variable to print a custom message with your own name:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">myName</span> <span class="o">=</span> <span class="s1">&#39;Carlos&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello &#39;</span> <span class="o">+</span> <span class="n">myName</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Run the script on the terminal:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PS</span> <span class="n">C</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">youruser</span>\<span class="n">Desktop</span>\<span class="n">DeusDevExercises</span><span class="o">&gt;</span> <span class="n">python</span> <span class="n">firstPythonProgram</span><span class="o">.</span><span class="n">py</span>
+<span class="n">Hello</span> <span class="n">Carlos</span>
+</pre></div>
+</div>
+<p>As you can see the scripts are working as expected. This way of working with programs is very helpful in case you need to edit the variable <code class="docutils literal notranslate"><span class="pre">myName</span></code> for example. You only need to edit that line and the rest of the script remains unchanged.</p>
+<p>You can use Notepad for all your programs, but there are other excellent editors that are specifically designed to work with different programming languages like Python. These are called <strong>IDEs</strong>.</p>
+</section>
+<section id="what-is-an-integrated-development-environment-ide">
+<h2>What is an Integrated Development Environment (IDE)?<a class="headerlink" href="#what-is-an-integrated-development-environment-ide" title="Link to this heading">#</a></h2>
+<p>An Integrated Development Environment (IDE) is a software application specifically designed to work in software development. An IDE usually has different features which makes coding easier, and that other common text editors like Notepad doesn’t.</p>
+<p>IDEs consist of some sort of text editor, building automation and debuggers. Some IDEs include extra features like syntax highlighting (colored code), autocomplete, specific code language integration, and many more.</p>
+<p>You will learn all of this concepts along the way. For now let’s see some examples of popular IDEs and try to pick one or two to keep working with Python.</p>
+<section id="sublime-text">
+<h3>Sublime Text<a class="headerlink" href="#sublime-text" title="Link to this heading">#</a></h3>
+<figure class="align-center" id="id1">
+<img alt="python book image" src="_images/sublimetexteditor.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 6 </span><span class="caption-text">Sublime text editor</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p><a class="reference external" href="https://www.sublimetext.com/">Sublime text</a> is a text editor similar to Notepad. It has many features that help developers code in a more comfortable way. Some of them are:</p>
+<ul class="simple">
+<li><p>Files and folder organization: you can open multiple files, and even a complete folder with files and subfolders inside of it.</p></li>
+<li><p>Colored code according to the language: sublime has many different color combinations to improve code readability based on the programming language used (Python, C, Ruby, etc).</p></li>
+<li><p>Packages: you can use different packages or plugins to make your sublime text editor more customizable.</p></li>
+</ul>
+</section>
+<section id="pycharm-by-jetbrains">
+<h3>PyCharm (by JetBrains)<a class="headerlink" href="#pycharm-by-jetbrains" title="Link to this heading">#</a></h3>
+<figure class="align-center" id="id2">
+<img alt="python book image" src="_images/pycharmeditor.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 7 </span><span class="caption-text">PyCharm text editor</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Another very popular IDE is <a class="reference external" href="https://www.jetbrains.com/pycharm/">PyCharm</a>. This IDE is specific for Python, which makes it a very good choice if you intend to work solely with this programming language. Some key of its features are:</p>
+<ul class="simple">
+<li><p>Syntax highlighting to improve code readability.</p></li>
+<li><p>Intelligent code autocompletion and suggestions.</p></li>
+<li><p>Folder and files structure for ease of navigation.</p></li>
+</ul>
+</section>
+<section id="visual-studio-code-vs-code">
+<h3>Visual Studio Code (VS Code)<a class="headerlink" href="#visual-studio-code-vs-code" title="Link to this heading">#</a></h3>
+<figure class="align-center" id="id3">
+<img alt="python book image" src="_images/vscodeeditor.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 8 </span><span class="caption-text">VS Code text editor</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>One of the most popular and used code editors is <a class="reference external" href="https://code.visualstudio.com/">VS Code</a>. This code editor has many features that makes working with code a lot easier compared with common text editors like Notepad. Some of them are:</p>
+<ul class="simple">
+<li><p>Files and folder organization (similar to Sublime and PyCharm)</p></li>
+<li><p>Colored code according to language (similar to Sublime and PyCharm)</p></li>
+<li><p>VS Code works with something called <em>extensions</em>. For example, you can download the Python extension when working with Python programs.</p></li>
+<li><p>Customization: you can customize the editor to your needs, being the layout, colors and more.</p></li>
+<li><p>IntelliSense: VS Code has autocomplete and suggestions that makes coding very easy and faster.</p></li>
+<li><p>Integrated terminal. You can run your Python code directly from the IDE.</p></li>
+</ul>
+</section>
+</section>
+<section id="which-text-editor-should-i-use">
+<h2>Which text editor should I use?<a class="headerlink" href="#which-text-editor-should-i-use" title="Link to this heading">#</a></h2>
+<p>There are many options to choose from. I have given only three with some detail, but you can search for others and see which one fits your needs and likes better.</p>
+<p>Other popular options are: IDLE, Jupyter Notebook, Atom, Spyder, Thonny, Vim, etc.</p>
+<p>I can recommend you to try at least three options so you can see for yourself which code editor you feel more comfortable with.</p>
+</section>
+<section id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h2>
+<p>In this article you learned how to work with text editors and IDEs. Writing your Python code in a text editor is a great practice for your future projects. Keep practicing!</p>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="chapter2.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Chapter 2: Using the terminal and Python interpreter</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="chapter4.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Chapter 4: Data Types</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#notepad">Notepad</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-an-integrated-development-environment-ide">What is an Integrated Development Environment (IDE)?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sublime-text">Sublime Text</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pycharm-by-jetbrains">PyCharm (by JetBrains)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visual-studio-code-vs-code">Visual Studio Code (VS Code)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#which-text-editor-should-i-use">Which text editor should I use?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Carlos
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026, Carlos.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

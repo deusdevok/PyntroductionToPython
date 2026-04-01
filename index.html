@@ -1,0 +1,506 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Pyntroduction To Python &#8212; Pyntroduction To Python 1.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="_static/documentation_options.js?v=a681ed88"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'index';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Introduction" href="intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="#">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Pyntroduction To Python 1.0 documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter1.html">Chapter 1: Installation &amp; Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter2.html">Chapter 2: Using the terminal and Python interpreter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter3.html">Chapter 3: Using text editors and IDEs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter4.html">Chapter 4: Data Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter5.html">Chapter 5: Working with strings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter6.html">Chapter 6: Working with lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter7.html">Chapter 7: Working with dictionaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter8.html">Chapter 8: Conditional statements: if, elif, else</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter9.html">Chapter 9: Loops, for and while, break and continue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter10.html">Chapter 10: Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter11.html">Chapter 11: Built-in Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter12.html">Chapter 12: Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter13.html">Chapter 13: Practice Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="final.html">Thank you for reading</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/index.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Pyntroduction To Python</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="pyntroduction-to-python">
+<h1>Pyntroduction To Python<a class="headerlink" href="#pyntroduction-to-python" title="Link to this heading">#</a></h1>
+<p>Welcome to this short introduction to Python.</p>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter1.html">Chapter 1: Installation &amp; Setup</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="chapter1.html#step-1-download-the-python-installer">Step 1: Download the Python installer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter1.html#step-2-run-the-exe-file">Step 2: Run the exe file</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter1.html#step-3-check-the-python-installation">Step 3: Check the Python installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter1.html#conclusion">Conclusion</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="chapter2.html">Chapter 2: Using the terminal and Python interpreter</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="chapter2.html#first-steps-the-python-interpreter">First steps: The Python interpreter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter2.html#getting-help-in-the-python-interpreter">Getting help in the Python interpreter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter2.html#basic-operations-in-python">Basic Operations in Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter2.html#python-variables">Python variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter2.html#conclusion">Conclusion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter2.html#exercises">Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="chapter3.html">Chapter 3: Using text editors and IDEs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="chapter3.html#notepad">Notepad</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter3.html#what-is-an-integrated-development-environment-ide">What is an Integrated Development Environment (IDE)?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter3.html#which-text-editor-should-i-use">Which text editor should I use?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter3.html#conclusion">Conclusion</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="chapter4.html">Chapter 4: Data Types</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="chapter4.html#what-you-will-learn">What you will learn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter4.html#numeric-data-types">Numeric Data Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter4.html#conversion-from-one-type-to-another-casting">Conversion from one type to another: casting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter4.html#text-data-type">Text Data Type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter4.html#sequence-data-types">Sequence Data Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter4.html#mapping-data-type-dictionary">Mapping Data Type: dictionary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter4.html#set-data-types">Set Data Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter4.html#boolean-data-types">Boolean Data Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter4.html#binary-data-types">Binary Data Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter4.html#none-data-type">None Data Type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter4.html#conclusion">Conclusion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter4.html#exercises">Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="chapter5.html">Chapter 5: Working with strings</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="chapter5.html#python-strings-the-basics">Python strings: the basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter5.html#string-index-notation">String index notation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter5.html#python-strings-are-immutable">Python strings are immutable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter5.html#format-strings">Format strings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter5.html#conclusion">Conclusion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter5.html#exercises">Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="chapter6.html">Chapter 6: Working with lists</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="chapter6.html#python-lists">Python lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter6.html#list-index-notation">List index notation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter6.html#python-lists-are-mutable">Python lists are mutable</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter6.html#python-lists-vs-strings">Python Lists vs Strings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter6.html#conclusion">Conclusion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter6.html#exercises">Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="chapter7.html">Chapter 7: Working with dictionaries</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="chapter7.html#python-dictionaries-the-basics">Python dictionaries: the basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter7.html#reading-items-from-a-dictionary">Reading items from a dictionary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter7.html#editing-key-value-pairs">Editing key-value pairs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter7.html#dictionary-key-value-data-types">Dictionary key/value data types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter7.html#converting-dictionaries-to-lists">Converting dictionaries to lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter7.html#conclusion">Conclusion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter7.html#exercises">Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="chapter8.html">Chapter 8: Conditional statements: if, elif, else</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="chapter8.html#revisiting-the-boolean-data-type">Revisiting the boolean data type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter8.html#simple-decisions-the-if-statement">Simple decisions: the if statement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter8.html#the-elif-statement">The elif statement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter8.html#conclusion">Conclusion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter8.html#exercises">Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="chapter9.html">Chapter 9: Loops, for and while, break and continue</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="chapter9.html#for-loops">For loops</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter9.html#while-loops">While loops</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter9.html#control-statements">Control statements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter9.html#conclusion">Conclusion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter9.html#exercises">Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="chapter10.html">Chapter 10: Functions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="chapter10.html#what-is-a-function-the-mathematical-definition">What is a function? The mathematical definition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter10.html#functions-in-python">Functions in Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter10.html#built-in-functions">Built-in functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter10.html#conclusion">Conclusion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter10.html#exercises">Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="chapter11.html">Chapter 11: Built-in Methods</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="chapter11.html#python-methods">Python methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter11.html#string-methods">String methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter11.html#list-methods">List methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter11.html#dictionary-methods">Dictionary methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter11.html#conclusion">Conclusion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter11.html#exercises">Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="chapter12.html">Chapter 12: Modules</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="chapter12.html#python-modules">Python modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter12.html#the-random-module">The random module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter12.html#the-math-module">The math module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter12.html#the-numpy-module">The numpy module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter12.html#conclusion">Conclusion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter12.html#exercises">Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="chapter13.html">Chapter 13: Practice Projects</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="chapter13.html#rock-paper-scissors-game">Rock, paper, scissors game</a></li>
+<li class="toctree-l2"><a class="reference internal" href="chapter13.html#countdown-timer-and-clock">Countdown timer and clock</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="final.html">Thank you for reading</a></li>
+</ul>
+</div>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="right-next"
+       href="intro.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Introduction</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Carlos
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026, Carlos.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

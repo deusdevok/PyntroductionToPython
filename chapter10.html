@@ -1,0 +1,678 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Chapter 10: Functions &#8212; Pyntroduction To Python 1.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="_static/documentation_options.js?v=a681ed88"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter10';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Chapter 11: Built-in Methods" href="chapter11.html" />
+    <link rel="prev" title="Chapter 9: Loops, for and while, break and continue" href="chapter9.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Pyntroduction To Python 1.0 documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter1.html">Chapter 1: Installation &amp; Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter2.html">Chapter 2: Using the terminal and Python interpreter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter3.html">Chapter 3: Using text editors and IDEs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter4.html">Chapter 4: Data Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter5.html">Chapter 5: Working with strings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter6.html">Chapter 6: Working with lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter7.html">Chapter 7: Working with dictionaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter8.html">Chapter 8: Conditional statements: if, elif, else</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter9.html">Chapter 9: Loops, for and while, break and continue</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Chapter 10: Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter11.html">Chapter 11: Built-in Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter12.html">Chapter 12: Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter13.html">Chapter 13: Practice Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="final.html">Thank you for reading</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/chapter10.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Chapter 10: Functions</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-function-the-mathematical-definition">What is a function? The mathematical definition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions-in-python">Functions in Python</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions-with-more-than-one-parameter">Functions with more than one parameter</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions-which-returns-more-than-one-value">Functions which returns more than one value</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions-with-arbitrary-data-types">Functions with arbitrary data types</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#default-arguments">Default arguments</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#built-in-functions">Built-in functions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-print-function">The print function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-len-function">The len function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-input-function">The input function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#all-built-in-functions">All built-in functions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="chapter-10-functions">
+<h1>Chapter 10: Functions<a class="headerlink" href="#chapter-10-functions" title="Link to this heading">#</a></h1>
+<p>A function is a very useful technique all programmers use in their everyday life. Not only programmers use functions to improve their code, making it work better and even faster, but scientists like mathematicians, physicists, etc, also use functions all the time.</p>
+<p>In this article you will learn what a function is, how you can create and use functions in your Python programs, and what are some of the most commonly used Python built-in functions.</p>
+<section id="what-is-a-function-the-mathematical-definition">
+<h2>What is a function? The mathematical definition<a class="headerlink" href="#what-is-a-function-the-mathematical-definition" title="Link to this heading">#</a></h2>
+<p>Mathematically speaking, a function is a relation, mapping or rule between two or more sets (numbers) with some particular properties. Let’s think of a function relating two sets for simplicity, represented by the variable names <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code>. The relation between both sets have to be such that for each value of <code class="docutils literal notranslate"><span class="pre">x</span></code> there is only one related value of <code class="docutils literal notranslate"><span class="pre">y</span></code>. The <code class="docutils literal notranslate"><span class="pre">x</span></code> set is called the <em>domain</em> of the function, while the <code class="docutils literal notranslate"><span class="pre">y</span></code> set is the <em>range</em>.</p>
+<p>Functions are commonly represented as <code class="docutils literal notranslate"><span class="pre">y=f(x)</span></code>, which reads ‘y is equal to f of x’. The variable <code class="docutils literal notranslate"><span class="pre">x</span></code> is said to be <em>independent</em>, while <code class="docutils literal notranslate"><span class="pre">y</span></code> is <em>dependent</em>. This means that to obtain a value of the variable <code class="docutils literal notranslate"><span class="pre">y</span></code>, the variable <code class="docutils literal notranslate"><span class="pre">x</span></code> has to be set first.</p>
+<p>The letter <code class="docutils literal notranslate"><span class="pre">f</span></code> represents the rule between variables <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code>. The rule can be of various forms; for example a linear function has the form <code class="docutils literal notranslate"><span class="pre">f(x)=ax+b</span></code>, where <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code> are given constant numbers. <code class="docutils literal notranslate"><span class="pre">x</span></code> is the independent variable which can take any real value. After making the operations (<code class="docutils literal notranslate"><span class="pre">a</span></code> multiplied by <code class="docutils literal notranslate"><span class="pre">x</span></code> and added to <code class="docutils literal notranslate"><span class="pre">b</span></code>) a new value is obtained, which is the result assigned to the dependent variable <code class="docutils literal notranslate"><span class="pre">y</span></code>.</p>
+</section>
+<section id="functions-in-python">
+<h2>Functions in Python<a class="headerlink" href="#functions-in-python" title="Link to this heading">#</a></h2>
+<p>Let’s see how to make a linear function using Python. To create a new function you need to use the keyword <code class="docutils literal notranslate"><span class="pre">def</span></code>, followed by a function name (in this case let’s just use <code class="docutils literal notranslate"><span class="pre">f</span></code>), and finally a set of parentheses containing the independent variable <code class="docutils literal notranslate"><span class="pre">x</span></code>. In Python, the independent variable is called the <strong>parameter</strong> of the function. A function can have more than one parameter, as you will see later. Finish the statement with a colon <code class="docutils literal notranslate"><span class="pre">:</span></code>.</p>
+<p>Below the <code class="docutils literal notranslate"><span class="pre">def</span></code> statement comes the body of the function, which has to be indented, similar to the <code class="docutils literal notranslate"><span class="pre">if</span></code> and <code class="docutils literal notranslate"><span class="pre">for</span></code> statements. In this case we just need to compute a linear function and return its value. The linear function can be something like <code class="docutils literal notranslate"><span class="pre">2*x+1</span></code> (feel free to try something different yourself). The <code class="docutils literal notranslate"><span class="pre">return</span></code> statement is used for the function to give a value back when is called in the main program.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+  <span class="k">return</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<p>You have just defined the function <code class="docutils literal notranslate"><span class="pre">f</span></code>. How do you call this function to show a resulting value, given a value of <code class="docutils literal notranslate"><span class="pre">x</span></code>? To call the function, simply write its name (in this case <code class="docutils literal notranslate"><span class="pre">f</span></code>) followed by a value (a number) between parentheses. Make use of the <code class="docutils literal notranslate"><span class="pre">print</span></code> function to show the result on the screen.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+  <span class="k">return</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+
+<span class="c1"># 5</span>
+</pre></div>
+</div>
+<p>When you give a concrete value for the parameter, that is called the <strong>argument</strong> of the function you just called. You could have defined the function in a slightly different way. First compute the value of <code class="docutils literal notranslate"><span class="pre">2x+1</span></code>, save the result in a variable called <code class="docutils literal notranslate"><span class="pre">y</span></code>, and lastly return <code class="docutils literal notranslate"><span class="pre">y</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+  <span class="n">y</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
+  <span class="k">return</span> <span class="n">y</span>
+</pre></div>
+</div>
+<p>Calling the function defined this way will work exactly the same as the previous example.</p>
+<blockquote>
+<div><p>The difference between a <strong>parameter</strong> and an <strong>argument</strong> can be subtle at first. A parameter is the name used in the function definition at the def statement level. An argument is the value you give the parameter when the function is called.</p>
+</div></blockquote>
+<section id="functions-with-more-than-one-parameter">
+<h3>Functions with more than one parameter<a class="headerlink" href="#functions-with-more-than-one-parameter" title="Link to this heading">#</a></h3>
+<p>You can define a function that takes more than only one parameter. Let’s make a function with three numerical parameters, <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code> and <code class="docutils literal notranslate"><span class="pre">z</span></code>. Define the function <code class="docutils literal notranslate"><span class="pre">f</span></code> similar to the previous example, and separate each parameter with a comma.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
+  <span class="k">return</span> <span class="n">x</span><span class="o">+</span><span class="n">y</span><span class="o">+</span><span class="n">z</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+
+<span class="c1"># 6</span>
+</pre></div>
+</div>
+<p>In this example the <code class="docutils literal notranslate"><span class="pre">return</span></code> statement computes the sum over the three arguments. There is no need to include all parameters in the <code class="docutils literal notranslate"><span class="pre">return</span></code> statement. For example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
+  <span class="k">return</span> <span class="mi">2</span><span class="o">*</span><span class="n">y</span><span class="o">*</span><span class="n">z</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+
+<span class="c1"># 12</span>
+</pre></div>
+</div>
+</section>
+<section id="functions-which-returns-more-than-one-value">
+<h3>Functions which returns more than one value<a class="headerlink" href="#functions-which-returns-more-than-one-value" title="Link to this heading">#</a></h3>
+<p>Functions can return more than one value. In the <code class="docutils literal notranslate"><span class="pre">return</span></code> statement separate each returned value with a comma. When calling the function (and printing the output) you will get a tuple containing each returned value.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
+  <span class="k">return</span> <span class="n">x</span><span class="o">+</span><span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="o">+</span><span class="n">z</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+
+<span class="c1"># (3, 4)</span>
+</pre></div>
+</div>
+</section>
+<section id="functions-with-arbitrary-data-types">
+<h3>Functions with arbitrary data types<a class="headerlink" href="#functions-with-arbitrary-data-types" title="Link to this heading">#</a></h3>
+<p>So far you have seen different examples of functions, all of them working with numerical data types. But with Python you can define functions that takes any data type values as parameters, and also return any data type values.</p>
+<p>Let’s set an example where a function takes a string (could be a name) and outputs another string with a welcoming message.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">hello</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+  <span class="k">return</span> <span class="s1">&#39;Welcome &#39;</span> <span class="o">+</span> <span class="n">name</span> <span class="o">+</span><span class="s1">&#39;. Happy coding!&#39;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">hello</span><span class="p">(</span><span class="s1">&#39;John&#39;</span><span class="p">))</span>
+
+<span class="c1"># Welcome John. Happy coding!</span>
+</pre></div>
+</div>
+</section>
+<section id="default-arguments">
+<h3>Default arguments<a class="headerlink" href="#default-arguments" title="Link to this heading">#</a></h3>
+<p>What happens if you don’t give the necessary arguments to a function? You will learn more on this with the exercises at the end of the article, but you can guess already that you may encounter some sort of error. You can give a specific parameter a default value for cases where you don’t specify it when calling a function.</p>
+<p>To set a default value for a parameter, make an equal sign <code class="docutils literal notranslate"><span class="pre">=</span></code> after its name in the <code class="docutils literal notranslate"><span class="pre">def</span></code> statement and specify the value you want it to take:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">hello</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;guest&#39;</span><span class="p">):</span>
+  <span class="k">return</span> <span class="s1">&#39;Welcome &#39;</span> <span class="o">+</span> <span class="n">name</span> <span class="o">+</span><span class="s1">&#39;. Happy coding!&#39;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">hello</span><span class="p">())</span>
+
+<span class="c1"># Welcome guest. Happy coding!</span>
+</pre></div>
+</div>
+<p>As you can see, calling the function without any arguments makes the <code class="docutils literal notranslate"><span class="pre">name</span></code> parameter take the value of ‘guest’. But if you call the function giving an argument, like ‘Karen’, the <code class="docutils literal notranslate"><span class="pre">name</span></code> parameter will take that value. The function will ignore the default value:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">hello</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;guest&#39;</span><span class="p">):</span>
+  <span class="k">return</span> <span class="s1">&#39;Welcome &#39;</span> <span class="o">+</span> <span class="n">name</span> <span class="o">+</span><span class="s1">&#39;. Happy coding!&#39;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">hello</span><span class="p">(</span><span class="s1">&#39;Karen&#39;</span><span class="p">))</span>
+
+<span class="c1"># Welcome Karen. Happy coding!</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="built-in-functions">
+<h2>Built-in functions<a class="headerlink" href="#built-in-functions" title="Link to this heading">#</a></h2>
+<p>Python has many functions that are already implemented for you to use directly. You have been using a couple of them throughout the course: the <code class="docutils literal notranslate"><span class="pre">print()</span></code> and the <code class="docutils literal notranslate"><span class="pre">len()</span></code> functions. Let’s see how they work in more detail.</p>
+<section id="the-print-function">
+<h3>The print function<a class="headerlink" href="#the-print-function" title="Link to this heading">#</a></h3>
+<p>The print function, as you have seen throughout the course, is used to show certain information on the screen. You can use it to print a message using a string, or to show the value of certain variables, and even combine both.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello World!&#39;</span><span class="p">)</span>
+<span class="c1"># Hello World!</span>
+
+<span class="n">pi</span> <span class="o">=</span> <span class="mf">3.14</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pi</span><span class="p">)</span>
+<span class="c1"># 3.14</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The value of pi is &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">pi</span><span class="p">))</span>
+<span class="c1"># The value of pi is 3.14</span>
+</pre></div>
+</div>
+<p>But you can do more with the print function. Imagine you want to print a list of names. You can do it by using the print function for each of the names, which will result in the list of names printed one below the other:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;John&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Jane&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Karen&#39;</span><span class="p">)</span>
+
+<span class="c1"># John</span>
+<span class="c1"># Jane</span>
+<span class="c1"># Karen</span>
+</pre></div>
+</div>
+<p>The names are shown each in a different line by default. What if you wanted to show them in the same line, with each name separated by a comma? The print function can take an additional parameter <code class="docutils literal notranslate"><span class="pre">end</span></code>, which indicates what should be printed at the end of the line. The default value for the <code class="docutils literal notranslate"><span class="pre">end</span></code> parameter is the new line character <code class="docutils literal notranslate"><span class="pre">\n</span></code>, that’s why the default behaviour is to print the names in different lines.</p>
+<p>Let’s repeat the last example, this time giving each print function a value for the <code class="docutils literal notranslate"><span class="pre">end</span></code> parameter. The first two will have an <code class="docutils literal notranslate"><span class="pre">end</span></code> value of <code class="docutils literal notranslate"><span class="pre">',</span> <span class="pre">'</span></code>, that is a comma and a space. The last print will have an end value of <code class="docutils literal notranslate"><span class="pre">'.'</span></code>, so that the last one ends with a period.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;John&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;, &#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Jane&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;, &#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Karen&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
+
+<span class="c1"># John, Jane, Karen.</span>
+</pre></div>
+</div>
+<p>Looks much better! Another way to get the same result is to use a single print statement with each name separated with a comma:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;John&#39;</span><span class="p">,</span> <span class="s1">&#39;Jane&#39;</span><span class="p">,</span> <span class="s1">&#39;Karen&#39;</span><span class="p">)</span>
+
+<span class="c1"># John Jane Karen</span>
+</pre></div>
+</div>
+<p>The names are separated with a space by default. You can specify a different separator with the <code class="docutils literal notranslate"><span class="pre">sep</span></code> parameter. Let’s give the print function a <code class="docutils literal notranslate"><span class="pre">sep</span></code> parameter with a value of <code class="docutils literal notranslate"><span class="pre">',</span> <span class="pre">'</span></code> (comma and space):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;John&#39;</span><span class="p">,</span> <span class="s1">&#39;Jane&#39;</span><span class="p">,</span> <span class="s1">&#39;Karen&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;, &#39;</span><span class="p">)</span>
+
+<span class="c1"># John, Jane, Karen</span>
+</pre></div>
+</div>
+<p>So, the <code class="docutils literal notranslate"><span class="pre">sep</span></code> parameter has a default value of <code class="docutils literal notranslate"><span class="pre">'</span> <span class="pre">'</span></code>, which is a space character. What about the period at the end? You can include the <code class="docutils literal notranslate"><span class="pre">end</span></code> parameter with a value of <code class="docutils literal notranslate"><span class="pre">'.'</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;John&#39;</span><span class="p">,</span> <span class="s1">&#39;Jane&#39;</span><span class="p">,</span> <span class="s1">&#39;Karen&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;, &#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
+
+<span class="c1"># John, Jane, Karen.</span>
+</pre></div>
+</div>
+<p>And there you have it! You just made the same example in just one line of code.</p>
+</section>
+<section id="the-len-function">
+<h3>The len function<a class="headerlink" href="#the-len-function" title="Link to this heading">#</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">len()</span></code> function is simpler than the <code class="docutils literal notranslate"><span class="pre">print()</span></code> function because it doesn’t have any extra arguments. The <code class="docutils literal notranslate"><span class="pre">len()</span></code> function returns the number of items in an object, such as a list.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">([</span><span class="s1">&#39;John&#39;</span><span class="p">,</span> <span class="mi">38</span><span class="p">,</span> <span class="s1">&#39;California&#39;</span><span class="p">])</span>
+<span class="go">3</span>
+</pre></div>
+</div>
+<p>When the <code class="docutils literal notranslate"><span class="pre">len()</span></code> function is applied to a string, it returns the number of characters of it:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="s1">&#39;Hello World!&#39;</span><span class="p">)</span>
+<span class="go">12</span>
+</pre></div>
+</div>
+<p>There are specific cases like <em>sets</em>, where you have to pay attention because the number you see may not be equal to what the <code class="docutils literal notranslate"><span class="pre">len()</span></code> function returns:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">({</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">})</span>
+<span class="go">3</span>
+</pre></div>
+</div>
+<p>In this example the output is 3, and not 4, because the set returns the unique elements of it, which in this case is <code class="docutils literal notranslate"><span class="pre">{'a',</span> <span class="pre">'b',</span> <span class="pre">'c'}</span></code>. The character <code class="docutils literal notranslate"><span class="pre">'a'</span></code> is repeated.</p>
+</section>
+<section id="the-input-function">
+<h3>The input function<a class="headerlink" href="#the-input-function" title="Link to this heading">#</a></h3>
+<p>This is a very interesting and useful function that helps Python programs interact with the user. The <code class="docutils literal notranslate"><span class="pre">input()</span></code> function takes a single string parameter. When the function is called, a message is shown and the program waits for the user to input a string text.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter your name: &#39;</span><span class="p">)</span>
+<span class="go">Enter your name:</span>
+</pre></div>
+</div>
+<p>In this example we are using the terminal but you can try this with a script file and executing it. Enter your name and hit <code class="docutils literal notranslate"><span class="pre">Enter</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter your name: &#39;</span><span class="p">)</span>
+<span class="go">Enter your name: DeusDev</span>
+<span class="go">&#39;DeusDev&#39;</span>
+</pre></div>
+</div>
+<p>The text you just wrote is shown (returned) on the screen. You can also save what the user inputs in a variable for later use:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter your name: &#39;</span><span class="p">)</span>
+<span class="go">Enter your name: DeusDev</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Your name is&#39;</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+<span class="go">Your name is DeusDev</span>
+</pre></div>
+</div>
+<p>Keep in mind that the <code class="docutils literal notranslate"><span class="pre">input()</span></code> function returns string values. However you can use other Python functions to convert strings to integers, floats, etc, in case the input values represent numbers.</p>
+</section>
+<section id="all-built-in-functions">
+<h3>All built-in functions<a class="headerlink" href="#all-built-in-functions" title="Link to this heading">#</a></h3>
+<p>There are more built-in functions, and they are all listed on the Python official documentation: <a class="reference external" href="https://docs.python.org/3/library/functions.html">https://docs.python.org/3/library/functions.html</a>. Have some time to go over all of them, at least to have an idea of what Python is capable of.</p>
+</section>
+</section>
+<section id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h2>
+<p>In this article you learned about Python functions. Python has a number of built-in functions you can use directly. Each function has its own purpose, and you will learn to use them at given time.</p>
+<p>Functions can also be built to fulfill your own needs. You learned how to define custom functions using the <code class="docutils literal notranslate"><span class="pre">def</span></code> keyword. The body of a function usually needs a <code class="docutils literal notranslate"><span class="pre">return</span></code> statement in order to give one or more values back.</p>
+<p>In the next chapter you will learn about Python methods, which are functions that work for specific objects.</p>
+</section>
+<section id="exercises">
+<h2>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
+<p>The next list of exercises are intended for you to practice what you have learned on this article about functions.</p>
+<ol class="arabic simple">
+<li><p>In this article the functions defined in the examples all used the <code class="docutils literal notranslate"><span class="pre">return</span></code> statement to return a specific value. Sometimes a function can be defined without a <code class="docutils literal notranslate"><span class="pre">return</span></code> statement. Make a new function that takes one parameter <code class="docutils literal notranslate"><span class="pre">country</span></code>, and prints a message saying <code class="docutils literal notranslate"><span class="pre">'The</span> <span class="pre">country</span> <span class="pre">is</span> <span class="pre">India'</span></code> when the country parameter is equal to the string <code class="docutils literal notranslate"><span class="pre">'India'</span></code>. To do this, the body of the function will only contain a <code class="docutils literal notranslate"><span class="pre">print</span></code> statement. Test your function.</p></li>
+<li><p>Make a new function that computes the square of a given number, <code class="docutils literal notranslate"><span class="pre">x^2=x*x</span></code>, this is the number multiplied by itself. Include a <code class="docutils literal notranslate"><span class="pre">return</span></code> statement in your function definition, and test the function with different values, including floats and negative.</p></li>
+<li><p>Make a function with two parameters <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code>, and compute the product of both numbers. Test the function against different numbers.</p></li>
+<li><p>Use the same function of the exercise #3, but this time return two values: the product and the sum of <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code>.</p></li>
+<li><p>Make a function that takes a list as its argument, and return the number of elements it contains. Test the function with lists of different lengths.</p></li>
+<li><p>Use the function of exercise #5 but this time call it by using a string as its argument. Is it working as expected? Why or why not?</p></li>
+<li><p>Use the function of exercise #3 and give the parameters default values. Test the new function for different cases.</p></li>
+<li><p>This exercise is intended to show you a special value returned by some functions in special cases. Open a new terminal and enter the Python interpreter. Define a new function without any parameters (you can call it <code class="docutils literal notranslate"><span class="pre">f</span></code> or however you prefer). In the block of the function make a single <code class="docutils literal notranslate"><span class="pre">return</span></code> statement without anything else. If you call the function like <code class="docutils literal notranslate"><span class="pre">f()</span></code> nothing will be shown. But what happens if you do <code class="docutils literal notranslate"><span class="pre">print(f())</span></code>? What is the function returning?</p></li>
+</ol>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="chapter9.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Chapter 9: Loops, for and while, break and continue</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="chapter11.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Chapter 11: Built-in Methods</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-function-the-mathematical-definition">What is a function? The mathematical definition</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#functions-in-python">Functions in Python</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions-with-more-than-one-parameter">Functions with more than one parameter</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions-which-returns-more-than-one-value">Functions which returns more than one value</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#functions-with-arbitrary-data-types">Functions with arbitrary data types</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#default-arguments">Default arguments</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#built-in-functions">Built-in functions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-print-function">The print function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-len-function">The len function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-input-function">The input function</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#all-built-in-functions">All built-in functions</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Carlos
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026, Carlos.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

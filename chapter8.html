@@ -1,0 +1,782 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Chapter 8: Conditional statements: if, elif, else &#8212; Pyntroduction To Python 1.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="_static/documentation_options.js?v=a681ed88"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter8';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Chapter 9: Loops, for and while, break and continue" href="chapter9.html" />
+    <link rel="prev" title="Chapter 7: Working with dictionaries" href="chapter7.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Pyntroduction To Python 1.0 documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter1.html">Chapter 1: Installation &amp; Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter2.html">Chapter 2: Using the terminal and Python interpreter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter3.html">Chapter 3: Using text editors and IDEs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter4.html">Chapter 4: Data Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter5.html">Chapter 5: Working with strings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter6.html">Chapter 6: Working with lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter7.html">Chapter 7: Working with dictionaries</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Chapter 8: Conditional statements: if, elif, else</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter9.html">Chapter 9: Loops, for and while, break and continue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter10.html">Chapter 10: Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter11.html">Chapter 11: Built-in Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter12.html">Chapter 12: Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter13.html">Chapter 13: Practice Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="final.html">Thank you for reading</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/chapter8.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Chapter 8: Conditional statements: if, elif, else</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#revisiting-the-boolean-data-type">Revisiting the boolean data type</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-values-and-variables">Boolean values and variables</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-operators-and-or-not">Boolean operators: and, or, not</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-decisions-the-if-statement">Simple decisions: the if statement</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flowchart-diagrams">Flowchart diagrams</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-indentation">Python indentation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-else-statement">The else statement</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nested-if-else-statements">Nested if-else statements</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-elif-statement">The elif statement</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="chapter-8-conditional-statements-if-elif-else">
+<h1>Chapter 8: Conditional statements: if, elif, else<a class="headerlink" href="#chapter-8-conditional-statements-if-elif-else" title="Link to this heading">#</a></h1>
+<p>Conditional statements are almost everywhere in computer programming. This part of the course will teach you about simple decisions you can work with on your Python programs.</p>
+<p>You make simple decisions in your everyday life, based on a number of variables. For example, if you know that is raining or is going to rain today, you may decide to take an umbrella when going out. Or if you get a call on your phone you will decide weather you attend it or not based on who it is.</p>
+<p>Python programs can deal with simple decisions like those by combining <em>boolean expressions</em> and the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement, which you will learn about shortly.</p>
+<section id="revisiting-the-boolean-data-type">
+<h2>Revisiting the boolean data type<a class="headerlink" href="#revisiting-the-boolean-data-type" title="Link to this heading">#</a></h2>
+<p>Think about the raining example of the introduction. How do you decide weather to take an umbrella or not? You have to check if its raining. If you ask yourself, is it raining? What are the possible answers? <strong>Yes</strong> or <strong>No</strong>. Python has a special data type to deal with such binary values: the <em>boolean data type</em>.</p>
+<p>Remember that boolean variables can take two values: <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>. For our example, <code class="docutils literal notranslate"><span class="pre">True</span></code> will be the <strong>Yes</strong>, while <code class="docutils literal notranslate"><span class="pre">False</span></code> is the <strong>No</strong>. You have learned the very basics of the boolean data type in a previous tutorial. Let’s go further now that you need this data type to make simple decisions.</p>
+<section id="boolean-values-and-variables">
+<h3>Boolean values and variables<a class="headerlink" href="#boolean-values-and-variables" title="Link to this heading">#</a></h3>
+<p>Boolean values can be directly defined with the keywords <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">raining</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">raining</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">raining</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">raining</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<p>In this case the variable <code class="docutils literal notranslate"><span class="pre">raining</span></code> will contain <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>, depending on weather it is raining or not outside. Once you define your variable, you will make use of it for the logic of simple decisions.</p>
+</section>
+<section id="boolean-operators-and-or-not">
+<h3>Boolean operators: and, or, not<a class="headerlink" href="#boolean-operators-and-or-not" title="Link to this heading">#</a></h3>
+<p>Boolean logic can be much more complex than just defining a single value as <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>. Imagine you want to check if two different variables are <code class="docutils literal notranslate"><span class="pre">True</span></code> at the same time. For this you can use the <code class="docutils literal notranslate"><span class="pre">and</span></code> boolean operator:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">raining</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cold</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">raining</span> <span class="ow">and</span> <span class="n">cold</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<p>The different combinations for the <code class="docutils literal notranslate"><span class="pre">and</span></code> boolean operator are on the table below:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>a</p></th>
+<th class="head"><p>b</p></th>
+<th class="head"><p>a and b</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>True</p></td>
+<td><p>True</p></td>
+<td><p>True</p></td>
+</tr>
+<tr class="row-odd"><td><p>True</p></td>
+<td><p>False</p></td>
+<td><p>False</p></td>
+</tr>
+<tr class="row-even"><td><p>False</p></td>
+<td><p>True</p></td>
+<td><p>False</p></td>
+</tr>
+<tr class="row-odd"><td><p>False</p></td>
+<td><p>False</p></td>
+<td><p>False</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Another boolean operator is the <code class="docutils literal notranslate"><span class="pre">or</span></code>, which is used to check if at least one of the variables is set to <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">raining</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cold</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">raining</span> <span class="ow">or</span> <span class="n">cold</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<p>The combinations for the <code class="docutils literal notranslate"><span class="pre">or</span></code> operator are:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>a</p></th>
+<th class="head"><p>b</p></th>
+<th class="head"><p>a or b</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>True</p></td>
+<td><p>True</p></td>
+<td><p>True</p></td>
+</tr>
+<tr class="row-odd"><td><p>True</p></td>
+<td><p>False</p></td>
+<td><p>True</p></td>
+</tr>
+<tr class="row-even"><td><p>False</p></td>
+<td><p>True</p></td>
+<td><p>True</p></td>
+</tr>
+<tr class="row-odd"><td><p>False</p></td>
+<td><p>False</p></td>
+<td><p>False</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">not</span></code> operator negates the value:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">raining</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="ow">not</span> <span class="n">raining</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">raining</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="ow">not</span> <span class="n">raining</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<p>Here is the table for the <code class="docutils literal notranslate"><span class="pre">not</span></code> operator:</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>a</p></th>
+<th class="head"><p>not a</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>True</p></td>
+<td><p>False</p></td>
+</tr>
+<tr class="row-odd"><td><p>False</p></td>
+<td><p>True</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+<section id="simple-decisions-the-if-statement">
+<h2>Simple decisions: the if statement<a class="headerlink" href="#simple-decisions-the-if-statement" title="Link to this heading">#</a></h2>
+<p>Let’s see how a simple decision can be automated with a Python script. First of all, define a variable called <code class="docutils literal notranslate"><span class="pre">raining</span></code>, and assign it the value <code class="docutils literal notranslate"><span class="pre">True</span></code>, meaning it is actually raining today. Then comes the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement, followed by a boolean expression. In this case the boolean expression is simply the variable <code class="docutils literal notranslate"><span class="pre">raining</span></code> containing the boolean value <code class="docutils literal notranslate"><span class="pre">True</span></code>. In the same line at the end, finish with a colon <code class="docutils literal notranslate"><span class="pre">:</span></code>.</p>
+<p>Below the <em>if</em> statement comes the <strong>body</strong>. This is the part of the script you want to be executed only in case the boolean expression has a value of <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">raining</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="k">if</span> <span class="n">raining</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;It&#39;s raining. Let me get my umbrella!&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Have a good day!&quot;</span><span class="p">)</span>
+
+<span class="c1"># It&#39;s raining. Let me get my umbrella!</span>
+<span class="c1"># Have a good day!</span>
+</pre></div>
+</div>
+<p>As you can see, the body of the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement, that is the first <code class="docutils literal notranslate"><span class="pre">print</span></code>, executes because the boolean expression (the variable <code class="docutils literal notranslate"><span class="pre">raining</span></code>) has a value of <code class="docutils literal notranslate"><span class="pre">True</span></code>. What happens if the <code class="docutils literal notranslate"><span class="pre">raining</span></code> variable is set to <code class="docutils literal notranslate"><span class="pre">False</span></code>?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">raining</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="k">if</span> <span class="n">raining</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;It&#39;s raining. Let me get my umbrella!&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Have a good day!&quot;</span><span class="p">)</span>
+
+<span class="c1"># Have a good day!</span>
+</pre></div>
+</div>
+<p>The script does not print the first message because the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement encounters an expression that has a value of <code class="docutils literal notranslate"><span class="pre">False</span></code>. Then, the body of the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement is skipped (not executed). Only the last message is printed to the screen, because that one is not part of the body of the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement.</p>
+<p>The body of an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement can have more than one line. For example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">raining</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="k">if</span> <span class="n">raining</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;It&#39;s raining. Let me get my umbrella!&quot;</span><span class="p">)</span>
+  <span class="n">day</span> <span class="o">=</span> <span class="s1">&#39;Sunday&#39;</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Today is &#39;</span> <span class="o">+</span> <span class="n">day</span> <span class="o">+</span> <span class="s1">&#39;. Have fun!&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Have a good day!&quot;</span><span class="p">)</span>
+
+<span class="c1"># It&#39;s raining. Let me get my umbrella!</span>
+<span class="c1"># Today is Sunday. Have fun!</span>
+<span class="c1"># Have a good day!</span>
+</pre></div>
+</div>
+<p>In this example the body of the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement has three lines. When the boolean expression of the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement has a value of <code class="docutils literal notranslate"><span class="pre">True</span></code>, the whole contents of the body will execute before moving on. In case it is <code class="docutils literal notranslate"><span class="pre">False</span></code>, the complete body will be skipped.</p>
+<section id="flowchart-diagrams">
+<h3>Flowchart diagrams<a class="headerlink" href="#flowchart-diagrams" title="Link to this heading">#</a></h3>
+<p>When dealing with simple decisions like the ones you are learning in this article, it is a good idea to organize your program and think about its logic before moving on to writing any code. This is a great idea specially when a program is getting too complex and the code is harder to read. A <em>flowchart</em> diagram for the last example would look like this:</p>
+<figure class="align-center" id="id1">
+<img alt="python book image" src="_images/flowdiagramif.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 15 </span><span class="caption-text">Flowchart diagram</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The <strong>diamond shaped box</strong> contains the <em>conditional decision</em>, which will be part of the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement in your program. In this case that is the <code class="docutils literal notranslate"><span class="pre">raining</span></code> boolean variable.</p>
+<p>The <strong>rectangular boxes</strong> shows what the code will do, in this case those are simple <code class="docutils literal notranslate"><span class="pre">print</span></code> statements, but it can be much more than that, such as assigning values to variables, or more <code class="docutils literal notranslate"><span class="pre">if</span></code> statements.</p>
+<p>The <strong>arrow lines</strong> indicate the <em>flow</em> of the program. Each diamond shaped box in this case can follow two possible paths: one for the case that the boolean expression has a value of <code class="docutils literal notranslate"><span class="pre">True</span></code>, and another when it is <code class="docutils literal notranslate"><span class="pre">False</span></code>. You can use <strong>True/False</strong> instead of <strong>yes/no</strong> in the diagram. For this example the <code class="docutils literal notranslate"><span class="pre">True</span></code> case makes it go to the first print statement, while the <code class="docutils literal notranslate"><span class="pre">False</span></code> case avoids the first print and jumps directly to the second one.</p>
+</section>
+<section id="python-indentation">
+<h3>Python indentation<a class="headerlink" href="#python-indentation" title="Link to this heading">#</a></h3>
+<p>In all the examples where there is an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement you may have noticed that the body is not in the same level as the rest of the lines of the script. If you are using a text editor like Sublime or VS Code, hitting Enter after the line containing the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement (right after the colon) will make an automatic <em>indentation</em> for you.</p>
+<p>In case you are not using a text editor that makes the indentation automatically, you will have to make it yourself. The indentation can be made using a tab, or using 2 or 4 spaces. What happens if you don’t indent your code? Try the following, without indentation:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">raining</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="k">if</span> <span class="n">raining</span><span class="p">:</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;It&#39;s raining. Let me get my umbrella!&quot;</span><span class="p">)</span>
+
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">File &quot;pythoncourse.py&quot;, line 4</span>
+<span class="sd">    print(&quot;It&#39;s raining. Let me get my umbrella!&quot;)</span>
+<span class="sd">        ^</span>
+<span class="sd">IndentationError: expected an indented block</span>
+<span class="sd">&#39;&#39;&#39;</span>
+</pre></div>
+</div>
+<p>Python will throw and <code class="docutils literal notranslate"><span class="pre">IndentationError</span></code>, which is very helpful for debugging purposes. It actually points where the indentation was expected in your code.</p>
+<p>In other programming languages this is a good practice that improves readability of your code. But in Python the indentation is something that is used specifically to group blocks of code belonging to different parts of the script, for example the block code of an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement. Indentation in Python is not optional, is mandatory.</p>
+</section>
+<section id="the-else-statement">
+<h3>The else statement<a class="headerlink" href="#the-else-statement" title="Link to this heading">#</a></h3>
+<p>What if you want to print a different message if the condition is not met? In the previous example the message “Have a good day!” was shown weather it is raining or not. Let’s leave that message as it is, but let’s see how you can include an extra message for the case where is not raining outside.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">else</span></code> statement comes into play for this example. After the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement and its corresponding code block, include the keyword <code class="docutils literal notranslate"><span class="pre">else</span></code> at the <strong>same level of indentation</strong> as the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement, finishing with a colon <code class="docutils literal notranslate"><span class="pre">:</span></code>. Then comes the code block belonging to the <code class="docutils literal notranslate"><span class="pre">else</span></code> statement with the new message.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">raining</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="k">if</span> <span class="n">raining</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;It&#39;s raining. Let me get my umbrella!&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;It is not raining. Leave the umbrella alone!&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Have a good day!&quot;</span><span class="p">)</span>
+
+<span class="c1"># It&#39;s raining. Let me get my umbrella!</span>
+<span class="c1"># Have a good day!</span>
+</pre></div>
+</div>
+<p>After running the example where <code class="docutils literal notranslate"><span class="pre">raining</span></code> is set to <code class="docutils literal notranslate"><span class="pre">True</span></code>, only the first message is printed to the screen, just as the previous example. What happens when you set the variable <code class="docutils literal notranslate"><span class="pre">raining</span></code> to <code class="docutils literal notranslate"><span class="pre">False</span></code>?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">raining</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="k">if</span> <span class="n">raining</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;It&#39;s raining. Let me get my umbrella!&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;It is not raining. Leave the umbrella alone!&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Have a good day!&quot;</span><span class="p">)</span>
+
+<span class="c1"># It is not raining. Leave the umbrella alone!</span>
+<span class="c1"># Have a good day!</span>
+</pre></div>
+</div>
+<p>In this case, only the second message is printed to the screen. The code block belonging to the <code class="docutils literal notranslate"><span class="pre">else</span></code> statement is executed only when the boolean value resulting from the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement evaluates to <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<p>A flowchart diagram for this example would look like this:</p>
+<figure class="align-center" id="id2">
+<img alt="python book image" src="_images/flowdiagramifelse.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 16 </span><span class="caption-text">Flowchart diagram with if/else</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The <code class="docutils literal notranslate"><span class="pre">False</span></code> case now has a path with a <code class="docutils literal notranslate"><span class="pre">print</span></code> statement in between, making it show a custom message in between instead of jumping to the end of the script.</p>
+</section>
+<section id="nested-if-else-statements">
+<h3>Nested if-else statements<a class="headerlink" href="#nested-if-else-statements" title="Link to this heading">#</a></h3>
+<p>So far you have seen simple <code class="docutils literal notranslate"><span class="pre">if-else</span></code> statements, where a block of code is executed only if a condition is met, and another if the condition is not met. But <code class="docutils literal notranslate"><span class="pre">if-else</span></code> statements can be made more complex by chaining more than one of them together.</p>
+<p>For example, say you are working on a math problem where you have an integer number, and you want to check if that number is even or odd. Only in case the number is even (a multiple of 2), check if the number is equal to 2. Let’s make a diagram to organize the logic before writing any code.</p>
+<figure class="align-center" id="id3">
+<img alt="python book image" src="_images/flowdiagramnestedifelse.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 17 </span><span class="caption-text">Flowchart diagram with nested if/else</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The first thing the program will do is to check weather the number <code class="docutils literal notranslate"><span class="pre">n</span></code> is even or odd. The diamond shaped box indicates that this is part of a main <code class="docutils literal notranslate"><span class="pre">if</span></code> statement. If the number is not even, it means that is odd, and the program should terminate with a message saying that the number is odd.</p>
+<p>If the number is even, you have to make another decision to check if the number is equal to 2 or not. Make another <code class="docutils literal notranslate"><span class="pre">if</span></code> statement to check for the equality, and if the number is equal to 2, show a message indicating that information, and leave the program. If the number is different than 2, print a different message and leave the program. For this later case you should make use of an <code class="docutils literal notranslate"><span class="pre">else</span></code> statement.</p>
+<p>To check if a number <code class="docutils literal notranslate"><span class="pre">n</span></code> is even or odd you can make use of the <em>modulo (or modulus, or remainder) operator</em>, symbolized by <code class="docutils literal notranslate"><span class="pre">%</span></code>. This operator returns the remainder of the division between two numbers. When you divide a number by 2, you can get two possible remainders: 0 or 1. If you get a remainder of 0, it means the number is a multiple of 2 (<strong>even</strong>), while if you get a remainder of 1, the number is not a multiple of 2 (<strong>odd</strong>). Open a Python interpreter and try out the modulo operator with different integer numbers:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="mi">1</span><span class="o">%</span><span class="mi">2</span>
+<span class="go">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="mi">2</span><span class="o">%</span><span class="mi">2</span>
+<span class="go">0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="mi">3</span><span class="o">%</span><span class="mi">2</span>
+<span class="go">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="mi">4</span><span class="o">%</span><span class="mi">2</span>
+<span class="go">0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="mi">132</span><span class="o">%</span><span class="mi">2</span>
+<span class="go">0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="mi">767</span><span class="o">%</span><span class="mi">2</span>
+<span class="go">1</span>
+<span class="gp">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>To check the equality between the remainder of a number with 2 and 0, you can use the <code class="docutils literal notranslate"><span class="pre">==</span></code> operator, which returns True if both sides have the same value, otherwise it returns False. The condition <code class="docutils literal notranslate"><span class="pre">n%2</span> <span class="pre">==</span> <span class="pre">0</span></code> returns <code class="docutils literal notranslate"><span class="pre">True</span></code> for even numbers and <code class="docutils literal notranslate"><span class="pre">False</span></code> for odd numbers.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">5</span>
+
+<span class="k">if</span> <span class="n">n</span><span class="o">%</span><span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+  <span class="c1"># Here comes the main if block</span>
+</pre></div>
+</div>
+<p>Inside the main <code class="docutils literal notranslate"><span class="pre">if</span></code> block comes another <code class="docutils literal notranslate"><span class="pre">if</span></code> statement to check if the number is equal to 2. If it is equal, print a message indicating this fact, and if it is different print another message (using an <code class="docutils literal notranslate"><span class="pre">else</span></code> statement).</p>
+<p>Below the last print make another <code class="docutils literal notranslate"><span class="pre">else</span></code> statement, this time at the <em>same level of indentation as the first <code class="docutils literal notranslate"><span class="pre">if</span></code> statement</em>, since this last <code class="docutils literal notranslate"><span class="pre">else</span></code> belongs to the first <code class="docutils literal notranslate"><span class="pre">if</span></code>. This corresponds to the case where the number is odd.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">5</span>
+
+<span class="k">if</span> <span class="n">n</span><span class="o">%</span><span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+  <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;n is even and equal to 2&quot;</span><span class="p">)</span>
+  <span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;n is even but different than 2&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;n is odd&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Things are getting complicated, right? This is just the beginning. Once you get comfortable understanding and coding such logics, you can move on to more advanced topics. At the end of this article you can practice more on this with the exercises.</p>
+</section>
+</section>
+<section id="the-elif-statement">
+<h2>The elif statement<a class="headerlink" href="#the-elif-statement" title="Link to this heading">#</a></h2>
+<p>Let’s work on another example to see how you can make a still more complex logic. Imagine you are organizing a family dinner, and each of the family members have to bring something different to the meeting. The members can be your father, your mother and others.</p>
+<p>Your father has to bring extra chairs (because you only have two chairs at your house), your mother brings the food, and everyone else the drinks. All of you still needs to decide on who is gonna cook, and who is gonna do the dishes. Let’s leave this for a future tutorial where you can make use of random techniques with Python.</p>
+<p>Let’s make a simple Python program that takes a string variable <code class="docutils literal notranslate"><span class="pre">member</span></code> containing the name of the family member and prints a message indicating what he/she needs to bring to the reunion. Before moving on to the code, let’s do a flowchart.</p>
+<figure class="align-center" id="id4">
+<img alt="python book image" src="_images/flowdiagramelif.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 18 </span><span class="caption-text">Flowchart diagram with elif</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Start by checking if the member is the father. In case it is, print a message indicating that he needs to bring extra chairs. In case the member is not the father, you still need to check if it is the mother or not. If it is the mother, print a message saying that she needs to bring food, and exit the program. If the member is not the mother, there is only one last case in which the member (whoever it is) has to bring drinks. After that, exit the program and print a “Have fun!” message.</p>
+<p>As you can see this example is similar to the last one, where you learned how to make nested if statements. But this is different because the nesting is on the negative (False) part of the decision. You could make this work by combining an <code class="docutils literal notranslate"><span class="pre">else</span></code> followed by an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement, but Python has a built-in keyword to make this easier which is the <code class="docutils literal notranslate"><span class="pre">elif</span></code> statement.</p>
+<p>Start with the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement, checking if the member is the father. In case it is, print the corresponding message (after that, the program will automatically exit the <code class="docutils literal notranslate"><span class="pre">if</span></code> statament). Then instead of an <code class="docutils literal notranslate"><span class="pre">else</span></code> statement, place the <code class="docutils literal notranslate"><span class="pre">elif</span></code> statement at the same level of indentation as the <code class="docutils literal notranslate"><span class="pre">if</span></code>, and write the second condition, where the member is equal to the mother. If this is the case, print a message to bring the food. Finally, finish with the <code class="docutils literal notranslate"><span class="pre">else</span></code> statement in case the member is other than the father or the mother, in which case the message is to bring drinks.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">member</span> <span class="o">=</span> <span class="s1">&#39;father&#39;</span>
+
+<span class="k">if</span> <span class="n">member</span> <span class="o">==</span> <span class="s1">&#39;father&#39;</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Bring extra chairs&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">member</span> <span class="o">==</span> <span class="s1">&#39;mother&#39;</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Bring food&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Bring drinks&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Have fun!&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>You can make use of more <code class="docutils literal notranslate"><span class="pre">elif</span></code> statements in case you want to check for different members of the family.</p>
+</section>
+<section id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h2>
+<p>In this article you learned about conditional statements and simple decision making for Python programs. Conditional statements are made with the keywords <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">elif</span></code> and <code class="docutils literal notranslate"><span class="pre">else</span></code>.</p>
+<p>Flowchart diagrams are a great way to organize the logic of your programs, specially when they get long and complicated. You have learned how to read and construct simple flowchart diagrams for simple decision making programs.</p>
+<p>After you read the contents of the article, keep practicing to fully learn the conditional statements topics.</p>
+</section>
+<section id="exercises">
+<h2>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>To recap the basics of boolean logic, what are the possible values a boolean variable can take?</p></li>
+<li><p>Write a Python program to check if a given integer number (different than zero) is either positive or negative. Draw a flowchart diagram before writing any code.</p></li>
+<li><p>Write a Python program similar to the one of exercise #2, and if the given number is positive, check if that number is equal to 10.</p></li>
+<li><p>Write a program similar to that of exercise #2, but letting the number be zero also. Use the <code class="docutils literal notranslate"><span class="pre">elif</span></code> statement somehow.</p></li>
+<li><p>How can you check if a given positive integer number is a multiple of 5? Write the boolean condition and test it against different numbers.</p></li>
+<li><p>Write a program that given a string checks if its length is less than 10. In case it is less than 10, print a message with that information. If the length is not less than 10 (meaning the length is greater than or equal to 10), print a different message. Finally, the remaining case would be that the length is exactly equal to 10, in which case print a message with this information.</p></li>
+<li><p>Write a program that, given a variable of any type (string, integer, float, dictionary, etc), prints a message saying the type of the variable. For example, if the variable is <code class="docutils literal notranslate"><span class="pre">my_variable</span> <span class="pre">=</span> <span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3]</span></code> the program should print something like ‘Your variable is of the list type’. You should make use of multiple <code class="docutils literal notranslate"><span class="pre">elif</span></code> statements for this exercise. The boolean expression to check if a variable is, for example, an integer, is <code class="docutils literal notranslate"><span class="pre">type(my_variable)</span> <span class="pre">==</span> <span class="pre">int</span></code>.</p></li>
+</ol>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="chapter7.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Chapter 7: Working with dictionaries</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="chapter9.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Chapter 9: Loops, for and while, break and continue</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#revisiting-the-boolean-data-type">Revisiting the boolean data type</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-values-and-variables">Boolean values and variables</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-operators-and-or-not">Boolean operators: and, or, not</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-decisions-the-if-statement">Simple decisions: the if statement</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#flowchart-diagrams">Flowchart diagrams</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-indentation">Python indentation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-else-statement">The else statement</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nested-if-else-statements">Nested if-else statements</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-elif-statement">The elif statement</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Carlos
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026, Carlos.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

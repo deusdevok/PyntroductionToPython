@@ -1,0 +1,832 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Chapter 12: Modules &#8212; Pyntroduction To Python 1.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="_static/documentation_options.js?v=a681ed88"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter12';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Chapter 13: Practice Projects" href="chapter13.html" />
+    <link rel="prev" title="Chapter 11: Built-in Methods" href="chapter11.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Pyntroduction To Python 1.0 documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter1.html">Chapter 1: Installation &amp; Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter2.html">Chapter 2: Using the terminal and Python interpreter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter3.html">Chapter 3: Using text editors and IDEs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter4.html">Chapter 4: Data Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter5.html">Chapter 5: Working with strings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter6.html">Chapter 6: Working with lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter7.html">Chapter 7: Working with dictionaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter8.html">Chapter 8: Conditional statements: if, elif, else</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter9.html">Chapter 9: Loops, for and while, break and continue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter10.html">Chapter 10: Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter11.html">Chapter 11: Built-in Methods</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Chapter 12: Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter13.html">Chapter 13: Practice Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="final.html">Thank you for reading</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/chapter12.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Chapter 12: Modules</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-modules">Python modules</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-and-using-a-custom-module">Creating and using a custom module</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pycache-files">pycache files</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-random-module">The random module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#random-random">random.random()</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#random-uniform-a-b">random.uniform(a, b)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#random-randrange-start-stop-step">random.randrange(start, stop, step)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#random-randint-a-b">random.randint(a, b)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#random-choice-seq">random.choice(seq)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#random-shuffle-seq">random.shuffle(seq)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-math-module">The math module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#math-ceil-x">math.ceil(x)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#math-factorial-n">math.factorial(n)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#math-gcd">math.gcd()</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#math-exp-x">math.exp(x)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#math-sin-x">math.sin(x)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#math-pi">math.pi</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-numpy-module">The numpy module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-array">numpy.array()</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-arange">numpy.arange()</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-linspace">numpy.linspace()</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="chapter-12-modules">
+<h1>Chapter 12: Modules<a class="headerlink" href="#chapter-12-modules" title="Link to this heading">#</a></h1>
+<p>Python has a way to encapsulate a set of objects such as functions, variables, etc, in a single file with a given name. These objects can be used in your programs without the need to include all the code in your script.</p>
+<p>In this article you are going to learn how to create a Python module, and how to use it in your programs. You will also learn about some of the most commonly used Python modules and its useful functions.</p>
+<section id="python-modules">
+<h2>Python modules<a class="headerlink" href="#python-modules" title="Link to this heading">#</a></h2>
+<section id="creating-and-using-a-custom-module">
+<h3>Creating and using a custom module<a class="headerlink" href="#creating-and-using-a-custom-module" title="Link to this heading">#</a></h3>
+<p>To make a custom Python module, create a new file and give it a name like <strong>deusdev.py</strong> or whatever name you want it to have. It is important that the file has the <strong>py</strong> extension. This is the file that will contain all the functions to be used later.</p>
+<p>In your module file, create a new function. For now let’s make a simple function that prints a welcoming message like you did before in this course:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># deusdev.py</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">greet</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello </span><span class="si">{}</span><span class="s1">. Welcome to Python!&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>How can this module with its function be used in another script? Let’s suppose the file is saved in the Desktop. Open a new file, also in the Desktop, and give it some name like <strong>test.py</strong>. This will be the file containing the script that will call the function <code class="docutils literal notranslate"><span class="pre">greet()</span></code> from the <strong>deusdev.py</strong> module.</p>
+<p>First you need to <em>import</em> the module. To do that, use the <code class="docutils literal notranslate"><span class="pre">import</span></code> keyword, followed by the name of the module, in this case <code class="docutils literal notranslate"><span class="pre">deusdev</span></code> (without the <em>.py</em> extension). Now that the module is included in your script, you can use the function defined in it.</p>
+<p>The function <code class="docutils literal notranslate"><span class="pre">greet()</span></code> can be used in the same way as a method. Use the module name <code class="docutils literal notranslate"><span class="pre">deusdev</span></code> followed by a period, and then the name of the function <code class="docutils literal notranslate"><span class="pre">greet()</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># test.py</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">deusdev</span>
+
+<span class="n">deusdev</span><span class="o">.</span><span class="n">greet</span><span class="p">(</span><span class="s1">&#39;John&#39;</span><span class="p">)</span>
+
+<span class="c1"># Hello John. Welcome to Python!</span>
+</pre></div>
+</div>
+<p>Another way to use a module’s function is to assign it to a variable. You can assign the function using <code class="docutils literal notranslate"><span class="pre">deusdev.greet</span></code> (without parentheses) to a variable called <code class="docutils literal notranslate"><span class="pre">greet_func</span></code> (or something different). Then you can call the function using <code class="docutils literal notranslate"><span class="pre">greet('John')</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># test.py</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">deusdev</span>
+
+<span class="n">greet_func</span> <span class="o">=</span> <span class="n">deusdev</span><span class="o">.</span><span class="n">greet</span>
+<span class="n">greet_func</span><span class="p">(</span><span class="s1">&#39;John&#39;</span><span class="p">)</span>
+
+<span class="c1"># Hello John. Welcome to Python!</span>
+</pre></div>
+</div>
+<p>There are other ways you can import functions from your module. To import the <code class="docutils literal notranslate"><span class="pre">greet</span></code> function from the <code class="docutils literal notranslate"><span class="pre">deusdev</span></code> module, use the keyword <code class="docutils literal notranslate"><span class="pre">from</span></code>, followed by the module’s name <code class="docutils literal notranslate"><span class="pre">deusdev</span></code>, then <code class="docutils literal notranslate"><span class="pre">import</span></code> and finally the function you want to import, in this case <code class="docutils literal notranslate"><span class="pre">greet</span></code>. Then use the function without the module’s name.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># test.py</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">deusdev</span><span class="w"> </span><span class="kn">import</span> <span class="n">greet</span>
+
+<span class="n">greet</span><span class="p">(</span><span class="s1">&#39;John&#39;</span><span class="p">)</span>
+<span class="c1"># Hello John. Welcome to Python!</span>
+</pre></div>
+</div>
+<p>If you have more than one function in your module, you can import each function separating them with a comma. Let’s add a new function to the module that checks if a given number is even:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># deusdev.py</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">greet</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello </span><span class="si">{}</span><span class="s1">. Welcome to Python!&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">isEven</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+  <span class="k">return</span> <span class="n">n</span><span class="o">%</span><span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span>
+</pre></div>
+</div>
+<p>Then in your main file import and call both functions:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># test.py</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">deusdev</span><span class="w"> </span><span class="kn">import</span> <span class="n">greet</span><span class="p">,</span> <span class="n">isEven</span>
+
+<span class="n">greet</span><span class="p">(</span><span class="s1">&#39;John&#39;</span><span class="p">)</span>
+<span class="c1"># Hello John. Welcome to Python!</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">isEven</span><span class="p">(</span><span class="mi">41</span><span class="p">))</span>
+<span class="c1"># False</span>
+</pre></div>
+</div>
+<p>You can use the wildcard <code class="docutils literal notranslate"><span class="pre">*</span></code> to import all the functions at once, instead of writing each of them:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># test.py</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">deusdev</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+
+<span class="n">greet</span><span class="p">(</span><span class="s1">&#39;John&#39;</span><span class="p">)</span>
+<span class="c1"># Hello John. Welcome to Python!</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">isEven</span><span class="p">(</span><span class="mi">41</span><span class="p">))</span>
+<span class="c1"># False</span>
+</pre></div>
+</div>
+<p>You can also use the <code class="docutils literal notranslate"><span class="pre">as</span></code> keyword to give the module a different name to use it in the main program. This can be useful when module names are somewhat long and you want to reduce the typing in your program.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># test.py</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">deusdev</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">dd</span>
+
+<span class="n">dd</span><span class="o">.</span><span class="n">greet</span><span class="p">(</span><span class="s1">&#39;John&#39;</span><span class="p">)</span>
+<span class="c1"># Hello John. Welcome to Python!</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">as</span></code> keyword can be combined with the <code class="docutils literal notranslate"><span class="pre">from</span></code> keyword to import a module’s function with a different name:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># test.py</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">deusdev</span><span class="w"> </span><span class="kn">import</span> <span class="n">greet</span> <span class="k">as</span> <span class="n">greetings</span>
+
+<span class="n">greetings</span><span class="p">(</span><span class="s1">&#39;John&#39;</span><span class="p">)</span>
+
+<span class="c1"># Hello John. Welcome to Python!</span>
+</pre></div>
+</div>
+</section>
+<section id="pycache-files">
+<h3>pycache files<a class="headerlink" href="#pycache-files" title="Link to this heading">#</a></h3>
+<p>You may have noticed that when you run your scripts importing a custom module, a new folder is created with the name <strong><strong>pycache</strong></strong>. Inside this folder there is a file with the name <strong>deusdev.cpython-311.py</strong> (you may see it with a slightly different name depending on your module’s name and the Python version you are using). This is done to make the loading of modules faster, using something called <em>cache</em>. I won’t get into much details in this course, but you can read more about this in the <a class="reference external" href="https://docs.python.org/3/tutorial/modules.html#compiled-python-files">official Python documentation</a>.</p>
+<p>Next you are going to learn about some of the most common Python’s built-in modules.</p>
+</section>
+</section>
+<section id="the-random-module">
+<h2>The random module<a class="headerlink" href="#the-random-module" title="Link to this heading">#</a></h2>
+<p>The <a class="reference external" href="https://docs.python.org/3/library/random.html">random module</a> is used to generate pseudo-random numbers. Let’s see some of the functions you can use with this popular module.</p>
+<p>This time you can work with the Python interpreter, without the need to make a new file. First, import the <code class="docutils literal notranslate"><span class="pre">random</span></code> module.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+</pre></div>
+</div>
+<p>Once the module is imported, you can begin to use its functions. Let’s see some of them.</p>
+<section id="random-random">
+<h3>random.random()<a class="headerlink" href="#random-random" title="Link to this heading">#</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">random()</span></code> function returns a random floating point number between 0 and 1. 0 is included, meaning that sometimes you can get that exact value, but the 1 is not included in the range, so you will never get a 1 with this function.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span>
+<span class="go">0.5727401830032317</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span>
+<span class="go">0.4977649539769565</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">()</span>
+<span class="go">0.11762935447218192</span>
+</pre></div>
+</div>
+</section>
+<section id="random-uniform-a-b">
+<h3>random.uniform(a, b)<a class="headerlink" href="#random-uniform-a-b" title="Link to this heading">#</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">uniform()</span></code> function is similar to the <code class="docutils literal notranslate"><span class="pre">random()</span></code> function, but with <code class="docutils literal notranslate"><span class="pre">uniform()</span></code> you can return a floating point number between two arbitrary numbers <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="go">9.377423126967187</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="go">6.98125740847348</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="go">5.565696392526846</span>
+</pre></div>
+</div>
+</section>
+<section id="random-randrange-start-stop-step">
+<h3>random.randrange(start, stop, step)<a class="headerlink" href="#random-randrange-start-stop-step" title="Link to this heading">#</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">randrange()</span></code> function returns a random integer value between <code class="docutils literal notranslate"><span class="pre">start</span></code> (optional, default is 0) and <code class="docutils literal notranslate"><span class="pre">stop</span></code> (not included in the range), and you can give an optional parameter <code class="docutils literal notranslate"><span class="pre">step</span></code> (default is 1).</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="go">0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="go">3</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+<span class="go">17</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+<span class="go">33</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="go">5</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="go">15</span>
+</pre></div>
+</div>
+</section>
+<section id="random-randint-a-b">
+<h3>random.randint(a, b)<a class="headerlink" href="#random-randint-a-b" title="Link to this heading">#</a></h3>
+<p>This is equivalent to the <code class="docutils literal notranslate"><span class="pre">randrange()</span></code> function with <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b+1</span></code> as the parameters <code class="docutils literal notranslate"><span class="pre">start</span></code> and <code class="docutils literal notranslate"><span class="pre">stop</span></code>, because in this case <code class="docutils literal notranslate"><span class="pre">a</span></code> and <code class="docutils literal notranslate"><span class="pre">b</span></code> are both included.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="go">6</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="go">5</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="go">10</span>
+</pre></div>
+</div>
+</section>
+<section id="random-choice-seq">
+<h3>random.choice(seq)<a class="headerlink" href="#random-choice-seq" title="Link to this heading">#</a></h3>
+<p>With the <code class="docutils literal notranslate"><span class="pre">choice()</span></code> function you can randomly select an element from a sequence, such as a list. For example, say you have a list of names and you want to select one of them randomly:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="s1">&#39;John&#39;</span><span class="p">,</span> <span class="s1">&#39;Karen&#39;</span><span class="p">,</span> <span class="s1">&#39;Sean&#39;</span><span class="p">,</span> <span class="s1">&#39;Jane&#39;</span><span class="p">])</span>
+<span class="go">&#39;Karen&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="s1">&#39;John&#39;</span><span class="p">,</span> <span class="s1">&#39;Karen&#39;</span><span class="p">,</span> <span class="s1">&#39;Sean&#39;</span><span class="p">,</span> <span class="s1">&#39;Jane&#39;</span><span class="p">])</span>
+<span class="go">&#39;Karen&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="s1">&#39;John&#39;</span><span class="p">,</span> <span class="s1">&#39;Karen&#39;</span><span class="p">,</span> <span class="s1">&#39;Sean&#39;</span><span class="p">,</span> <span class="s1">&#39;Jane&#39;</span><span class="p">])</span>
+<span class="go">&#39;Jane&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="s1">&#39;John&#39;</span><span class="p">,</span> <span class="s1">&#39;Karen&#39;</span><span class="p">,</span> <span class="s1">&#39;Sean&#39;</span><span class="p">,</span> <span class="s1">&#39;Jane&#39;</span><span class="p">])</span>
+<span class="go">&#39;Karen&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">([</span><span class="s1">&#39;John&#39;</span><span class="p">,</span> <span class="s1">&#39;Karen&#39;</span><span class="p">,</span> <span class="s1">&#39;Sean&#39;</span><span class="p">,</span> <span class="s1">&#39;Jane&#39;</span><span class="p">])</span>
+<span class="go">&#39;Sean&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="random-shuffle-seq">
+<h3>random.shuffle(seq)<a class="headerlink" href="#random-shuffle-seq" title="Link to this heading">#</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">shuffle()</span></code> function takes a sequence, such as a list, and shuffles it (mixes its elements) in place (meaning that it doesn’t return a new sequence).</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;John&#39;</span><span class="p">,</span> <span class="s1">&#39;Karen&#39;</span><span class="p">,</span> <span class="s1">&#39;Sean&#39;</span><span class="p">,</span> <span class="s1">&#39;Jane&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">random</span><span class="o">.</span><span class="n">shuffle</span><span class="p">(</span><span class="n">names</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">names</span>
+<span class="go">[&#39;Sean&#39;, &#39;Jane&#39;, &#39;Karen&#39;, &#39;John&#39;]</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="the-math-module">
+<h2>The math module<a class="headerlink" href="#the-math-module" title="Link to this heading">#</a></h2>
+<p>The <a class="reference external" href="https://docs.python.org/3/library/math.html">math module</a> comes in handy when dealing with special mathematical operators. Let’s import the math module to start.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+</pre></div>
+</div>
+<p>Keep in mind that this module only works for real numbers. If you need to work with complex numbers, use the <a class="reference external" href="https://docs.python.org/3/library/cmath.html#module-cmath">cmath module</a>.</p>
+<p>Let’s see some of the functions the math module has for you.</p>
+<section id="math-ceil-x">
+<h3>math.ceil(x)<a class="headerlink" href="#math-ceil-x" title="Link to this heading">#</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">ceil(x)</span></code> function returns the smallest integer value greater than or equal to the argument <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">math</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="mf">5.2</span><span class="p">)</span>
+<span class="go">6</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">math</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="go">5</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">math</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="mf">1.9</span><span class="p">)</span>
+<span class="go">2</span>
+</pre></div>
+</div>
+</section>
+<section id="math-factorial-n">
+<h3>math.factorial(n)<a class="headerlink" href="#math-factorial-n" title="Link to this heading">#</a></h3>
+<p>This function returns the factorial of the integer value <code class="docutils literal notranslate"><span class="pre">n</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">math</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="go">120</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">math</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="go">6</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">math</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="go">1</span>
+</pre></div>
+</div>
+</section>
+<section id="math-gcd">
+<h3>math.gcd()<a class="headerlink" href="#math-gcd" title="Link to this heading">#</a></h3>
+<p>Returns the greatest common divisor between two numbers. Since the Python version 3.9 this function can take more than two parameters.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">math</span><span class="o">.</span><span class="n">gcd</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">18</span><span class="p">)</span>
+<span class="go">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">math</span><span class="o">.</span><span class="n">gcd</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="mi">18</span><span class="p">)</span>
+<span class="go">6</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">math</span><span class="o">.</span><span class="n">gcd</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
+<span class="go">2</span>
+</pre></div>
+</div>
+</section>
+<section id="math-exp-x">
+<h3>math.exp(x)<a class="headerlink" href="#math-exp-x" title="Link to this heading">#</a></h3>
+<p>Returns the <a class="reference external" href="https://en.wikipedia.org/wiki/E_(mathematical_constant)">number e</a> to the power of <code class="docutils literal notranslate"><span class="pre">x</span></code>. The number <code class="docutils literal notranslate"><span class="pre">e</span></code> is approximately equal to 2.718.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="go">7.38905609893065</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="go">1.0</span>
+</pre></div>
+</div>
+</section>
+<section id="math-sin-x">
+<h3>math.sin(x)<a class="headerlink" href="#math-sin-x" title="Link to this heading">#</a></h3>
+<p>Returns the sine of the number <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mf">7.32</span><span class="p">)</span>
+<span class="go">0.8607873878989017</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="go">0.0</span>
+</pre></div>
+</div>
+</section>
+<section id="math-pi">
+<h3>math.pi<a class="headerlink" href="#math-pi" title="Link to this heading">#</a></h3>
+<p>Returns the constant <a class="reference external" href="https://en.wikipedia.org/wiki/Pi">number pi</a>. Although the number pi has an infinite number of decimals, this module gives this number with a fixed number of decimals.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">math</span><span class="o">.</span><span class="n">pi</span>
+<span class="go">3.141592653589793</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="the-numpy-module">
+<h2>The numpy module<a class="headerlink" href="#the-numpy-module" title="Link to this heading">#</a></h2>
+<p>The <a class="reference external" href="https://numpy.org/">numpy module</a> is widely used among developers who work with data analysis. Go ahead and import the <code class="docutils literal notranslate"><span class="pre">numpy</span></code> module.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span>
+<span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
+<span class="gr">ModuleNotFoundError</span>: <span class="n">No module named &#39;numpy&#39;</span>
+</pre></div>
+</div>
+<p>Ups! It seems that <code class="docutils literal notranslate"><span class="pre">numpy</span></code> is not included with Python. Before using the <code class="docutils literal notranslate"><span class="pre">numpy</span></code> module, you have to install it. The <a class="reference external" href="https://numpy.org/install/">official numpy installation website</a> gives different options to install it. In this article I’m going to use <code class="docutils literal notranslate"><span class="pre">pip</span></code>. Execute <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">numpy</span></code> in the terminal (outside the Python interpreter):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PS</span> <span class="n">C</span><span class="p">:</span>\<span class="o">&gt;</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">numpy</span>
+<span class="n">Collecting</span> <span class="n">numpy</span>
+  <span class="n">Downloading</span> <span class="n">numpy</span><span class="o">-</span><span class="mf">1.24.2</span><span class="o">-</span><span class="n">cp311</span><span class="o">-</span><span class="n">cp311</span><span class="o">-</span><span class="n">win_amd64</span><span class="o">.</span><span class="n">whl</span> <span class="p">(</span><span class="mf">14.8</span> <span class="n">MB</span><span class="p">)</span>
+     <span class="o">----------------------------------------</span> <span class="mf">14.8</span><span class="o">/</span><span class="mf">14.8</span> <span class="n">MB</span> <span class="mf">17.7</span> <span class="n">MB</span><span class="o">/</span><span class="n">s</span> <span class="n">eta</span> <span class="mi">0</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span>
+<span class="n">Installing</span> <span class="n">collected</span> <span class="n">packages</span><span class="p">:</span> <span class="n">numpy</span>
+<span class="n">Successfully</span> <span class="n">installed</span> <span class="n">numpy</span><span class="o">-</span><span class="mf">1.24.2</span>
+</pre></div>
+</div>
+<p>If everything goes well, you should see a message similar to the one in the example, with information such as the module version that has been installed.</p>
+<p>Let’s go to the Python interpreter and try to import the numpy module, now that you have it installed.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span>
+<span class="gp">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>No errors, that is good! Actually, let’s import the module with a different name, which is the most commonly way to do it:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>Now you are ready to use the numpy functions with the <code class="docutils literal notranslate"><span class="pre">np</span></code> name. I encourage you to check you the <a class="reference external" href="https://numpy.org/doc/stable/user/absolute_beginners.html">numpy user guide for beginners</a>. The website has a lot of examples and a very good and extensive documentation. In this article you are going to learn the very basics of numpy.</p>
+<section id="numpy-array">
+<h3>numpy.array()<a class="headerlink" href="#numpy-array" title="Link to this heading">#</a></h3>
+<p>You can construct arrays that are similar to Python lists with the numpy module. They are called <em>numpy arrays</em>. For example, you can construct an array from a list of values:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">23</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">9</span><span class="p">])</span>
+<span class="go">array([23, 14, -2,  0,  9])</span>
+</pre></div>
+</div>
+<p>You can also create an array filled with zeros:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="go">array([0., 0., 0., 0.])</span>
+</pre></div>
+</div>
+</section>
+<section id="numpy-arange">
+<h3>numpy.arange()<a class="headerlink" href="#numpy-arange" title="Link to this heading">#</a></h3>
+<p>This function is used to construct a numpy array with a range of values. This works in a similar way as the <code class="docutils literal notranslate"><span class="pre">range()</span></code> function.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="go">array([0, 1, 2])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="go">array([2, 3, 4, 5, 6, 7, 8, 9])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="go">array([ 4,  7, 10, 13, 16, 19, 22, 25, 28])</span>
+</pre></div>
+</div>
+</section>
+<section id="numpy-linspace">
+<h3>numpy.linspace()<a class="headerlink" href="#numpy-linspace" title="Link to this heading">#</a></h3>
+<p>Another way to define a numpy array is with the <code class="docutils literal notranslate"><span class="pre">linspace()</span></code> function. This function takes a <code class="docutils literal notranslate"><span class="pre">start</span></code> and <code class="docutils literal notranslate"><span class="pre">end</span></code> parameters, and a third parameter which is the number of elements the array will contain. The values will be evenly spaced between each other.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="go">array([ 1. ,  4.5,  8. , 11.5, 15. ])</span>
+</pre></div>
+</div>
+<p>There is a lot you can do with the numpy module. Feel free to go over the documentation if you are interested, and have fun!</p>
+</section>
+</section>
+<section id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h2>
+<p>In this article you learned about the very basics of Python modules. You learned how to create a custom model, and how to import a model in your main Python scripts. Finally, you learned about three of the most popular Python modules and its basic functions.</p>
+<p>This is the last chapter of the Python basic course. There is an extra chapter which is intended for you to practice what you have learned all the way by making a couple of practice projects. Finally, don’t forget to take the exercises on this chapter too!</p>
+</section>
+<section id="exercises">
+<h2>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
+<p>This set of exercises are intended for you to practice the concepts learned on this chapter about Python modules.</p>
+<ol class="arabic simple">
+<li><p>Create a new file with the <strong>.py</strong> extension. Give it a name of your choosing, like <strong>deusdev.py</strong>. This is going to be used as a Python module. In this new Python module, create a function that prints a message saying something about the module. For example, the message can be an explanation of what your module can do, like <strong>‘This Python module has a set of functions that solves some mathematical equations’</strong>.</p></li>
+<li><p>Make a second function in your module. Make this function compute some mathematical formula with parameters. For example, you could make it compute the <a class="reference external" href="https://en.wikipedia.org/wiki/Discriminant">discriminant for a quadratic equation</a>. That is, given three float parameters <code class="docutils literal notranslate"><span class="pre">a</span></code>, <code class="docutils literal notranslate"><span class="pre">b</span></code> and <code class="docutils literal notranslate"><span class="pre">c</span></code>, the function should return the square root of <code class="docutils literal notranslate"><span class="pre">b^2-4ac</span></code>.</p></li>
+<li><p>Make a new file with a name of <strong>main.py</strong> or something similar. This is going to be the main script where you call the functions from your module. What is the first thing you need to do in order to be able to use the functions in your new module?</p></li>
+<li><p>Call the function you defined in exercise #1. You should be able to see the message printed on the screen.</p></li>
+<li><p>Call the function you made in exercise #2. Use different parameters and test if everything is working as expected.</p></li>
+<li><p>In this exercise you are going to learn how to use the <a class="reference external" href="https://docs.python.org/3/library/random.html#random.gauss"><code class="docutils literal notranslate"><span class="pre">random.gauss()</span></code> function</a> from the <a class="reference external" href="https://docs.python.org/3/library/random.html">random</a> module. This function can take two optional parameters: the mean and the standard deviation from a normal distribution. Read the documentation to see more details, and try the function with different values to see the outputs.</p></li>
+<li><p>Go to the <a class="reference external" href="https://docs.python.org/3/library/math.html">math module</a> page and look for a function to compute the logarithm of a number. Read the docs and use the function with different parameters to see the outputs.</p></li>
+<li><p>In this exercise you will learn about the <a class="reference external" href="https://docs.python.org/3/library/datetime.html">datetime module</a>. Go ahead and import the datetime module in a new Python interpreter or a new Python file. After importing the module, write <code class="docutils literal notranslate"><span class="pre">dir(datetime)</span></code> and hit <code class="docutils literal notranslate"><span class="pre">Enter</span></code>. The <a class="reference external" href="https://docs.python.org/3/tutorial/modules.html#the-dir-function">dir function</a> will give you a list of names available from that module. For example, try <code class="docutils literal notranslate"><span class="pre">datetime.datetime.now()</span></code>, you should see the current date and time. Try to investigate what other things you can do with this module from the documentation.</p></li>
+</ol>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="chapter11.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Chapter 11: Built-in Methods</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="chapter13.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Chapter 13: Practice Projects</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-modules">Python modules</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-and-using-a-custom-module">Creating and using a custom module</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pycache-files">pycache files</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-random-module">The random module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#random-random">random.random()</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#random-uniform-a-b">random.uniform(a, b)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#random-randrange-start-stop-step">random.randrange(start, stop, step)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#random-randint-a-b">random.randint(a, b)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#random-choice-seq">random.choice(seq)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#random-shuffle-seq">random.shuffle(seq)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-math-module">The math module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#math-ceil-x">math.ceil(x)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#math-factorial-n">math.factorial(n)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#math-gcd">math.gcd()</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#math-exp-x">math.exp(x)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#math-sin-x">math.sin(x)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#math-pi">math.pi</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-numpy-module">The numpy module</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-array">numpy.array()</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-arange">numpy.arange()</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-linspace">numpy.linspace()</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Carlos
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026, Carlos.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

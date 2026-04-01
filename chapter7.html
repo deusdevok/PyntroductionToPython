@@ -1,0 +1,656 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Chapter 7: Working with dictionaries &#8212; Pyntroduction To Python 1.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="_static/documentation_options.js?v=a681ed88"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter7';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Chapter 8: Conditional statements: if, elif, else" href="chapter8.html" />
+    <link rel="prev" title="Chapter 6: Working with lists" href="chapter6.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Pyntroduction To Python 1.0 documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter1.html">Chapter 1: Installation &amp; Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter2.html">Chapter 2: Using the terminal and Python interpreter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter3.html">Chapter 3: Using text editors and IDEs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter4.html">Chapter 4: Data Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter5.html">Chapter 5: Working with strings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter6.html">Chapter 6: Working with lists</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Chapter 7: Working with dictionaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter8.html">Chapter 8: Conditional statements: if, elif, else</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter9.html">Chapter 9: Loops, for and while, break and continue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter10.html">Chapter 10: Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter11.html">Chapter 11: Built-in Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter12.html">Chapter 12: Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter13.html">Chapter 13: Practice Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="final.html">Thank you for reading</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/chapter7.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Chapter 7: Working with dictionaries</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-dictionaries-the-basics">Python dictionaries: the basics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-length-of-a-dictionary">What is the length of a dictionary?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-items-from-a-dictionary">Reading items from a dictionary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#editing-key-value-pairs">Editing key-value pairs</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-new-key-value-pairs">Adding new key-value pairs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#updating-key-value-pairs">Updating key-value pairs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#removing-elements-from-a-dictionary">Removing elements from a dictionary</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dictionary-key-value-data-types">Dictionary key/value data types</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#converting-dictionaries-to-lists">Converting dictionaries to lists</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="chapter-7-working-with-dictionaries">
+<h1>Chapter 7: Working with dictionaries<a class="headerlink" href="#chapter-7-working-with-dictionaries" title="Link to this heading">#</a></h1>
+<p>The dictionary data type is very useful when dealing with data that comes in key-value pairs. Dictionaries are collections of data, in which the <strong>keys</strong> are unique identifiers related to each associated <strong>value</strong>. Dictionary keys are somewhat analogous to the index in a list, as you will see later in this tutorial’</p>
+<p>Let’s work with a simple example throughout this article, where a list of countries are associated with their respective capitals.</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Country</p></th>
+<th class="head"><p>Capital</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>India</p></td>
+<td><p>New Delhi</p></td>
+</tr>
+<tr class="row-odd"><td><p>Argentina</p></td>
+<td><p>Buenos Aires</p></td>
+</tr>
+<tr class="row-even"><td><p>Spain</p></td>
+<td><p>Madrid</p></td>
+</tr>
+<tr class="row-odd"><td><p>France</p></td>
+<td><p>Paris</p></td>
+</tr>
+<tr class="row-even"><td><p>Kenya</p></td>
+<td><p>Nairobi</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The countries are the <strong>keys</strong>, while their capitals are the <strong>values</strong>. Each value is associated with a <em>unique</em> key. While in this example both the countries and their capitals are unique, Python dictionaries can have repeated (non-unique) values, but the keys must be unique (you will see what happens if you try to insert a repeated key in a dictionary).</p>
+<section id="python-dictionaries-the-basics">
+<h2>Python dictionaries: the basics<a class="headerlink" href="#python-dictionaries-the-basics" title="Link to this heading">#</a></h2>
+<p>To define a Python dictionary use curly braces: <code class="docutils literal notranslate"><span class="pre">{}</span></code>. Inside the curly braces include key-value pairs separated by a colon <code class="docutils literal notranslate"><span class="pre">:</span></code>. For the example of this article, the key (country) and the value (capital) are both strings:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">countries</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;India&#39;</span><span class="p">:</span> <span class="s1">&#39;New Delhi&#39;</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">countries</span><span class="p">)</span>
+<span class="go">&lt;class &#39;dict&#39;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">countries</span>
+<span class="go">{&#39;India&#39;: &#39;New Delhi&#39;}</span>
+</pre></div>
+</div>
+<p>As you can see, checking the type of the newly created dictionary says that is of the <strong>dict</strong> type. Let’s define the dictionary variable <code class="docutils literal notranslate"><span class="pre">countries</span></code> with all the information. To add new key-value pairs, separate them with a comma:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">countries</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;India&#39;</span><span class="p">:</span> <span class="s1">&#39;New Delhi&#39;</span><span class="p">,</span> <span class="s1">&#39;Argentina&#39;</span><span class="p">:</span> <span class="s1">&#39;Buenos Aires&#39;</span><span class="p">,</span> <span class="s1">&#39;Spain&#39;</span><span class="p">:</span> <span class="s1">&#39;Madrid&#39;</span><span class="p">,</span> <span class="s1">&#39;France&#39;</span><span class="p">:</span> <span class="s1">&#39;Paris&#39;</span><span class="p">,</span> <span class="s1">&#39;Kenya&#39;</span><span class="p">:</span> <span class="s1">&#39;Nairobi&#39;</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">countries</span>
+<span class="go">{&#39;India&#39;: &#39;New Delhi&#39;, &#39;Argentina&#39;: &#39;Buenos Aires&#39;, &#39;Spain&#39;: &#39;Madrid&#39;, &#39;France&#39;: &#39;Paris&#39;, &#39;Kenya&#39;: &#39;Nairobi&#39;}</span>
+</pre></div>
+</div>
+<p>After printing the <code class="docutils literal notranslate"><span class="pre">countries</span></code> variable on the screen, you can see all the information from the example table, and each country is associated with its corresponding capital.</p>
+<p>Another way to create a dictionary is to begin with an empty dictionary, and add new key-value pairs one by one. To create an empty dictionary use a set of empty curly braces, <code class="docutils literal notranslate"><span class="pre">{}</span></code>. To add new items to the dictionary, write the name of the variable where the empty dictionary is stored, followed by square brackets. Inside the square brackets write the <code class="docutils literal notranslate"><span class="pre">key</span></code>, in this case the country in string format. Finally assign the corresponding <code class="docutils literal notranslate"><span class="pre">value</span></code>, which is the capital.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">countries</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">countries</span><span class="p">[</span><span class="s1">&#39;India&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;New Delhi&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">countries</span><span class="p">[</span><span class="s1">&#39;Argentina&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Buenos Aires&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">countries</span><span class="p">[</span><span class="s1">&#39;Spain&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Madrid&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">countries</span><span class="p">[</span><span class="s1">&#39;France&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Paris&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">countries</span><span class="p">[</span><span class="s1">&#39;Kenya&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Nairobi&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">countries</span>
+<span class="go">{&#39;India&#39;: &#39;New Delhi&#39;, &#39;Argentina&#39;: &#39;Buenos Aires&#39;, &#39;Spain&#39;: &#39;Madrid&#39;, &#39;France&#39;: &#39;Paris&#39;, &#39;Kenya&#39;: &#39;Nairobi&#39;}</span>
+</pre></div>
+</div>
+<p>By doing the assignment for each country and its capital this way, you will end up with the same dictionary you had before. This way of creating dictionaries can be helpful when dealing with cases where the dictionary must be created in a programatic way instead of manually.</p>
+<section id="what-is-the-length-of-a-dictionary">
+<h3>What is the length of a dictionary?<a class="headerlink" href="#what-is-the-length-of-a-dictionary" title="Link to this heading">#</a></h3>
+<p>The length of a dictionary is the number of the key-value pairs it contains.</p>
+<p>For the example of this article, you should expect it to have a length of 5, which is the number of entries, or rows on the table. It is true that if you count both the countries (keys) and the capitals (values), you will end up with a total of 10, but the length of a dictionary is computed as the number of key-value <em>pairs</em>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">countries</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;India&#39;</span><span class="p">:</span> <span class="s1">&#39;New Delhi&#39;</span><span class="p">,</span> <span class="s1">&#39;Argentina&#39;</span><span class="p">:</span> <span class="s1">&#39;Buenos Aires&#39;</span><span class="p">,</span> <span class="s1">&#39;Spain&#39;</span><span class="p">:</span> <span class="s1">&#39;Madrid&#39;</span><span class="p">,</span> <span class="s1">&#39;France&#39;</span><span class="p">:</span> <span class="s1">&#39;Paris&#39;</span><span class="p">,</span> <span class="s1">&#39;Kenya&#39;</span><span class="p">:</span> <span class="s1">&#39;Nairobi&#39;</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">countries</span><span class="p">)</span>
+<span class="go">5</span>
+</pre></div>
+</div>
+<p>In a particular case that the dictionary is empty, its length is 0:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">empty_dict</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">empty_dict</span><span class="p">)</span>
+<span class="go">0</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="reading-items-from-a-dictionary">
+<h2>Reading items from a dictionary<a class="headerlink" href="#reading-items-from-a-dictionary" title="Link to this heading">#</a></h2>
+<p>Now that you have learned how to define a dictionary with a bunch of key-value pairs, let’s see how you can retrieve information from it. Imagine a scenario where you have a dictionary with all the countries and their capitals, and you want to check the capital of some specific country.</p>
+<p>Having defined this simple example with 5 countries, let’s check what is the capital of Spain. To do this, you need to find the <em>key</em> with the string value <code class="docutils literal notranslate"><span class="pre">Spain</span></code>, and obtain the associated <em>value</em>, which is the one after the colon. Write the name of the variable containing the dictionary, followed by square brackets. Inside the square brackets put the value of the key you are looking for:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">countries</span><span class="p">[</span><span class="s1">&#39;Spain&#39;</span><span class="p">]</span>
+<span class="go">&#39;Madrid&#39;</span>
+</pre></div>
+</div>
+<p>Cool! Retrieving values from keys in a dictionary is analogous as getting a value from a list given its index. Let’s see what would happen if you try to access an item with a non existent key:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">countries</span><span class="p">[</span><span class="s1">&#39;China&#39;</span><span class="p">]</span>
+<span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
+<span class="gr">KeyError</span>: <span class="n">&#39;China&#39;</span>
+</pre></div>
+</div>
+<p>Python throws a <code class="docutils literal notranslate"><span class="pre">KeyError</span></code> claiming that the key China doesn’t exist.</p>
+</section>
+<section id="editing-key-value-pairs">
+<h2>Editing key-value pairs<a class="headerlink" href="#editing-key-value-pairs" title="Link to this heading">#</a></h2>
+<p>Dictionaries key-value pairs can be edited. Let’s see how you can do this.</p>
+<section id="adding-new-key-value-pairs">
+<h3>Adding new key-value pairs<a class="headerlink" href="#adding-new-key-value-pairs" title="Link to this heading">#</a></h3>
+<p>You can add new key-value pairs to an already created dictionary. To do this, assign a new value (capital) to <code class="docutils literal notranslate"><span class="pre">countries[key]</span></code>, where the key is the new country. This is the same as adding new items to an empty dictionary.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">countries</span><span class="p">[</span><span class="s1">&#39;Canada&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Ottawa&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">countries</span>
+<span class="go">{&#39;India&#39;: &#39;New Delhi&#39;, &#39;Argentina&#39;: &#39;Buenos Aires&#39;, &#39;Spain&#39;: &#39;Madrid&#39;, &#39;France&#39;: &#39;Paris&#39;, &#39;Kenya&#39;: &#39;Nairobi&#39;, &#39;Canada&#39;: &#39;Ottawa&#39;}</span>
+</pre></div>
+</div>
+<p>In this example you added the country Canada as a key, and assigned the value Ottawa, both strings. The updated <code class="docutils literal notranslate"><span class="pre">countries</span></code> variable is shown with the old values along with the new one at the end.</p>
+</section>
+<section id="updating-key-value-pairs">
+<h3>Updating key-value pairs<a class="headerlink" href="#updating-key-value-pairs" title="Link to this heading">#</a></h3>
+<p>Remember that keys have to be unique. What would happen if you try to assign a new value to an already existing key? For example, let’s assign the number 39 to Spain.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">countries</span>
+<span class="go">{&#39;India&#39;: &#39;New Delhi&#39;, &#39;Argentina&#39;: &#39;Buenos Aires&#39;, &#39;Spain&#39;: &#39;Madrid&#39;, &#39;France&#39;: &#39;Paris&#39;, &#39;Kenya&#39;: &#39;Nairobi&#39;, &#39;Canada&#39;: &#39;Ottawa&#39;}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">countries</span><span class="p">[</span><span class="s1">&#39;Spain&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">39</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">countries</span>
+<span class="go">{&#39;India&#39;: &#39;New Delhi&#39;, &#39;Argentina&#39;: &#39;Buenos Aires&#39;, &#39;Spain&#39;: 39, &#39;France&#39;: &#39;Paris&#39;, &#39;Kenya&#39;: &#39;Nairobi&#39;, &#39;Canada&#39;: &#39;Ottawa&#39;}</span>
+</pre></div>
+</div>
+<p>What you are doing in this case is simply re-assigning a new value to an already existing key. This is analogous to updating a list item given its index.</p>
+</section>
+<section id="removing-elements-from-a-dictionary">
+<h3>Removing elements from a dictionary<a class="headerlink" href="#removing-elements-from-a-dictionary" title="Link to this heading">#</a></h3>
+<p>You can also remove elements from your dictionary. For this you use the <code class="docutils literal notranslate"><span class="pre">del</span></code> keyword. For example, let’s delete the Spain element:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">del</span> <span class="n">countries</span><span class="p">[</span><span class="s1">&#39;Spain&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">countries</span>
+<span class="go">{&#39;India&#39;: &#39;New Delhi&#39;, &#39;Argentina&#39;: &#39;Buenos Aires&#39;, &#39;France&#39;: &#39;Paris&#39;, &#39;Kenya&#39;: &#39;Nairobi&#39;, &#39;Canada&#39;: &#39;Ottawa&#39;}</span>
+</pre></div>
+</div>
+<p>As you can see, the key Spain has been deleted, along with its corresponding value. When you delete elements from a dictionary by its key, what is deleted is the key-value pair. What happens if you try to delete an element that is not present in the dictionary? Let’s try to delete the element with the Spain key again:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">del</span> <span class="n">countries</span><span class="p">[</span><span class="s1">&#39;Spain&#39;</span><span class="p">]</span>
+<span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
+<span class="gr">KeyError</span>: <span class="n">&#39;Spain&#39;</span>
+</pre></div>
+</div>
+<p>As expected, a <code class="docutils literal notranslate"><span class="pre">KeyError</span></code> is raised, since there isn’t an element with the key Spain anymore.</p>
+</section>
+</section>
+<section id="dictionary-key-value-data-types">
+<h2>Dictionary key/value data types<a class="headerlink" href="#dictionary-key-value-data-types" title="Link to this heading">#</a></h2>
+<p>In this article you have worked with a dictionary where the keys and values are all of the string data type. Python dictionaries can have other data types, such as integers, floats, lists, and even other dictionaries. Let’s try some of those with a newly created dictionary.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="p">[</span><span class="mi">12</span><span class="p">]</span> <span class="o">=</span> <span class="mf">99.3</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;pi&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">3.14</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;list&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;dict&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;John&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">:</span> <span class="mi">19</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span>
+<span class="go">{12: 99.3, &#39;pi&#39;: 3.14, &#39;list&#39;: [1, 2, 3], &#39;dict&#39;: {&#39;name&#39;: &#39;John&#39;, &#39;age&#39;: 19}}</span>
+</pre></div>
+</div>
+<p>In this example, an empty dictionary <code class="docutils literal notranslate"><span class="pre">d</span></code> has been created. Next, a first item is added, with an integer key and a float as its value. Then a string as a key, and a float as the value. The third has a string as key and a list as its value. Finally, the last element has a string key and another dictionary as the value. By printing the dictionary <code class="docutils literal notranslate"><span class="pre">d</span></code> you can see everything works as expected.</p>
+<p>So far so good. Let’s try a list as a key:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="p">[[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]]</span> <span class="o">=</span> <span class="s1">&#39;key is list&#39;</span>
+<span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
+<span class="gr">TypeError</span>: <span class="n">unhashable type: &#39;list&#39;</span>
+</pre></div>
+</div>
+<p>Ups! Not good. Python doesn’t like lists as dictionary keys. What about another dictionary as a key?</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="p">[{</span><span class="mi">1</span><span class="p">:</span> <span class="s1">&#39;one&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span> <span class="s1">&#39;two&#39;</span><span class="p">}]</span> <span class="o">=</span> <span class="s1">&#39;key is dict&#39;</span>
+<span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
+<span class="gr">TypeError</span>: <span class="n">unhashable type: &#39;dict&#39;</span>
+</pre></div>
+</div>
+<p>Oh man! What about a tuple?</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)]</span> <span class="o">=</span> <span class="s1">&#39;key is tuple&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span>
+<span class="go">{12: 99.3, &#39;pi&#39;: 3.14, &#39;list&#39;: [1, 2, 3], &#39;dict&#39;: {&#39;name&#39;: &#39;John&#39;, &#39;age&#39;: 19}, (1, 2, 3): &#39;key is tuple&#39;}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">d</span><span class="p">[(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)]</span>
+<span class="go">&#39;key is tuple&#39;</span>
+</pre></div>
+</div>
+<p>Tuple works as a key for a dictionary. But not lists nor dictionaries. The rule is that the <em>dictionary key must be of an immutable type</em>, such as integers, strings and even tuples, but not list nor dictionaries. Remember that lists and dictionaries are <em>mutable</em> data types, meaning their items can be changed.</p>
+</section>
+<section id="converting-dictionaries-to-lists">
+<h2>Converting dictionaries to lists<a class="headerlink" href="#converting-dictionaries-to-lists" title="Link to this heading">#</a></h2>
+<p>Let’s go back to the initial example, the one with the countries and their capitals. What would happen if you tried to convert that dictionary with key-value pairs (country-capital) to a list using the <code class="docutils literal notranslate"><span class="pre">list()</span></code> function? Let’s see:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">countries</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;India&#39;</span><span class="p">:</span> <span class="s1">&#39;New Delhi&#39;</span><span class="p">,</span> <span class="s1">&#39;Argentina&#39;</span><span class="p">:</span> <span class="s1">&#39;Buenos Aires&#39;</span><span class="p">,</span> <span class="s1">&#39;Spain&#39;</span><span class="p">:</span> <span class="s1">&#39;Madrid&#39;</span><span class="p">,</span> <span class="s1">&#39;France&#39;</span><span class="p">:</span> <span class="s1">&#39;Paris&#39;</span><span class="p">,</span> <span class="s1">&#39;Kenya&#39;</span><span class="p">:</span> <span class="s1">&#39;Nairobi&#39;</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">countries</span><span class="p">)</span>
+<span class="go">[&#39;India&#39;, &#39;Argentina&#39;, &#39;Spain&#39;, &#39;France&#39;, &#39;Kenya&#39;]</span>
+</pre></div>
+</div>
+<p>Interesting! The <code class="docutils literal notranslate"><span class="pre">list()</span></code> function applied to the dictionary returned a list with only the keys, sorted in the same order they were inserted in the first place. But the values seem to have been lost in the process.</p>
+<p>You have seen the <code class="docutils literal notranslate"><span class="pre">list()</span></code> function here and in previous tutorials too. You may be wondering if there is a <code class="docutils literal notranslate"><span class="pre">dict()</span></code> function that converts lists to dictionaries. In fact there is. To use the <code class="docutils literal notranslate"><span class="pre">dict()</span></code> function you need to define the key-value pairs as the elements of a list, where each one of them is a tuple containing one key-value pair separated by a comma:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">numbers_dict</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">([(</span><span class="s1">&#39;one&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;two&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;three&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">)])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">numbers_dict</span>
+<span class="go">{&#39;one&#39;: 1, &#39;two&#39;: 2, &#39;three&#39;: 3}</span>
+</pre></div>
+</div>
+<p>There are other ways to use the <code class="docutils literal notranslate"><span class="pre">dict()</span></code> function, but let’s leave those for another time.</p>
+</section>
+<section id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h2>
+<p>In this article you learned the basics of Python dictionaries. What they are, how to create a dictionary, how to edit its elements, delete, add, and more.</p>
+<p>Things are getting more complicated as you advance through the course, so remember to practice what you have learned by doing the proposed exercises. Have fun!</p>
+</section>
+<section id="exercises">
+<h2>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
+<p>After you read the article on dictionaries, you should practice what you have learned with the following exercises. Good luck!</p>
+<ol class="arabic simple">
+<li><p>In your own words, what is a Python dictionary and how is it different from a Python list?</p></li>
+<li><p>In this article I used a very simple example where the Countries are related to their Capitals. Another common example is to make a dictionary where personal information of a student is stored, such as its name, age, scores, etc. Think of an example where you could make use of a Python dictionary and construct it. Save it in a new variable.</p></li>
+<li><p>Check the type of the newly created dictionary and verify that is of the class <strong>dict</strong>.</p></li>
+<li><p>Use the square bracket notation to retrieve some of the values given the corresponding keys. Use this method to verify that every key-value pair is defined as is supposed to.</p></li>
+<li><p>What is the length of your dictionary? Try to answer the question before using the built-in Python function that gives you the answer automatically.</p></li>
+<li><p>Going back to exercise #2, you may or may not have defined one of the values as a list or a dictionary. If you haven’t, add a new item to your dictionary where the value is either a list or another dictionary.</p></li>
+<li><p>Use the square bracket notation to access the list or dictionary you have stored as one of the values. You should have done this either in exercise #2 or #6.</p></li>
+<li><p>Use the square bracket notation to access one of the list or dictionary values you have defined inside the original dictionary. For this you will have to make use of two sets of square brackets, similar to how you access list elements inside another list.</p></li>
+<li><p>Convert your dictionary to a list, and save the contents to a new variable. What is the length of this list? Where are the elements of this list coming from?</p></li>
+</ol>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="chapter6.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Chapter 6: Working with lists</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="chapter8.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Chapter 8: Conditional statements: if, elif, else</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-dictionaries-the-basics">Python dictionaries: the basics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-length-of-a-dictionary">What is the length of a dictionary?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-items-from-a-dictionary">Reading items from a dictionary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#editing-key-value-pairs">Editing key-value pairs</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-new-key-value-pairs">Adding new key-value pairs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#updating-key-value-pairs">Updating key-value pairs</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#removing-elements-from-a-dictionary">Removing elements from a dictionary</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dictionary-key-value-data-types">Dictionary key/value data types</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#converting-dictionaries-to-lists">Converting dictionaries to lists</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Carlos
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026, Carlos.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

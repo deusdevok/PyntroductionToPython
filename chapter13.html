@@ -1,0 +1,512 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Chapter 13: Practice Projects &#8212; Pyntroduction To Python 1.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="_static/documentation_options.js?v=a681ed88"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter13';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Thank you for reading" href="final.html" />
+    <link rel="prev" title="Chapter 12: Modules" href="chapter12.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Pyntroduction To Python 1.0 documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter1.html">Chapter 1: Installation &amp; Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter2.html">Chapter 2: Using the terminal and Python interpreter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter3.html">Chapter 3: Using text editors and IDEs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter4.html">Chapter 4: Data Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter5.html">Chapter 5: Working with strings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter6.html">Chapter 6: Working with lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter7.html">Chapter 7: Working with dictionaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter8.html">Chapter 8: Conditional statements: if, elif, else</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter9.html">Chapter 9: Loops, for and while, break and continue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter10.html">Chapter 10: Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter11.html">Chapter 11: Built-in Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter12.html">Chapter 12: Modules</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Chapter 13: Practice Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="final.html">Thank you for reading</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/chapter13.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Chapter 13: Practice Projects</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rock-paper-scissors-game">Rock, paper, scissors game</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#countdown-timer-and-clock">Countdown timer and clock</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="chapter-13-practice-projects">
+<h1>Chapter 13: Practice Projects<a class="headerlink" href="#chapter-13-practice-projects" title="Link to this heading">#</a></h1>
+<p>This section of the basic Python course is intended for you to practice what you have learned so far. There is a lot you can do with what you already know, and in this short article you are getting a couple of ideas for practice projects. Let’s get started and have fun!</p>
+<section id="rock-paper-scissors-game">
+<h2>Rock, paper, scissors game<a class="headerlink" href="#rock-paper-scissors-game" title="Link to this heading">#</a></h2>
+<p>This is a two player game where each of them randomly chooses between rock, paper or scissors. In this case you can make a user play against the computer. You can read more about this popular game in the <a class="reference external" href="https://en.wikipedia.org/wiki/Rock_paper_scissors">wikipedia article</a>. The basic rules are:</p>
+<ul class="simple">
+<li><p>Rock beats scissors</p></li>
+<li><p>Paper beats rock</p></li>
+<li><p>Scissors beats paper</p></li>
+</ul>
+<p>The Python program can work like the following after executing the script:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Game number 1
+Rock (R), paper (P) or scissors (S)? (Q to quit): R
+You have chosen Rock, while the computer chose Paper
+You lost
+
+Game number 2
+Rock (R), paper (P) or scissors (S)? (Q to quit): p
+You have chosen Paper, while the computer chose Rock
+You won!
+
+Game number 3
+Rock (R), paper (P) or scissors (S)? (Q to quit): S
+You have chosen Scissors, while the computer chose Rock
+You lost
+
+Game number 4
+Rock (R), paper (P) or scissors (S)? (Q to quit): T
+Incorrect input. Please try again.
+
+Game number 4
+Rock (R), paper (P) or scissors (S)? (Q to quit): r
+You have chosen Rock, while the computer chose Scissors
+You won!
+
+Game number 5
+Rock (R), paper (P) or scissors (S)? (Q to quit): r
+You have chosen Rock, while the computer chose Scissors
+You won!
+
+Game number 6
+Rock (R), paper (P) or scissors (S)? (Q to quit): P
+You have chosen Paper, while the computer chose Scissors
+You lost
+
+Game number 7
+Rock (R), paper (P) or scissors (S)? (Q to quit): q
+Thank you for playing!
+You won 3 out of 6 games (50.00%)
+</pre></div>
+</div>
+<p>The user plays against the computer one game after another as long as the user doesn’t choose the option to quit, which can be the letter Q. Here is a list of things to consider for the Python script:</p>
+<ol class="arabic simple">
+<li><p>In order to play games indefinitely until a condition is met (choosing Q to quit) you can make use of a <code class="docutils literal notranslate"><span class="pre">while</span></code> loop. There are a couple of ways to do it, but one popular way to make an infinite loop is by using the <code class="docutils literal notranslate"><span class="pre">while</span> <span class="pre">True</span></code>. Keep in mind that if you don’t use a proper ending condition in the loop, you may end up with an infinite loop.</p></li>
+<li><p>The program needs to prompts the player (you) for either rock, paper or scissors. Remember you can use the <code class="docutils literal notranslate"><span class="pre">input()</span></code> function for this.</p></li>
+<li><p>The computer also needs to choose between rock, paper or scissors. You could make use of the <code class="docutils literal notranslate"><span class="pre">random</span></code> module to randomly choose between the three options, particularly with the <code class="docutils literal notranslate"><span class="pre">choice()</span></code> function.</p></li>
+<li><p>In each game you need to check who won, or if there was a tie. For this you could make a series of <code class="docutils literal notranslate"><span class="pre">if-else</span></code> and possibly <code class="docutils literal notranslate"><span class="pre">elif</span></code> statements. For example, if the user chooses Rock and the computer chooses Scissors, then the user won the game.</p></li>
+<li><p>You could keep a score of the game by using a variable <code class="docutils literal notranslate"><span class="pre">score</span></code>, initially being equal to 0. Each game you win adds up one point to the final score. Remember you can increase a variable with <code class="docutils literal notranslate"><span class="pre">score</span> <span class="pre">=</span> <span class="pre">score</span> <span class="pre">+</span> <span class="pre">1</span></code> or <code class="docutils literal notranslate"><span class="pre">score</span> <span class="pre">+=</span> <span class="pre">1</span></code>.</p></li>
+</ol>
+</section>
+<section id="countdown-timer-and-clock">
+<h2>Countdown timer and clock<a class="headerlink" href="#countdown-timer-and-clock" title="Link to this heading">#</a></h2>
+<p>In this simple project the idea is to prompt the user for a number of seconds and show a countdown timer with minutes and seconds. The total number of seconds will be an integer number.</p>
+<p>After running the script you should be looking at something like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Enter</span> <span class="n">the</span> <span class="n">time</span> <span class="ow">in</span> <span class="n">seconds</span><span class="p">:</span> <span class="mi">62</span>
+<span class="n">You</span> <span class="n">have</span> <span class="n">entered</span> <span class="mi">62</span> <span class="n">seconds</span>
+<span class="mi">01</span><span class="p">:</span><span class="mi">02</span>
+<span class="mi">01</span><span class="p">:</span><span class="mi">01</span>
+<span class="mi">01</span><span class="p">:</span><span class="mi">00</span>
+<span class="mi">00</span><span class="p">:</span><span class="mi">59</span>
+<span class="mi">00</span><span class="p">:</span><span class="mi">58</span>
+<span class="mi">00</span><span class="p">:</span><span class="mi">57</span>
+<span class="o">...</span>
+<span class="mi">00</span><span class="p">:</span><span class="mi">03</span>
+<span class="mi">00</span><span class="p">:</span><span class="mi">02</span>
+<span class="mi">00</span><span class="p">:</span><span class="mi">01</span>
+<span class="mi">00</span><span class="p">:</span><span class="mi">00</span>
+<span class="n">Time</span><span class="s1">&#39;s up!</span>
+</pre></div>
+</div>
+<p>First, you can print a message showing the number of seconds the user just entered. This can sound silly for a small and simple program like this one, but it is a good idea for larger projects to show the user what the inputs are as a way to confirm.</p>
+<p>Then the countdown begins. In the example above the user entered 62 seconds. That means that the time can be split in 1 minute and 2 seconds. Then, the first line should be something like <code class="docutils literal notranslate"><span class="pre">01:02</span></code> which is the standard format in which a digital clock shows the time.</p>
+<p>As the time passes, the number of seconds decreases by one, and when the seconds reach zero the number of minutes decreases, at which point the seconds go all the way up to 59.</p>
+<p>The program stops when the total number of seconds reaches zero. Then you can show a message indicating that the time is up.</p>
+<p>A couple of things to consider when you work on this small project:</p>
+<ol class="arabic simple">
+<li><p>Use the <code class="docutils literal notranslate"><span class="pre">input()</span></code> function to prompt the user for the total number of seconds. Remember what is the data type that the <code class="docutils literal notranslate"><span class="pre">input()</span></code> function returns? The <code class="docutils literal notranslate"><span class="pre">input()</span></code> function has been covered in the <a class="reference internal" href="chapter10.html"><span class="doc std std-doc">functions chapter</span></a> of this course. You will need to convert this to an integer number for later use.</p></li>
+<li><p>If you need to compute the number of minutes and seconds from the total number of seconds, you could make use of the integer division and modulus operators. These topics were covered in the <a class="reference internal" href="chapter2.html"><span class="doc std std-doc">terminal and python interpreter</span></a> article.</p></li>
+<li><p>You learned about Python modules in a <a class="reference internal" href="chapter12.html"><span class="doc std std-doc">previous article</span></a> from this course. There is a module called <a class="reference external" href="https://docs.python.org/3/library/time.html">time</a> which you can use in this project to wait for one second between each pass. Specifically, look for the <a class="reference external" href="https://docs.python.org/3/library/time.html#time.sleep">sleep()</a> method of this module.</p></li>
+</ol>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="chapter12.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Chapter 12: Modules</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="final.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Thank you for reading</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rock-paper-scissors-game">Rock, paper, scissors game</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#countdown-timer-and-clock">Countdown timer and clock</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Carlos
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026, Carlos.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

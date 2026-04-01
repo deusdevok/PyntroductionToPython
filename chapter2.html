@@ -1,0 +1,810 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Chapter 2: Using the terminal and Python interpreter &#8212; Pyntroduction To Python 1.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="_static/documentation_options.js?v=a681ed88"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter2';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Chapter 3: Using text editors and IDEs" href="chapter3.html" />
+    <link rel="prev" title="Chapter 1: Installation &amp; Setup" href="chapter1.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Pyntroduction To Python 1.0 documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter1.html">Chapter 1: Installation &amp; Setup</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Chapter 2: Using the terminal and Python interpreter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter3.html">Chapter 3: Using text editors and IDEs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter4.html">Chapter 4: Data Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter5.html">Chapter 5: Working with strings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter6.html">Chapter 6: Working with lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter7.html">Chapter 7: Working with dictionaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter8.html">Chapter 8: Conditional statements: if, elif, else</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter9.html">Chapter 9: Loops, for and while, break and continue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter10.html">Chapter 10: Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter11.html">Chapter 11: Built-in Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter12.html">Chapter 12: Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter13.html">Chapter 13: Practice Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="final.html">Thank you for reading</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/chapter2.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Chapter 2: Using the terminal and Python interpreter</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#first-steps-the-python-interpreter">First steps: The Python interpreter</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-help-in-the-python-interpreter">Getting help in the Python interpreter</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-operations-in-python">Basic Operations in Python</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operations-with-numbers">Operations with numbers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operations-with-strings">Operations with strings</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-variables">Python variables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="chapter-2-using-the-terminal-and-python-interpreter">
+<h1>Chapter 2: Using the terminal and Python interpreter<a class="headerlink" href="#chapter-2-using-the-terminal-and-python-interpreter" title="Link to this heading">#</a></h1>
+<p>Python can be used directly from the terminal, without the need of using <a class="reference internal" href="chapter3.html"><span class="doc std std-doc">text editors</span></a> like Notepad, Sublime or VsCode. Using the terminal is a good practice when making the first steps to learn Python. In this article you are going to learn how to run basic Python commands using the terminal (PowerShell).</p>
+<p>In the <a class="reference internal" href="chapter1.html"><span class="doc std std-doc">previous article</span></a> you went through the installation and setup of Python. You already used PowerShell to check the Python version by using <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">--version</span></code>. Check it out if you missed it.</p>
+<section id="first-steps-the-python-interpreter">
+<h2>First steps: The Python interpreter<a class="headerlink" href="#first-steps-the-python-interpreter" title="Link to this heading">#</a></h2>
+<p>Let’s start using PowerShell right now. Go ahead and open a new terminal (PowerShell). The first thing you will see on the screen is something like the following:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Windows</span> <span class="n">PowerShell</span>
+<span class="n">Copyright</span> <span class="p">(</span><span class="n">C</span><span class="p">)</span> <span class="n">Microsoft</span> <span class="n">Corporation</span><span class="o">.</span> <span class="n">All</span> <span class="n">rights</span> <span class="n">reserved</span><span class="o">.</span>
+
+<span class="n">Try</span> <span class="n">the</span> <span class="n">new</span> <span class="n">cross</span><span class="o">-</span><span class="n">platform</span> <span class="n">PowerShell</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">aka</span><span class="o">.</span><span class="n">ms</span><span class="o">/</span><span class="n">pscore6</span>
+
+<span class="n">PS</span> <span class="n">C</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">yourusername</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>As you can see, you have an initial message with Copyright and some extra information. If you are in using an operating system different than Windows, you may see your terminal in some other format.</p>
+<p>The last line is the place where you can enter different commands. <strong>yourusername</strong> will be your computer user name. At the end of that line you should see a blinking underscore, meaning it is ready to take a written input from the user. For example, you could write <code class="docutils literal notranslate"><span class="pre">pwd</span></code> to print the current working directory:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PS</span> <span class="n">C</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">yourusername</span><span class="o">&gt;</span> <span class="n">pwd</span>
+
+<span class="n">Path</span>
+<span class="o">----</span>
+<span class="n">C</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">yourusername</span>
+</pre></div>
+</div>
+<p>When you write <code class="docutils literal notranslate"><span class="pre">pwd</span></code> and hit Enter, the terminal shows the current working directory on the screen. There are a lot of useful commands you can try besides <code class="docutils literal notranslate"><span class="pre">pwd</span></code>. But let’s work with the one we are interested in: <code class="docutils literal notranslate"><span class="pre">python</span></code>. Go ahead and write <code class="docutils literal notranslate"><span class="pre">python</span></code> and hit Enter:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PS</span> <span class="n">C</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">yourusername</span><span class="o">&gt;</span> <span class="n">python</span>
+<span class="n">Python</span> <span class="mf">3.11.2</span> <span class="p">(</span><span class="n">tags</span><span class="o">/</span><span class="n">v3</span><span class="mf">.11.2</span><span class="p">:</span><span class="mi">878</span><span class="n">ead1</span><span class="p">,</span> <span class="n">Feb</span>  <span class="mi">7</span> <span class="mi">2023</span><span class="p">,</span> <span class="mi">16</span><span class="p">:</span><span class="mi">38</span><span class="p">:</span><span class="mi">35</span><span class="p">)</span> <span class="p">[</span><span class="n">MSC</span> <span class="n">v</span><span class="mf">.1934</span> <span class="mi">64</span> <span class="n">bit</span> <span class="p">(</span><span class="n">AMD64</span><span class="p">)]</span> <span class="n">on</span> <span class="n">win32</span>
+<span class="n">Type</span> <span class="s2">&quot;help&quot;</span><span class="p">,</span> <span class="s2">&quot;copyright&quot;</span><span class="p">,</span> <span class="s2">&quot;credits&quot;</span> <span class="ow">or</span> <span class="s2">&quot;license&quot;</span> <span class="k">for</span> <span class="n">more</span> <span class="n">information</span><span class="o">.</span>
+<span class="o">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>The first thing you see after the command you just entered is the Python version and some extra information (never mind that now). The next thing you see is a couple of suggestions to try next. They are help, copyright, credits and license.</p>
+<p>Lastly you may have noticed that there are three greater-than symbols <code class="docutils literal notranslate"><span class="pre">&gt;&gt;&gt;</span></code> before the blinking underscore. This is how the Python interpreter looks like. This means that you are ready to enter Python commands. This is called <a class="reference external" href="https://docs.python.org/3/tutorial/interpreter.html#interactive-mode">interactive mode</a>.</p>
+</section>
+<section id="getting-help-in-the-python-interpreter">
+<h2>Getting help in the Python interpreter<a class="headerlink" href="#getting-help-in-the-python-interpreter" title="Link to this heading">#</a></h2>
+<p>Go ahead and try <code class="docutils literal notranslate"><span class="pre">help</span></code>, one of the suggested commands. Write the command and hit Enter.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">help</span>
+<span class="go">Type help() for interactive help, or help(object) for help about object.</span>
+</pre></div>
+</div>
+<p>Seems like you need to include a set of parentheses after <code class="docutils literal notranslate"><span class="pre">help</span></code> according to the message you just got. Let’s do that now.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">help</span><span class="p">()</span>
+
+<span class="go">Welcome to Python 3.11&#39;s help utility!</span>
+
+<span class="go">If this is your first time using Python, you should definitely check out</span>
+<span class="go">the tutorial on the internet at https://docs.python.org/3.11/tutorial/.</span>
+
+<span class="go">Enter the name of any module, keyword, or topic to get help on writing</span>
+<span class="go">Python programs and using Python modules.  To quit this help utility and</span>
+<span class="go">return to the interpreter, just type &quot;quit&quot;.</span>
+
+<span class="go">To get a list of available modules, keywords, symbols, or topics, type</span>
+<span class="go">&quot;modules&quot;, &quot;keywords&quot;, &quot;symbols&quot;, or &quot;topics&quot;.  Each module also comes</span>
+<span class="go">with a one-line summary of what it does; to list the modules whose name</span>
+<span class="go">or summary contain a given string such as &quot;spam&quot;, type &quot;modules spam&quot;.</span>
+
+<span class="go">help&gt;</span>
+</pre></div>
+</div>
+<p>Writing <code class="docutils literal notranslate"><span class="pre">help()</span></code> (with parentheses at the end) on the Python prompt and hitting Enter shows something very interesting! First of all it is giving you a warm welcome to the Python help utility. Right below it suggests to check out the official tutorial for the current version.</p>
+<blockquote>
+<div><p><strong>Read everything</strong>. Now is the time for me to suggest you a couple of things you should do that I did not when learning Python. Read everything in detail even if you don’t understand it. For example if you keep reading the message given by the Python interpreter, you will find terms like <em>module</em>, <em>keyword</em> and <em>string</em>. You should not have to know their meaning yet, but is good to have those words ringing in your head. You will learn those in given time.</p>
+</div></blockquote>
+<p>Lastly, notice that the prompt changed again. Now it says help&gt; where you can write your search. Let’s try writing “modules” as suggested, just to see what happens.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="o">&gt;</span> <span class="n">modules</span>
+
+<span class="n">Please</span> <span class="n">wait</span> <span class="n">a</span> <span class="n">moment</span> <span class="k">while</span> <span class="n">I</span> <span class="n">gather</span> <span class="n">a</span> <span class="nb">list</span> <span class="n">of</span> <span class="nb">all</span> <span class="n">available</span> <span class="n">modules</span><span class="o">...</span>
+
+<span class="n">test_sqlite3</span><span class="p">:</span> <span class="n">testing</span> <span class="k">with</span> <span class="n">version</span> <span class="s1">&#39;2.6.0&#39;</span><span class="p">,</span> <span class="n">sqlite_version</span> <span class="s1">&#39;3.39.4&#39;</span>
+<span class="n">C</span><span class="p">:</span>\<span class="n">Users</span>\<span class="n">yourusername</span>\<span class="n">AppData</span>\<span class="n">Local</span>\<span class="n">Programs</span>\<span class="n">Python</span>\<span class="n">Python311</span>\<span class="n">Lib</span>\<span class="n">site</span><span class="o">-</span><span class="n">packages</span>\<span class="n">_distutils_hack</span>\<span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">33</span><span class="p">:</span> <span class="ne">UserWarning</span><span class="p">:</span> <span class="n">Setuptools</span> <span class="ow">is</span> <span class="n">replacing</span> <span class="n">distutils</span><span class="o">.</span>
+  <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s2">&quot;Setuptools is replacing distutils.&quot;</span><span class="p">)</span>
+<span class="n">__future__</span>          <span class="n">_testmultiphase</span>     <span class="n">genericpath</span>         <span class="n">runpy</span>
+<span class="n">__hello__</span>           <span class="n">_thread</span>             <span class="n">getopt</span>              <span class="n">sched</span>
+<span class="n">__phello__</span>          <span class="n">_threading_local</span>    <span class="n">getpass</span>             <span class="n">secrets</span>
+<span class="n">_abc</span>                <span class="n">_tkinter</span>            <span class="n">gettext</span>             <span class="n">select</span>
+<span class="n">_aix_support</span>        <span class="n">_tokenize</span>           <span class="n">glob</span>                <span class="n">selectors</span>
+<span class="n">_ast</span>                <span class="n">_tracemalloc</span>        <span class="n">graphlib</span>            <span class="n">setuptools</span>
+<span class="n">_asyncio</span>            <span class="n">_typing</span>             <span class="n">gzip</span>                <span class="n">shelve</span>
+<span class="n">_bisect</span>             <span class="n">_uuid</span>               <span class="n">hashlib</span>             <span class="n">shlex</span>
+<span class="n">_blake2</span>             <span class="n">_warnings</span>           <span class="n">heapq</span>               <span class="n">shutil</span>
+<span class="n">_bootsubprocess</span>     <span class="n">_weakref</span>            <span class="n">hmac</span>                <span class="n">signal</span>
+<span class="n">_bz2</span>                <span class="n">_weakrefset</span>         <span class="n">html</span>                <span class="n">site</span>
+<span class="n">_codecs</span>             <span class="n">_winapi</span>             <span class="n">http</span>                <span class="n">smtpd</span>
+<span class="n">_codecs_cn</span>          <span class="n">_xxsubinterpreters</span>  <span class="n">idlelib</span>             <span class="n">smtplib</span>
+<span class="n">_codecs_hk</span>          <span class="n">_zoneinfo</span>           <span class="n">imaplib</span>             <span class="n">sndhdr</span>
+<span class="n">_codecs_iso2022</span>     <span class="n">abc</span>                 <span class="n">imghdr</span>              <span class="n">socket</span>
+<span class="n">_codecs_jp</span>          <span class="n">aifc</span>                <span class="n">imp</span>                 <span class="n">socketserver</span>
+<span class="n">_codecs_kr</span>          <span class="n">antigravity</span>         <span class="n">importlib</span>           <span class="n">sqlite3</span>
+<span class="n">_codecs_tw</span>          <span class="n">argparse</span>            <span class="n">inspect</span>             <span class="n">sre_compile</span>
+<span class="n">_collections</span>        <span class="n">array</span>               <span class="n">io</span>                  <span class="n">sre_constants</span>
+<span class="n">_collections_abc</span>    <span class="n">ast</span>                 <span class="n">ipaddress</span>           <span class="n">sre_parse</span>
+<span class="n">_compat_pickle</span>      <span class="n">asynchat</span>            <span class="n">itertools</span>           <span class="n">ssl</span>
+<span class="n">_compression</span>        <span class="n">asyncio</span>             <span class="n">json</span>                <span class="n">stat</span>
+<span class="n">_contextvars</span>        <span class="n">asyncore</span>            <span class="n">keyword</span>             <span class="n">statistics</span>
+<span class="n">_csv</span>                <span class="n">atexit</span>              <span class="n">lib2to3</span>             <span class="n">string</span>
+<span class="n">_ctypes</span>             <span class="n">audioop</span>             <span class="n">linecache</span>           <span class="n">stringprep</span>
+<span class="n">_ctypes_test</span>        <span class="n">base64</span>              <span class="n">locale</span>              <span class="n">struct</span>
+<span class="n">_datetime</span>           <span class="n">bdb</span>                 <span class="n">logging</span>             <span class="n">subprocess</span>
+<span class="n">_decimal</span>            <span class="n">binascii</span>            <span class="n">lzma</span>                <span class="n">sunau</span>
+<span class="n">_distutils_hack</span>     <span class="n">bisect</span>              <span class="n">mailbox</span>             <span class="n">symtable</span>
+<span class="n">_elementtree</span>        <span class="n">builtins</span>            <span class="n">mailcap</span>             <span class="n">sys</span>
+<span class="n">_functools</span>          <span class="n">bz2</span>                 <span class="n">marshal</span>             <span class="n">sysconfig</span>
+<span class="n">_hashlib</span>            <span class="n">cProfile</span>            <span class="n">math</span>                <span class="n">tabnanny</span>
+<span class="n">_heapq</span>              <span class="n">calendar</span>            <span class="n">mimetypes</span>           <span class="n">tarfile</span>
+<span class="n">_imp</span>                <span class="n">cgi</span>                 <span class="n">mmap</span>                <span class="n">telnetlib</span>
+<span class="n">_io</span>                 <span class="n">cgitb</span>               <span class="n">modulefinder</span>        <span class="n">tempfile</span>
+<span class="n">_json</span>               <span class="n">chunk</span>               <span class="n">msilib</span>              <span class="n">test</span>
+<span class="n">_locale</span>             <span class="n">cmath</span>               <span class="n">msvcrt</span>              <span class="n">textwrap</span>
+<span class="n">_lsprof</span>             <span class="n">cmd</span>                 <span class="n">multiprocessing</span>     <span class="n">this</span>
+<span class="n">_lzma</span>               <span class="n">code</span>                <span class="n">netrc</span>               <span class="n">threading</span>
+<span class="n">_markupbase</span>         <span class="n">codecs</span>              <span class="n">nntplib</span>             <span class="n">time</span>
+<span class="n">_md5</span>                <span class="n">codeop</span>              <span class="n">nt</span>                  <span class="n">timeit</span>
+<span class="n">_msi</span>                <span class="n">collections</span>         <span class="n">ntpath</span>              <span class="n">tkinter</span>
+<span class="n">_multibytecodec</span>     <span class="n">colorsys</span>            <span class="n">nturl2path</span>          <span class="n">token</span>
+<span class="n">_multiprocessing</span>    <span class="n">compileall</span>          <span class="n">numbers</span>             <span class="n">tokenize</span>
+<span class="n">_opcode</span>             <span class="n">concurrent</span>          <span class="n">opcode</span>              <span class="n">tomllib</span>
+<span class="n">_operator</span>           <span class="n">configparser</span>        <span class="n">operator</span>            <span class="n">trace</span>
+<span class="n">_osx_support</span>        <span class="n">contextlib</span>          <span class="n">optparse</span>            <span class="n">traceback</span>
+<span class="n">_overlapped</span>         <span class="n">contextvars</span>         <span class="n">os</span>                  <span class="n">tracemalloc</span>
+<span class="n">_pickle</span>             <span class="n">copy</span>                <span class="n">pathlib</span>             <span class="n">tty</span>
+<span class="n">_py_abc</span>             <span class="n">copyreg</span>             <span class="n">pdb</span>                 <span class="n">turtle</span>
+<span class="n">_pydecimal</span>          <span class="n">crypt</span>               <span class="n">pickle</span>              <span class="n">turtledemo</span>
+<span class="n">_pyio</span>               <span class="n">csv</span>                 <span class="n">pickletools</span>         <span class="n">types</span>
+<span class="n">_queue</span>              <span class="n">ctypes</span>              <span class="n">pip</span>                 <span class="n">typing</span>
+<span class="n">_random</span>             <span class="n">curses</span>              <span class="n">pipes</span>               <span class="n">unicodedata</span>
+<span class="n">_sha1</span>               <span class="n">dataclasses</span>         <span class="n">pkg_resources</span>       <span class="n">unittest</span>
+<span class="n">_sha256</span>             <span class="n">datetime</span>            <span class="n">pkgutil</span>             <span class="n">urllib</span>
+<span class="n">_sha3</span>               <span class="n">dbm</span>                 <span class="n">platform</span>            <span class="n">uu</span>
+<span class="n">_sha512</span>             <span class="n">decimal</span>             <span class="n">plistlib</span>            <span class="n">uuid</span>
+<span class="n">_signal</span>             <span class="n">difflib</span>             <span class="n">poplib</span>              <span class="n">venv</span>
+<span class="n">_sitebuiltins</span>       <span class="n">dis</span>                 <span class="n">posixpath</span>           <span class="n">warnings</span>
+<span class="n">_socket</span>             <span class="n">distutils</span>           <span class="n">pprint</span>              <span class="n">wave</span>
+<span class="n">_sqlite3</span>            <span class="n">doctest</span>             <span class="n">profile</span>             <span class="n">weakref</span>
+<span class="n">_sre</span>                <span class="n">email</span>               <span class="n">pstats</span>              <span class="n">webbrowser</span>
+<span class="n">_ssl</span>                <span class="n">encodings</span>           <span class="n">pty</span>                 <span class="n">winreg</span>
+<span class="n">_stat</span>               <span class="n">ensurepip</span>           <span class="n">py_compile</span>          <span class="n">winsound</span>
+<span class="n">_statistics</span>         <span class="n">enum</span>                <span class="n">pyclbr</span>              <span class="n">wsgiref</span>
+<span class="n">_string</span>             <span class="n">errno</span>               <span class="n">pydoc</span>               <span class="n">xdrlib</span>
+<span class="n">_strptime</span>           <span class="n">faulthandler</span>        <span class="n">pydoc_data</span>          <span class="n">xml</span>
+<span class="n">_struct</span>             <span class="n">filecmp</span>             <span class="n">pyexpat</span>             <span class="n">xmlrpc</span>
+<span class="n">_symtable</span>           <span class="n">fileinput</span>           <span class="n">queue</span>               <span class="n">xxsubtype</span>
+<span class="n">_testbuffer</span>         <span class="n">fnmatch</span>             <span class="n">quopri</span>              <span class="n">zipapp</span>
+<span class="n">_testcapi</span>           <span class="n">fractions</span>           <span class="n">random</span>              <span class="n">zipfile</span>
+<span class="n">_testconsole</span>        <span class="n">ftplib</span>              <span class="n">re</span>                  <span class="n">zipimport</span>
+<span class="n">_testimportmultiple</span> <span class="n">functools</span>           <span class="n">reprlib</span>             <span class="n">zlib</span>
+<span class="n">_testinternalcapi</span>   <span class="n">gc</span>                  <span class="n">rlcompleter</span>         <span class="n">zoneinfo</span>
+
+<span class="n">Enter</span> <span class="nb">any</span> <span class="n">module</span> <span class="n">name</span> <span class="n">to</span> <span class="n">get</span> <span class="n">more</span> <span class="n">help</span><span class="o">.</span>  <span class="n">Or</span><span class="p">,</span> <span class="nb">type</span> <span class="s2">&quot;modules spam&quot;</span> <span class="n">to</span> <span class="n">search</span>
+<span class="k">for</span> <span class="n">modules</span> <span class="n">whose</span> <span class="n">name</span> <span class="ow">or</span> <span class="n">summary</span> <span class="n">contain</span> <span class="n">the</span> <span class="n">string</span> <span class="s2">&quot;spam&quot;</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>Looks overwhelming! So, it is listing all of the available modules you have (you will see what <a class="reference internal" href="chapter12.html"><span class="doc std std-doc">Python modules</span></a> are later in this course). You may have a different list with fewer modules. Let’s try “keywords” to see what you get.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="o">&gt;</span> <span class="n">keywords</span>
+
+<span class="n">Here</span> <span class="ow">is</span> <span class="n">a</span> <span class="nb">list</span> <span class="n">of</span> <span class="n">the</span> <span class="n">Python</span> <span class="n">keywords</span><span class="o">.</span>  <span class="n">Enter</span> <span class="nb">any</span> <span class="n">keyword</span> <span class="n">to</span> <span class="n">get</span> <span class="n">more</span> <span class="n">help</span><span class="o">.</span>
+
+<span class="kc">False</span>               <span class="k">class</span><span class="w">               </span><span class="nc">from</span>                <span class="ow">or</span>
+<span class="kc">None</span>                <span class="k">continue</span>            <span class="k">global</span>              <span class="k">pass</span>
+<span class="kc">True</span>                <span class="k">def</span><span class="w">                 </span><span class="nf">if</span>                  <span class="k">raise</span>
+<span class="ow">and</span>                 <span class="k">del</span>                 <span class="kn">import</span><span class="w">              </span><span class="nn">return</span>
+<span class="k">as</span><span class="w">                  </span><span class="nn">elif</span>                <span class="ow">in</span>                  <span class="k">try</span>
+<span class="k">assert</span>              <span class="k">else</span>                <span class="ow">is</span>                  <span class="k">while</span>
+<span class="k">async</span>               <span class="k">except</span>              <span class="k">lambda</span>              <span class="k">with</span>
+<span class="k">await</span>               <span class="k">finally</span>             <span class="k">nonlocal</span>            <span class="k">yield</span>  
+</pre></div>
+</div>
+<p>A shorter list now. Let’s try entering a keyword from this list to see what help you get.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="o">&gt;</span> <span class="k">for</span>
+<span class="n">The</span> <span class="s2">&quot;for&quot;</span> <span class="n">statement</span>
+<span class="o">*******************</span>
+
+<span class="n">The</span> <span class="s2">&quot;for&quot;</span> <span class="n">statement</span> <span class="ow">is</span> <span class="n">used</span> <span class="n">to</span> <span class="n">iterate</span> <span class="n">over</span> <span class="n">the</span> <span class="n">elements</span> <span class="n">of</span> <span class="n">a</span> <span class="n">sequence</span>
+<span class="p">(</span><span class="n">such</span> <span class="k">as</span> <span class="n">a</span> <span class="n">string</span><span class="p">,</span> <span class="nb">tuple</span> <span class="ow">or</span> <span class="nb">list</span><span class="p">)</span> <span class="ow">or</span> <span class="n">other</span> <span class="n">iterable</span> <span class="nb">object</span><span class="p">:</span>
+
+    <span class="n">for_stmt</span> <span class="p">:</span><span class="o">:=</span> <span class="s2">&quot;for&quot;</span> <span class="n">target_list</span> <span class="s2">&quot;in&quot;</span> <span class="n">expression_list</span> <span class="s2">&quot;:&quot;</span> <span class="n">suite</span>
+                <span class="p">[</span><span class="s2">&quot;else&quot;</span> <span class="s2">&quot;:&quot;</span> <span class="n">suite</span><span class="p">]</span>
+
+<span class="n">The</span> <span class="n">expression</span> <span class="nb">list</span> <span class="ow">is</span> <span class="n">evaluated</span> <span class="n">once</span><span class="p">;</span> <span class="n">it</span> <span class="n">should</span> <span class="k">yield</span> <span class="n">an</span> <span class="n">iterable</span>
+<span class="nb">object</span><span class="o">.</span>  <span class="n">An</span> <span class="n">iterator</span> <span class="ow">is</span> <span class="n">created</span> <span class="k">for</span> <span class="n">the</span> <span class="n">result</span> <span class="n">of</span> <span class="n">the</span>
+<span class="s2">&quot;expression_list&quot;</span><span class="o">.</span>  <span class="n">The</span> <span class="n">suite</span> <span class="ow">is</span> <span class="n">then</span> <span class="n">executed</span> <span class="n">once</span> <span class="k">for</span> <span class="n">each</span> <span class="n">item</span>
+<span class="n">provided</span> <span class="n">by</span> <span class="n">the</span> <span class="n">iterator</span><span class="p">,</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">order</span> <span class="n">returned</span> <span class="n">by</span> <span class="n">the</span> <span class="n">iterator</span><span class="o">.</span>  <span class="n">Each</span>
+<span class="n">item</span> <span class="ow">in</span> <span class="n">turn</span> <span class="ow">is</span> <span class="n">assigned</span> <span class="n">to</span> <span class="n">the</span> <span class="n">target</span> <span class="nb">list</span> <span class="n">using</span> <span class="n">the</span> <span class="n">standard</span> <span class="n">rules</span>
+<span class="k">for</span> <span class="n">assignments</span> <span class="p">(</span><span class="n">see</span> <span class="n">Assignment</span> <span class="n">statements</span><span class="p">),</span> <span class="ow">and</span> <span class="n">then</span> <span class="n">the</span> <span class="n">suite</span> <span class="ow">is</span>
+<span class="n">executed</span><span class="o">.</span>  <span class="n">When</span> <span class="n">the</span> <span class="n">items</span> <span class="n">are</span> <span class="n">exhausted</span> <span class="p">(</span><span class="n">which</span> <span class="ow">is</span> <span class="n">immediately</span> <span class="n">when</span> <span class="n">the</span>
+<span class="n">sequence</span> <span class="ow">is</span> <span class="n">empty</span> <span class="ow">or</span> <span class="n">an</span> <span class="n">iterator</span> <span class="n">raises</span> <span class="n">a</span> <span class="s2">&quot;StopIteration&quot;</span> <span class="n">exception</span><span class="p">),</span>
+<span class="n">the</span> <span class="n">suite</span> <span class="ow">in</span> <span class="n">the</span> <span class="s2">&quot;else&quot;</span> <span class="n">clause</span><span class="p">,</span> <span class="k">if</span> <span class="n">present</span><span class="p">,</span> <span class="ow">is</span> <span class="n">executed</span><span class="p">,</span> <span class="ow">and</span> <span class="n">the</span> <span class="n">loop</span>
+<span class="n">terminates</span><span class="o">.</span>
+
+<span class="n">A</span> <span class="s2">&quot;break&quot;</span> <span class="n">statement</span> <span class="n">executed</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">first</span> <span class="n">suite</span> <span class="n">terminates</span> <span class="n">the</span> <span class="n">loop</span>
+<span class="n">without</span> <span class="n">executing</span> <span class="n">the</span> <span class="s2">&quot;else&quot;</span> <span class="n">clause</span>\<span class="n">u2019s</span> <span class="n">suite</span><span class="o">.</span>  <span class="n">A</span> <span class="s2">&quot;continue&quot;</span> <span class="n">statement</span>
+<span class="n">executed</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">first</span> <span class="n">suite</span> <span class="n">skips</span> <span class="n">the</span> <span class="n">rest</span> <span class="n">of</span> <span class="n">the</span> <span class="n">suite</span> <span class="ow">and</span> <span class="n">continues</span>
+<span class="k">with</span> <span class="n">the</span> <span class="nb">next</span> <span class="n">item</span><span class="p">,</span> <span class="ow">or</span> <span class="k">with</span> <span class="n">the</span> <span class="s2">&quot;else&quot;</span> <span class="n">clause</span> <span class="k">if</span> <span class="n">there</span> <span class="ow">is</span> <span class="n">no</span> <span class="nb">next</span>
+<span class="n">item</span><span class="o">.</span>
+
+<span class="n">The</span> <span class="k">for</span><span class="o">-</span><span class="n">loop</span> <span class="n">makes</span> <span class="n">assignments</span> <span class="n">to</span> <span class="n">the</span> <span class="n">variables</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">target</span> <span class="nb">list</span><span class="o">.</span>
+<span class="n">This</span> <span class="n">overwrites</span> <span class="nb">all</span> <span class="n">previous</span> <span class="n">assignments</span> <span class="n">to</span> <span class="n">those</span> <span class="n">variables</span> <span class="n">including</span>
+<span class="n">those</span> <span class="n">made</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">suite</span> <span class="n">of</span> <span class="n">the</span> <span class="k">for</span><span class="o">-</span><span class="n">loop</span><span class="p">:</span>
+
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+        <span class="n">i</span> <span class="o">=</span> <span class="mi">5</span>             <span class="c1"># this will not affect the for-loop</span>
+                            <span class="c1"># because i will be overwritten with the next</span>
+                            <span class="c1"># index in the range</span>
+
+<span class="n">Names</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">target</span> <span class="nb">list</span> <span class="n">are</span> <span class="ow">not</span> <span class="n">deleted</span> <span class="n">when</span> <span class="n">the</span> <span class="n">loop</span> <span class="ow">is</span> <span class="n">finished</span><span class="p">,</span>
+<span class="n">but</span> <span class="k">if</span> <span class="n">the</span> <span class="n">sequence</span> <span class="ow">is</span> <span class="n">empty</span><span class="p">,</span> <span class="n">they</span> <span class="n">will</span> <span class="ow">not</span> <span class="n">have</span> <span class="n">been</span> <span class="n">assigned</span> <span class="n">to</span> <span class="n">at</span>
+<span class="nb">all</span> <span class="n">by</span> <span class="n">the</span> <span class="n">loop</span><span class="o">.</span>  <span class="n">Hint</span><span class="p">:</span> <span class="n">the</span> <span class="n">built</span><span class="o">-</span><span class="ow">in</span> <span class="n">function</span> <span class="s2">&quot;range()&quot;</span> <span class="n">returns</span> <span class="n">an</span>
+<span class="n">iterator</span> <span class="n">of</span> <span class="n">integers</span> <span class="n">suitable</span> <span class="n">to</span> <span class="n">emulate</span> <span class="n">the</span> <span class="n">effect</span> <span class="n">of</span> <span class="n">Pascal</span>\<span class="n">u2019s</span> <span class="s2">&quot;for i</span>
+<span class="o">:=</span> <span class="n">a</span> <span class="n">to</span> <span class="n">b</span> <span class="n">do</span><span class="s2">&quot;; e.g., &quot;</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span><span class="s2">&quot; returns the list &quot;</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span><span class="s2">&quot;.</span>
+
+<span class="n">Related</span> <span class="n">help</span> <span class="n">topics</span><span class="p">:</span> <span class="k">break</span><span class="p">,</span> <span class="k">continue</span><span class="p">,</span> <span class="k">while</span>
+</pre></div>
+</div>
+<p>Very nice! We get a lot of helpful information about this <em>for</em> keyword. If you read it now you may not understand many things, but we will cover this important keyword later on this course. Let’s be patient!</p>
+<p>Let’s quit the help section to try some other Python commands (you can write <code class="docutils literal notranslate"><span class="pre">quit</span></code> or do CTRL+C).</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="o">&gt;</span> <span class="n">quit</span>
+
+<span class="n">You</span> <span class="n">are</span> <span class="n">now</span> <span class="n">leaving</span> <span class="n">help</span> <span class="ow">and</span> <span class="n">returning</span> <span class="n">to</span> <span class="n">the</span> <span class="n">Python</span> <span class="n">interpreter</span><span class="o">.</span>
+<span class="n">If</span> <span class="n">you</span> <span class="n">want</span> <span class="n">to</span> <span class="n">ask</span> <span class="k">for</span> <span class="n">help</span> <span class="n">on</span> <span class="n">a</span> <span class="n">particular</span> <span class="nb">object</span> <span class="n">directly</span> <span class="kn">from</span><span class="w"> </span><span class="nn">the</span>
+<span class="n">interpreter</span><span class="p">,</span> <span class="n">you</span> <span class="n">can</span> <span class="nb">type</span> <span class="s2">&quot;help(object)&quot;</span><span class="o">.</span>  <span class="n">Executing</span> <span class="s2">&quot;help(&#39;string&#39;)&quot;</span>
+<span class="n">has</span> <span class="n">the</span> <span class="n">same</span> <span class="n">effect</span> <span class="k">as</span> <span class="n">typing</span> <span class="n">a</span> <span class="n">particular</span> <span class="n">string</span> <span class="n">at</span> <span class="n">the</span> <span class="n">help</span><span class="o">&gt;</span> <span class="n">prompt</span><span class="o">.</span>
+<span class="o">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>Remember that the three <code class="docutils literal notranslate"><span class="pre">&gt;&gt;&gt;</span></code> signs means you are now on the Python interpreter again. When quitting the help interpreter you get a message indicating that you can use the help directly on the Python interpreter. Go ahead and give it a try.</p>
+</section>
+<section id="basic-operations-in-python">
+<h2>Basic Operations in Python<a class="headerlink" href="#basic-operations-in-python" title="Link to this heading">#</a></h2>
+<p>You want to learn Python and you may have already guessed that Python can make calculations fast. You can make many different operations with different data types in Python. In this section you are going to learn the very basics of Python operations.</p>
+<section id="operations-with-numbers">
+<h3>Operations with numbers<a class="headerlink" href="#operations-with-numbers" title="Link to this heading">#</a></h3>
+<p>Let’s see how to make some simple math with the Python interpreter. Let’s start simple and try addition, subtraction, multiplication and division.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="mi">1</span><span class="o">+</span><span class="mi">1</span>
+<span class="go">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="mi">3</span><span class="o">-</span><span class="mi">1</span>
+<span class="go">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="mi">2</span><span class="o">*</span><span class="mi">3</span>
+<span class="go">6</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="mi">12</span><span class="o">/</span><span class="mi">3</span>
+<span class="go">4.0</span>
+</pre></div>
+</div>
+<p>The symbols for addition and subtraction are <code class="docutils literal notranslate"><span class="pre">+</span></code> and <code class="docutils literal notranslate"><span class="pre">-</span></code>, as you may have already guessed. The symbol for multiplication is an asterisk <code class="docutils literal notranslate"><span class="pre">*</span></code>, and for division you use a single forward slash <code class="docutils literal notranslate"><span class="pre">/</span></code>. The four operations you tried on this example are giving correct results.</p>
+<p>If you look closer on the last example, the answer is shown as <strong>4.0</strong> instead of just <strong>4</strong>. This has something to do with <a class="reference external" href="https://en.wikipedia.org/wiki/Floating-point_arithmetic">floating point numbers</a> (more on this in the future).</p>
+<p>You can also do more complex calculations, like combined operations. If you need to group operations, use parentheses <code class="docutils literal notranslate"><span class="pre">()</span></code>. You can even use multiple parentheses if needed.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="mi">1</span><span class="o">-</span><span class="mi">8</span><span class="o">+</span><span class="mi">3</span>
+<span class="go">-4</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="mi">1</span><span class="o">-</span><span class="p">(</span><span class="mi">8</span><span class="o">+</span><span class="mi">3</span><span class="p">)</span>
+<span class="go">-10</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="mi">1</span><span class="o">-</span><span class="mi">8</span><span class="o">+</span><span class="mi">3</span><span class="o">/</span><span class="mi">4</span>
+<span class="go">-6.25</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="mi">1</span><span class="o">/</span><span class="mi">8</span><span class="o">+</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span><span class="o">*</span><span class="mi">5</span>
+<span class="go">3.875</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">8</span><span class="o">+</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="mi">5</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+<span class="go">14.125</span>
+</pre></div>
+</div>
+<p>There are other useful operations you can use in Python. The most common are modulus (remainder), exponentiation and floor division operators.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="mi">10</span><span class="o">%</span><span class="mi">3</span>
+<span class="go">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="mi">2</span><span class="o">**</span><span class="mi">3</span>
+<span class="go">8</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="mi">10</span><span class="o">//</span><span class="mi">3</span>
+<span class="go">3</span>
+</pre></div>
+</div>
+<p>Each of these operations can be summarized as:</p>
+<ul class="simple">
+<li><p><strong>modulus</strong> (%) returns the remainder of the division between two numbers.</p></li>
+<li><p><strong>exponentiation</strong> (**, double asterisk) returns the result of multiplying the number on the left by itself a number of times given by the number on the right.</p></li>
+<li><p><strong>floor division</strong> (//) returns the integer part of the division between two numbers.</p></li>
+</ul>
+</section>
+<section id="operations-with-strings">
+<h3>Operations with strings<a class="headerlink" href="#operations-with-strings" title="Link to this heading">#</a></h3>
+<p>Another type of data you can play with before moving on are <em>strings</em>. A string is a sequence of characters surrounded by single, double or triple quotes. Within the Python interpreter, try writing different strings and hit Enter to see the output.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s1">&#39;hello in single quotes&#39;</span>
+<span class="go">&#39;hello in single quotes&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s1">&#39;&#39;</span><span class="n">hello</span> <span class="ow">in</span> <span class="n">double</span> <span class="n">quotes</span><span class="s1">&#39;&#39;</span>
+<span class="go">    File &quot;&quot;, line 1</span>
+<span class="go">    &#39;&#39;hello in double quotes&#39;&#39;</span>
+<span class="go">        ^^^^^</span>
+<span class="go">SyntaxError: invalid syntax</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;hello in double quotes&quot;</span>
+<span class="go">&#39;hello in double quotes&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="sd">&#39;&#39;&#39;hello in triple quotes&#39;&#39;&#39;</span>
+<span class="go">&#39;hello in triple quotes&#39;</span>
+</pre></div>
+</div>
+<p>The first thing we tried is writing some text between single quotes and hitting Enter. The terminal outputs the same thing as expected. Next we tried the same string using double quotes, but the double quotes are used with two single quotes, which Python doesn’t like (it gives a <strong>SyntaxError</strong>. More on errors later). To use double quotes you have to use the special key (it is often done with SHIFT+2 on the keyboard). And lastly triple quotes, done with three single quotes.</p>
+<p>A curious thing to note is that no matter if you use single, double or triple quotes, the output is shown with single quotes. What if you need to include quotes in the string? You can use single quotes for our Python string, and use double quotes inside, or the other way around.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s1">&#39;hello, this &quot;word&quot; has quotes&#39;</span>
+<span class="go">&#39;hello, this &quot;word&quot; has quotes&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;hello, this &#39;word&#39; has quotes&quot;</span>
+<span class="go">&quot;hello, this &#39;word&#39; has quotes&quot;</span>
+</pre></div>
+</div>
+<p>So, the title of this section contains the word “operations”. Can you “operate” with strings like you did with numbers? You can concatenate strings with the <code class="docutils literal notranslate"><span class="pre">+</span></code> operator:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s1">&#39;hello&#39;</span><span class="o">+</span><span class="s1">&#39;world&#39;</span>
+<span class="go">&#39;helloworld&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s1">&#39;hello&#39;</span><span class="o">+</span><span class="s1">&#39; &#39;</span><span class="o">+</span><span class="s1">&#39;world&#39;</span>
+<span class="go">&#39;hello world&#39;</span>
+</pre></div>
+</div>
+<p>You can also use the <code class="docutils literal notranslate"><span class="pre">*</span></code> operator to repeat the same string a given number of times:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s1">&#39;hello&#39;</span><span class="o">*</span><span class="mi">3</span>
+<span class="go">&#39;hellohellohello&#39;</span>
+</pre></div>
+</div>
+<p>As you can see, Python strings can also be manipulated with some of the basic operations you learned so far.</p>
+</section>
+</section>
+<section id="python-variables">
+<h2>Python variables<a class="headerlink" href="#python-variables" title="Link to this heading">#</a></h2>
+<p>The last topic on this section will be about the basics of using variables in Python. Variables are a way to store values for later use. For example you may need to use your name as a string multiple times in your program or script.</p>
+<p>Let’s begin by declaring the variable <code class="docutils literal notranslate"><span class="pre">myName</span></code> and assigning it the value of the string ‘Carlos’. Then write <code class="docutils literal notranslate"><span class="pre">myName</span></code> and hit Enter to print the value inside of it:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">myName</span> <span class="o">=</span> <span class="s1">&#39;Carlos&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">myName</span>
+<span class="go">&#39;Carlos&#39;</span>
+</pre></div>
+</div>
+<p>Declaring and assigning values to variables in Python is as simple as that. You don’t have to worry about which data type the variable will be.</p>
+<p>You can now concatenate a string ‘Hello’ with ‘Carlos’ using the variable <code class="docutils literal notranslate"><span class="pre">myName</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="s1">&#39;Hello &#39;</span> <span class="o">+</span> <span class="n">myName</span>
+<span class="go">&#39;Hello Carlos&#39;</span>
+</pre></div>
+</div>
+<p>The same thing can be done with numbers. Suppose you want to compute the discriminant of a quadratic equation. For this you can use three variables for each parameter <code class="docutils literal notranslate"><span class="pre">a</span></code>, <code class="docutils literal notranslate"><span class="pre">b</span></code> and <code class="docutils literal notranslate"><span class="pre">c</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="o">-</span><span class="mi">7</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="mi">11</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mi">4</span><span class="o">*</span><span class="n">a</span><span class="o">*</span><span class="n">c</span>
+<span class="go">-83</span>
+</pre></div>
+</div>
+<p>Using variables in Python is a great way to write better, reusable and more readable code. Variables are used everywhere as you will see in future chapters of this course.</p>
+<p>To quit the Python interpreter you can use <code class="docutils literal notranslate"><span class="pre">quit()</span></code> (don’t forget the parentheses like I did before):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">quit</span>
+<span class="go">Use quit() or Ctrl-Z plus Return to exit</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">quit</span><span class="p">()</span>
+<span class="go">PS C:\Users\yourusername&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h2>
+<p>In this article you learned the basics of Python by using the terminal (PowerShell) and the Python interpreter. Here is a list of what you have learned:</p>
+<ul class="simple">
+<li><p>How to get help from the Python interpreter with the use of the <code class="docutils literal notranslate"><span class="pre">help()</span></code> command.</p></li>
+<li><p>How to make simple operations with numbers.</p></li>
+<li><p>How to make operations with strings.</p></li>
+<li><p>How to define and make simple calculations with variables.</p></li>
+</ul>
+<p>After closing the Python interpreter, all the work you did is lost. What about if you needed to continue the work you’ve done at another time? For this you can use text editors.</p>
+<p>In the next chapter you will learn more advanced ways to work with Python. You will use the topics learned on this article, so be sure you are comfortable with them. See you next time!</p>
+</section>
+<section id="exercises">
+<h2>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
+<p>This set of exercises are here to help you better understand the topics covered on this article.</p>
+<ol class="arabic simple">
+<li><p>Open the terminal (PowerShell).</p></li>
+<li><p>Check that Python is correctly installed by showing the version on the screen.</p></li>
+<li><p>Enter the Python interpreter.</p></li>
+<li><p>Find the help document about STRINGS. There are two ways of getting to it: one from the help interpreter, and the other directly from the Python interpreter.</p></li>
+<li><p>Make the following calculation using the Python interpreter: 6/2(2+1). Is the result correct or not? How can you be sure about the order of operations in a general case?</p></li>
+<li><p>Make the following calculation with the Python interpreter: sqrt(-4)=(-4)^0.5. A number with an exponent of 0.5 is the same as taking its square root. What can you guess about the output Python is giving? You will learn more about this in future chapters.</p></li>
+<li><p>Use your own name to print a custom welcoming message on the screen with the use of strings.</p></li>
+<li><p>Combine your name and a friend’s to print a message containing both. Use two variables to hold your names.</p></li>
+<li><p>Use variables to calculate how many seconds had been gone within the present day. Make a variable to hold the hours, another for minutes, and another for seconds. For example if the current time is 16:33:21 then you can assign 16 to hours, 33 to minutes and 21 to seconds.</p></li>
+<li><p>Quit the Python interpreter.</p></li>
+</ol>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="chapter1.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Chapter 1: Installation &amp; Setup</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="chapter3.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Chapter 3: Using text editors and IDEs</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#first-steps-the-python-interpreter">First steps: The Python interpreter</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-help-in-the-python-interpreter">Getting help in the Python interpreter</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-operations-in-python">Basic Operations in Python</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operations-with-numbers">Operations with numbers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#operations-with-strings">Operations with strings</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-variables">Python variables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Carlos
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026, Carlos.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

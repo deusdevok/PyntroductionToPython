@@ -1,0 +1,801 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Chapter 4: Data Types &#8212; Pyntroduction To Python 1.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="_static/documentation_options.js?v=a681ed88"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter4';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Chapter 5: Working with strings" href="chapter5.html" />
+    <link rel="prev" title="Chapter 3: Using text editors and IDEs" href="chapter3.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Pyntroduction To Python 1.0 documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter1.html">Chapter 1: Installation &amp; Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter2.html">Chapter 2: Using the terminal and Python interpreter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter3.html">Chapter 3: Using text editors and IDEs</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Chapter 4: Data Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter5.html">Chapter 5: Working with strings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter6.html">Chapter 6: Working with lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter7.html">Chapter 7: Working with dictionaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter8.html">Chapter 8: Conditional statements: if, elif, else</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter9.html">Chapter 9: Loops, for and while, break and continue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter10.html">Chapter 10: Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter11.html">Chapter 11: Built-in Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter12.html">Chapter 12: Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter13.html">Chapter 13: Practice Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="final.html">Thank you for reading</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/chapter4.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Chapter 4: Data Types</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-you-will-learn">What you will learn</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numeric-data-types">Numeric Data Types</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integer">Integer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#float">Float</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#complex">Complex</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conversion-from-one-type-to-another-casting">Conversion from one type to another: casting</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integer-to-float">Integer to float</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#float-to-integer">Float to integer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integer-to-complex">Integer to complex</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#float-to-complex">Float to complex</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#complex-to-integer">Complex to integer</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#text-data-type">Text Data Type</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sequence-data-types">Sequence Data Types</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#list">List</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tuple">Tuple</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#range">Range</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mapping-data-type-dictionary">Mapping Data Type: dictionary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-data-types">Set Data Types</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set">Set</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#frozen-set">Frozen set</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-data-types">Boolean Data Types</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#binary-data-types">Binary Data Types</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bytes">Bytes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bytearray">Bytearray</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#memoryview">Memoryview</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#none-data-type">None Data Type</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="chapter-4-data-types">
+<h1>Chapter 4: Data Types<a class="headerlink" href="#chapter-4-data-types" title="Link to this heading">#</a></h1>
+<p>Python can be used for a wide range of tasks involving different types of data. It can be used to make large and complicated computations using numbers, automating text operations, storing data in the form of lists, and many more.</p>
+<p>There are a set of different types of data to work with each specific task. For numeric tasks you use numbers (integers, decimals), for text operations you use data in form of strings, and so on. In this article you will learn the basics of how to work with different kinds of data types in Python.</p>
+<section id="what-you-will-learn">
+<h2>What you will learn<a class="headerlink" href="#what-you-will-learn" title="Link to this heading">#</a></h2>
+<p>In this article you will learn the following topics:</p>
+<ul class="simple">
+<li><p>What are the different available Python built-in data types</p></li>
+<li><p>How to check the type of a variable or value using the <code class="docutils literal notranslate"><span class="pre">type()</span></code> function</p></li>
+<li><p>How data types are casted into other data types</p></li>
+</ul>
+</section>
+<section id="numeric-data-types">
+<h2>Numeric Data Types<a class="headerlink" href="#numeric-data-types" title="Link to this heading">#</a></h2>
+<p>Numbers are everywhere, and Python is not the exception. There are different kinds of numbers you can work with. Let’s enter the Python interpreter in a terminal to understand how each type of number work.</p>
+<section id="integer">
+<h3>Integer<a class="headerlink" href="#integer" title="Link to this heading">#</a></h3>
+<p>Integer numbers are those which don’t have decimal part. They can be positive, negative and zero. Let’s begin by assigning an integer number to a new variable called <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span>
+<span class="go">1</span>
+</pre></div>
+</div>
+<p>If you don’t know what a variable is or how to work with them, check out a <a class="reference internal" href="chapter2.html"><span class="doc std std-doc">previous tutorial</span></a>. Now the variable <code class="docutils literal notranslate"><span class="pre">x</span></code> has the <em>value</em> of 1 assigned to it.</p>
+<p>What you can do now is to use a Python function called <code class="docutils literal notranslate"><span class="pre">type()</span></code>. This function takes as argument the variable (or the value), and returns the <em>data type</em>. Write <code class="docutils literal notranslate"><span class="pre">type</span></code> followed by the name of the variable inside parentheses, and then hit Enter:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="go">&lt;class &#39;int&#39;&gt;</span>
+</pre></div>
+</div>
+<p>As you can see Python prints <code class="docutils literal notranslate"><span class="pre">&lt;class</span> <span class="pre">'int'&gt;</span></code>, which means the variable is an <strong>int</strong> (short for integer). You will learn about functions in <a class="reference internal" href="chapter10.html"><span class="doc std std-doc">another tutorial</span></a> of this course.</p>
+</section>
+<section id="float">
+<h3>Float<a class="headerlink" href="#float" title="Link to this heading">#</a></h3>
+<p>You can repeat the same process with a real number. Let’s try the number 3.14. If you assign this value to the variable called <code class="docutils literal notranslate"><span class="pre">y</span></code> and check for its type, this is what you obtain:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="mf">3.14</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<span class="go">&lt;class &#39;float&#39;&gt;</span>
+</pre></div>
+</div>
+<p>Python tells you that the data type for 3.14 is called <strong>float</strong>. This is a floating point number, which is used to represent real numbers.</p>
+</section>
+<section id="complex">
+<h3>Complex<a class="headerlink" href="#complex" title="Link to this heading">#</a></h3>
+<p>Python also has implemented the complex data type to represent complex numbers, which have real and imaginary parts. To make a complex number, write it as a sum of the real part and the imaginary part. The imaginary part has to be accompanied by a <em>j</em> (the imaginary unit):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">z</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="mf">0.5</span><span class="n">j</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+<span class="go">&lt;class &#39;complex&#39;&gt;</span>
+</pre></div>
+</div>
+<p>Keep in mind that the imaginary unit in Python is written with a <em>j</em> instead of an <em>i</em>.</p>
+<p>Given a complex number, there are different methods you can use to extract information such as the real part, the imaginary part, the complex conjugate, etc. You will learn about <a class="reference internal" href="chapter11.html"><span class="doc std std-doc">methods</span></a> in another tutorial.</p>
+</section>
+</section>
+<section id="conversion-from-one-type-to-another-casting">
+<h2>Conversion from one type to another: casting<a class="headerlink" href="#conversion-from-one-type-to-another-casting" title="Link to this heading">#</a></h2>
+<p>There are a set of functions that convert one type of variable (number) to another. They are <code class="docutils literal notranslate"><span class="pre">int()</span></code>, <code class="docutils literal notranslate"><span class="pre">float()</span></code> and <code class="docutils literal notranslate"><span class="pre">complex()</span></code>. Functions in Python have to be called using parentheses, and inside them you put the variable or value.</p>
+<section id="integer-to-float">
+<h3>Integer to float<a class="headerlink" href="#integer-to-float" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">float</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="go">1.0</span>
+</pre></div>
+</div>
+<p>The result of calling the function <code class="docutils literal notranslate"><span class="pre">float()</span></code> on the variable <code class="docutils literal notranslate"><span class="pre">x</span></code> (which contains the integer value of 1) is 1.0. Python represents float numbers with a decimal point. So when the value doesn’t have any decimal digits it adds a 0.</p>
+<blockquote>
+<div><p>In some situations the decimal point is represented with a comma instead of a point. In Python you always have to use the decimal point to represent decimals, because the comma is reserved for other situations like using lists and sets.</p>
+</div></blockquote>
+</section>
+<section id="float-to-integer">
+<h3>Float to integer<a class="headerlink" href="#float-to-integer" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="mf">3.14</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">int</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<span class="go">3</span>
+</pre></div>
+</div>
+<p>In this case the result of the function <code class="docutils literal notranslate"><span class="pre">int()</span></code> applied to a float is just the integer part. Keep in mind that this is not the same as rounding the number. Take for example the float 9.99 and apply the function <code class="docutils literal notranslate"><span class="pre">int()</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">int</span><span class="p">(</span><span class="mf">9.99</span><span class="p">)</span>
+<span class="go">9</span>
+</pre></div>
+</div>
+<p>The result is still 9, and not 10 as it would have been if you rounded the number 9.99.</p>
+</section>
+<section id="integer-to-complex">
+<h3>Integer to complex<a class="headerlink" href="#integer-to-complex" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">complex</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="go">(1+0j)</span>
+</pre></div>
+</div>
+<p>When using the <code class="docutils literal notranslate"><span class="pre">complex()</span></code> function on an integer, the result is a complex number where the real part is the original value, and the imaginary part is 0. Note that Python explicitly prints 0j indicating that you are dealing with a complex number.</p>
+</section>
+<section id="float-to-complex">
+<h3>Float to complex<a class="headerlink" href="#float-to-complex" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">y</span> <span class="o">=</span> <span class="mf">3.14</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">complex</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<span class="go">(3.14+0j)</span>
+</pre></div>
+</div>
+<p>This is similar to the previous example, just in this case the real part is a floating point number instead of an integer.</p>
+</section>
+<section id="complex-to-integer">
+<h3>Complex to integer<a class="headerlink" href="#complex-to-integer" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">z</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="mf">0.5</span><span class="n">j</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">int</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+<span class="gt">Traceback (most recent call last):</span>
+<span class="w">    </span><span class="n">File</span> <span class="s2">&quot;&lt;stdin&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="gr">TypeError</span>: <span class="n">can&#39;t convert complex to int</span>
+</pre></div>
+</div>
+<p>We just got a <code class="docutils literal notranslate"><span class="pre">TypeError</span></code>! Well, this makes sense because there is no way to convert directly from a complex number to an integer. You could however take the real part, or the imaginary part, or even compute the modulus, and then convert that result to an integer. Either way you need to specify what you what to do and tell it to Python.</p>
+</section>
+</section>
+<section id="text-data-type">
+<h2>Text Data Type<a class="headerlink" href="#text-data-type" title="Link to this heading">#</a></h2>
+<p>Python represents textual data using the <em>string</em> data type. You have already worked with strings in a previous tutorial. Let’s check the type of a sample string:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;Hello World!&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="go">&lt;class &#39;str&#39;&gt;</span>
+</pre></div>
+</div>
+<p>The output tells us that the data type is called <strong>str</strong> (short for string). You can also convert strings to numbers. For example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;7&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">int</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="go">7</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">float</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="go">7.0</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">complex</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="go">(7+0j)</span>
+</pre></div>
+</div>
+<p>Of course you can’t convert a string that is not a number to a number type like an integer:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="s1">&#39;Not a number&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">int</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="gt">Traceback (most recent call last):</span>
+<span class="w">    </span><span class="n">File</span> <span class="s2">&quot;&lt;stdin&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="gr">ValueError</span>: <span class="n">invalid literal for int() with base 10: &#39;Not a number&#39;</span>
+</pre></div>
+</div>
+<p>Python throws an error (a <code class="docutils literal notranslate"><span class="pre">ValueError</span></code> in this case) claiming that the string is invalid to use with the <code class="docutils literal notranslate"><span class="pre">int()</span></code> function.</p>
+<p>You can also convert  a numeric value to a string by using the <code class="docutils literal notranslate"><span class="pre">str()</span></code> function:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">str</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="go">&#39;3&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">str</span><span class="p">(</span><span class="mf">3.14</span><span class="p">)</span>
+<span class="go">&#39;3.14&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">str</span><span class="p">(</span><span class="mi">3</span><span class="o">+</span><span class="mi">4</span><span class="n">j</span><span class="p">)</span>
+<span class="go">&#39;(3+4j)&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="sequence-data-types">
+<h2>Sequence Data Types<a class="headerlink" href="#sequence-data-types" title="Link to this heading">#</a></h2>
+<p>Another kind of data type that is very used in Python programs are <em>sequence</em> data types. This data types are used to hold sequence of values like numbers, strings and even combinations of both. You will learn about sequence data types with more detail in another tutorial.</p>
+<section id="list">
+<h3>List<a class="headerlink" href="#list" title="Link to this heading">#</a></h3>
+<p>The first sequence data type you will deal with is <strong>list</strong>. Let’s make an example with a list of integer values. To define a list, enclose the elements inside square brackets <code class="docutils literal notranslate"><span class="pre">[]</span></code>, and separate each value with a comma <code class="docutils literal notranslate"><span class="pre">,</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">my_list_numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">my_list_numbers</span><span class="p">)</span>
+<span class="go">&lt;class &#39;list&#39;&gt;</span>
+</pre></div>
+</div>
+<p>In this example I have added a space between the comma and the next value. This is not necessary but it can improve readability. When calling the <code class="docutils literal notranslate"><span class="pre">type()</span></code> function on the list just defined, Python tells it is of a <strong>list</strong> data type.</p>
+</section>
+<section id="tuple">
+<h3>Tuple<a class="headerlink" href="#tuple" title="Link to this heading">#</a></h3>
+<p>Another sequence data type is <strong>tuple</strong>. Tuples are similar to lists, with the difference that tuples are <em>immutable</em>, while lists are <em>mutable</em>. You will deal with this concepts in more detail in another tutorial. For now, let’s define a tuple in a similar way as the list, but in this case we use parentheses <code class="docutils literal notranslate"><span class="pre">()</span></code> instead of square brackets:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">my_tuple_strings</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;John&#39;</span><span class="p">,</span> <span class="s1">&#39;Carol&#39;</span><span class="p">,</span> <span class="s1">&#39;Eva&#39;</span><span class="p">,</span> <span class="s1">&#39;Charles&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">my_tuple_strings</span><span class="p">)</span>
+<span class="go">&lt;class &#39;tuple&#39;&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="range">
+<h3>Range<a class="headerlink" href="#range" title="Link to this heading">#</a></h3>
+<p>Another widely used sequence type is <strong>range</strong>. <code class="docutils literal notranslate"><span class="pre">range()</span></code> is a function that can take one or more integer parameters. The details of the range function are left for another tutorial. For now let’s just define it with one integer parameter and check its type:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">my_range_var</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">my_range_var</span><span class="p">)</span>
+<span class="go">&lt;class &#39;range&#39;&gt;</span>
+</pre></div>
+</div>
+<p>Python tells us that the data type is <em>range</em> as expected.</p>
+</section>
+</section>
+<section id="mapping-data-type-dictionary">
+<h2>Mapping Data Type: dictionary<a class="headerlink" href="#mapping-data-type-dictionary" title="Link to this heading">#</a></h2>
+<p>The <strong>dictionary</strong> data type is widely used in Python. For example, it is used in applications that work with APIs (Application Programming Interfaces), and it resembles the JSON format. An example of such an application is a Weather App.</p>
+<p>To create a dictionary, enclose the data inside curly brackets <code class="docutils literal notranslate"><span class="pre">{</span> <span class="pre">}</span></code> (braces). Inside the curly brackets you have to set <strong>key: value</strong> pairs separated by commas. Use a colon <code class="docutils literal notranslate"><span class="pre">:</span></code> to separate the key and the value. For example, you can define the keys to be the name of a person and the country he lives in, while the values for each key can be anything which makes sense:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">my_dictionary</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Charles&quot;</span><span class="p">,</span> <span class="s2">&quot;country&quot;</span><span class="p">:</span> <span class="s2">&quot;Argentina&quot;</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">my_dictionary</span><span class="p">)</span>
+<span class="go">&lt;class &#39;dict&#39;&gt;</span>
+</pre></div>
+</div>
+<p>By calling <code class="docutils literal notranslate"><span class="pre">type</span></code> on the dictionary variable Python tells it is of class <strong>dict</strong> (short for dictionary).</p>
+<p>The keys in a dictionary have to be unique. If you try to assign different values with the same key, Python will only keep the last one:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">my_dictionary</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Charles&quot;</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Einstein&quot;</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">my_dictionary</span>
+<span class="go">{&#39;name&#39;: &#39;Einstein&#39;}</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p><strong>Error but no error</strong>. As you may have noticed, Python didn’t throw an error in the last example. When working with Python programs you will make a lot of errors (and that is completely fine). Sometimes Python will help you correct those errors by throwing error messages. But there are some special situations like in the last example, where Python doesn’t have a problem with what you are doing. This is one of the hardest aspects of programming: how do you know you are making a mistake if nobody tells you?</p>
+</div></blockquote>
+<p>You can, however, have repeated values for different keys:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">my_dictionary</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Charles&quot;</span><span class="p">,</span> <span class="s2">&quot;teacher&quot;</span><span class="p">:</span> <span class="s2">&quot;Charles&quot;</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">my_dictionary</span>
+<span class="go">{&#39;name&#39;: &#39;Charles&#39;, &#39;teacher&#39;: &#39;Charles&#39;}</span>
+</pre></div>
+</div>
+</section>
+<section id="set-data-types">
+<h2>Set Data Types<a class="headerlink" href="#set-data-types" title="Link to this heading">#</a></h2>
+<section id="set">
+<h3>Set<a class="headerlink" href="#set" title="Link to this heading">#</a></h3>
+<p>Sets are similar to lists. The items are stored inside curly brackets and separated with commas.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">my_set</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;John&#39;</span><span class="p">,</span> <span class="s1">&#39;Carol&#39;</span><span class="p">,</span> <span class="s1">&#39;Eva&#39;</span><span class="p">,</span> <span class="s1">&#39;Charles&#39;</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">my_set</span><span class="p">)</span>
+<span class="go">&lt;class &#39;set&#39;&gt;</span>
+</pre></div>
+</div>
+<p>The items in a set have to be unique as opposed to a list, where the items can be repeated. If you try to repeat the same item in a set, Python will not keep more than one of it:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">,</span><span class="s1">&#39;d&#39;</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span>
+<span class="go">{&#39;c&#39;, &#39;b&#39;, &#39;d&#39;, &#39;a&#39;}</span>
+</pre></div>
+</div>
+<p>The set data type is very useful when you need to retrieve the <em>distinct values</em> that are present, for example, in a list.</p>
+</section>
+<section id="frozen-set">
+<h3>Frozen set<a class="headerlink" href="#frozen-set" title="Link to this heading">#</a></h3>
+<p><strong>Frozen Sets</strong> are similar to sets, only in this case the items are unchangeable.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">my_frozen_set</span> <span class="o">=</span> <span class="nb">frozenset</span><span class="p">({</span><span class="s1">&#39;John&#39;</span><span class="p">,</span> <span class="s1">&#39;Carol&#39;</span><span class="p">,</span> <span class="s1">&#39;Eva&#39;</span><span class="p">,</span> <span class="s1">&#39;Charles&#39;</span><span class="p">})</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">my_frozen_set</span><span class="p">)</span>
+<span class="go">&lt;class &#39;frozenset&#39;&gt;</span>
+</pre></div>
+</div>
+<p>You will be dealing with modifying sets, lists and others in later tutorials.</p>
+</section>
+</section>
+<section id="boolean-data-types">
+<h2>Boolean Data Types<a class="headerlink" href="#boolean-data-types" title="Link to this heading">#</a></h2>
+<p>Sometimes you need to check whether an expression is valid or not. For example you would check an equality between two variables, like two names belonging to the same dictionary. If there are two values with the same name, you would return <code class="docutils literal notranslate"><span class="pre">True</span></code>. In case they are different, return <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<p>The data type that deals with this kind of values is referred to as <strong>boolean</strong> data type. Boolean values can have two possible values: <code class="docutils literal notranslate"><span class="pre">True</span></code> or <code class="docutils literal notranslate"><span class="pre">False</span></code>. Is important to remember the capital T for True, and the capital F for False.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="go">&lt;class &#39;bool&#39;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="go">&lt;class &#39;bool&#39;&gt;</span>
+</pre></div>
+</div>
+<p>You will learn how to properly work with boolean variables in another tutorial.</p>
+</section>
+<section id="binary-data-types">
+<h2>Binary Data Types<a class="headerlink" href="#binary-data-types" title="Link to this heading">#</a></h2>
+<p>There is a set of data types that deal with <a class="reference external" href="https://en.wikipedia.org/wiki/Byte">bytes</a>. Let’s leave the details about this data types for another tutorial. Here are the three data types for reference.</p>
+<section id="bytes">
+<h3>Bytes<a class="headerlink" href="#bytes" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">my_bytes_var</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">&quot;DeusDev&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">my_bytes_var</span><span class="p">)</span>
+<span class="go">&lt;class &#39;bytes&#39;&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="bytearray">
+<h3>Bytearray<a class="headerlink" href="#bytearray" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">my_byte_array</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="mi">123</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">my_byte_array</span><span class="p">)</span>
+<span class="go">&lt;class &#39;bytearray&#39;&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="memoryview">
+<h3>Memoryview<a class="headerlink" href="#memoryview" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">my_memory_view</span> <span class="o">=</span> <span class="nb">memoryview</span><span class="p">(</span><span class="nb">bytes</span><span class="p">(</span><span class="mi">123</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">my_memory_view</span><span class="p">)</span>
+<span class="go">&lt;class &#39;memoryview&#39;&gt;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="none-data-type">
+<h2>None Data Type<a class="headerlink" href="#none-data-type" title="Link to this heading">#</a></h2>
+<p>The last data type listed in this tutorial is the <strong>NoneType</strong> data type. The value of this data type is called <code class="docutils literal notranslate"><span class="pre">None</span></code> (capital N). This is used to assign a null value to a variable.</p>
+<p>You may be wondering why would you even need this kind of data at all. You will see how this works and why is useful in later tutorials. For now let’s see just one example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">my_none_var</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">my_none_var</span><span class="p">)</span>
+<span class="go">&lt;class &#39;NoneType&#39;&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h2>
+<p>In this article you have gone through the basics of several data types supported by Python. Some of them are used a lot and others not so much, but is good to have a basic understanding of each data type and what they mean before moving on.</p>
+<p>The next step is to learn different functions and methods each data type has to offer. For example, you may need to round a float number to two decimals, capitalize a string, add values to a list, retrieve some information from a dictionary, etc.</p>
+</section>
+<section id="exercises">
+<h2>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
+<p>Here is a list of exercises intended for you to practice some of the topics covered in this article. You have learned about each Python data type using the terminal. I recommend you try this exercises in a new Python file and run the script with the terminal. If you don’t know how to do this, refer to the article about how to use <a class="reference internal" href="chapter3.html"><span class="doc std std-doc">text editors and IDEs</span></a>.</p>
+<ol class="arabic simple">
+<li><p>Create a new variable called <code class="docutils literal notranslate"><span class="pre">my_int</span></code> and assign any integer value to it. You can try a positive integer, a negative integer and even the number 0. Check that the variable is actually an integer by printing its type.</p></li>
+<li><p>Create a variable and assign a float number to it. Call the variable however you like. Keep in mind that variable names usually have meaningful names according to its value. Check its type.</p></li>
+<li><p>Create a complex variable and check its type. Remember that complex numbers have real and imaginary parts, each of which can be either integer or float. Try creating a complex variable with no imaginary part, but the type being complex anyway.</p></li>
+<li><p>Convert the float variable to an integer, and assign the new value to a new variable. Check the type of the new variable (it should be int).</p></li>
+<li><p>Create a variable called <code class="docutils literal notranslate"><span class="pre">my_greeting</span></code> and assign a string like ‘Hello World’ to it. Print its contents and type. You can try enclosing your string with single quotes, double quotes, triple quotes. You can even try triple double quotes around it.</p></li>
+<li><p>Create a list. Remember that lists are enclosed with square brackets, and each item is separated with a comma. Try using numbers, strings, and even combinations of both, meaning you can use integers, floats and strings in the same list. Check its type.</p></li>
+<li><p>Create a dictionary. Let your imagination fly! I recommend you try different options for the keys and values (integers, strings, complex, even lists). The more you try, the more you will likely to get errors. Don’t worry, you will learn by force! If you want a suggestion, try to make a dictionary such that it generates this error: <em>TypeError: unhashable type: ‘list’</em></p></li>
+<li><p>Back to exercise #1, you created a variable called <code class="docutils literal notranslate"><span class="pre">my_int</span></code> and assigned a value to it. If you lost that variable for some reason, recreate it. Now create another variable called <code class="docutils literal notranslate"><span class="pre">my_boolean</span></code> and assign the following to it: <code class="docutils literal notranslate"><span class="pre">bool(my_int)</span></code>. Print the contents of <code class="docutils literal notranslate"><span class="pre">my_boolean</span></code>, and check its type. As you can see you can cast different values to boolean variables. You will see more on this in another tutorial.</p></li>
+</ol>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="chapter3.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Chapter 3: Using text editors and IDEs</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="chapter5.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Chapter 5: Working with strings</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-you-will-learn">What you will learn</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numeric-data-types">Numeric Data Types</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integer">Integer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#float">Float</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#complex">Complex</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conversion-from-one-type-to-another-casting">Conversion from one type to another: casting</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integer-to-float">Integer to float</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#float-to-integer">Float to integer</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integer-to-complex">Integer to complex</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#float-to-complex">Float to complex</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#complex-to-integer">Complex to integer</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#text-data-type">Text Data Type</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sequence-data-types">Sequence Data Types</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#list">List</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#tuple">Tuple</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#range">Range</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mapping-data-type-dictionary">Mapping Data Type: dictionary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#set-data-types">Set Data Types</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#set">Set</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#frozen-set">Frozen set</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#boolean-data-types">Boolean Data Types</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#binary-data-types">Binary Data Types</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bytes">Bytes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bytearray">Bytearray</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#memoryview">Memoryview</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#none-data-type">None Data Type</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Carlos
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026, Carlos.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

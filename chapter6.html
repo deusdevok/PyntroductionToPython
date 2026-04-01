@@ -1,0 +1,679 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Chapter 6: Working with lists &#8212; Pyntroduction To Python 1.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="_static/documentation_options.js?v=a681ed88"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter6';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Chapter 7: Working with dictionaries" href="chapter7.html" />
+    <link rel="prev" title="Chapter 5: Working with strings" href="chapter5.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Pyntroduction To Python 1.0 documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter1.html">Chapter 1: Installation &amp; Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter2.html">Chapter 2: Using the terminal and Python interpreter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter3.html">Chapter 3: Using text editors and IDEs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter4.html">Chapter 4: Data Types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter5.html">Chapter 5: Working with strings</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Chapter 6: Working with lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter7.html">Chapter 7: Working with dictionaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter8.html">Chapter 8: Conditional statements: if, elif, else</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter9.html">Chapter 9: Loops, for and while, break and continue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter10.html">Chapter 10: Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter11.html">Chapter 11: Built-in Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter12.html">Chapter 12: Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter13.html">Chapter 13: Practice Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="final.html">Thank you for reading</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/chapter6.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Chapter 6: Working with lists</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-lists">Python lists</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-length-of-a-list">What is the length of a list?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#list-index-notation">List index notation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-list-slice-notation">Python list slice notation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lists-can-contain-other-lists">Lists can contain other lists</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-lists-are-mutable">Python lists are mutable</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-lists-vs-strings">Python Lists vs Strings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="chapter-6-working-with-lists">
+<h1>Chapter 6: Working with lists<a class="headerlink" href="#chapter-6-working-with-lists" title="Link to this heading">#</a></h1>
+<p>All programming languages have the feature of organizing data in efficient ways. In a previous article you learned quite a lot about the string data type. Strings can contain lots of information, but they are not usually chosen as a way of organizing tabular like data.</p>
+<p>There is a popular data type to manage related data, which is the <strong>list</strong> data type. This is very useful if you need to store a list of names for a birthday reunion, or a list of products your company offers, a list of bar code numbers, etc.</p>
+<p>In this article you will learn how to create and work with Python lists in different ways. You have learned about lists in a previous article, but here you will learn a lot more.</p>
+<section id="python-lists">
+<h2>Python lists<a class="headerlink" href="#python-lists" title="Link to this heading">#</a></h2>
+<p>To define a list in Python use square brackets: <code class="docutils literal notranslate"><span class="pre">[]</span></code>. Inside the square brackets, place the different values you want to store, separated with commas. For example, say you want to create a list with the numbers 1, 2, 3, 4 and 5:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">numbers</span>
+<span class="go">[1, 2, 3, 4, 5]</span>
+</pre></div>
+</div>
+<p>In the example I included a space after each comma. This is not strictly necessary, but it improves readability. Check the type of the variable <code class="docutils literal notranslate"><span class="pre">numbers</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
+<span class="go">&lt;class &#39;list&#39;&gt;</span>
+</pre></div>
+</div>
+<p>As you can see, the type of the variable <code class="docutils literal notranslate"><span class="pre">numbers</span></code> is <em>list</em>. In this example you used integer values to create a list. You can use another data type for the list elements, such as floats or strings:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">floats</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.1</span><span class="p">,</span> <span class="mf">3.14</span><span class="p">,</span> <span class="mf">2.71</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">floats</span>
+<span class="go">[1.1, 3.14, 2.71, 5.0]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">strings</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;hello&#39;</span><span class="p">,</span> <span class="s1">&#39;world&#39;</span><span class="p">,</span> <span class="s1">&#39;bye&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">strings</span>
+<span class="go">[&#39;hello&#39;, &#39;world&#39;, &#39;bye&#39;]</span>
+</pre></div>
+</div>
+<p>The cool thing about lists is that the elements don’t need to be of the same type. You can mix different data types in the same list:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mixed_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;hello&#39;</span><span class="p">,</span> <span class="mf">3.14</span><span class="p">,</span> <span class="mi">2</span><span class="o">+</span><span class="mi">3</span><span class="n">j</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mixed_list</span>
+<span class="go">[1, &#39;hello&#39;, 3.14, (2+3j)]</span>
+</pre></div>
+</div>
+<p>Lists can be constructed using previously defined variables:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">my_name</span> <span class="o">=</span> <span class="s1">&#39;John&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Jane&#39;</span><span class="p">,</span> <span class="n">my_name</span><span class="p">,</span> <span class="s1">&#39;Carol&#39;</span><span class="p">,</span> <span class="s1">&#39;Lucas&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">names</span>
+<span class="go">[&#39;Jane&#39;, &#39;John&#39;, &#39;Carol&#39;, &#39;Lucas&#39;]</span>
+</pre></div>
+</div>
+<p>You can also work with empty lists. For that, just write a set of empty square brackets:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">empty_list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">empty_list</span>
+<span class="go">[]</span>
+</pre></div>
+</div>
+<section id="what-is-the-length-of-a-list">
+<h3>What is the length of a list?<a class="headerlink" href="#what-is-the-length-of-a-list" title="Link to this heading">#</a></h3>
+<p>The length of a list is the number of elements it contains. It can be obtained with the <code class="docutils literal notranslate"><span class="pre">len()</span></code> function, similar to how the length of a string is computed. For example, the length of the list <code class="docutils literal notranslate"><span class="pre">['John',</span> <span class="pre">'Jane',</span> <span class="pre">'Kevin']</span></code> should be 3, since it contains three elements (three strings in this case):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;John&#39;</span><span class="p">,</span> <span class="s1">&#39;Jane&#39;</span><span class="p">,</span> <span class="s1">&#39;Kevin&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">names</span><span class="p">)</span>
+<span class="go">3</span>
+</pre></div>
+</div>
+<p>In the particular case that the list has no elements, that is the list is empty, the length is 0:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">empty_list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">empty_list</span><span class="p">)</span>
+<span class="go">0</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="list-index-notation">
+<h2>List index notation<a class="headerlink" href="#list-index-notation" title="Link to this heading">#</a></h2>
+<p>You can access different elements of a Python list by using the <strong>index notation</strong>. In order to access a specific element in a list, write the name of the variable containing the list followed by square brackets <code class="docutils literal notranslate"><span class="pre">[]</span></code>, and inside the square brackets goes the index of the element you want to access. Remember that in Python indexe values start at 0, as you learned in the <a class="reference internal" href="chapter5.html"><span class="doc std std-doc">strings chapter</span></a>.</p>
+<p>For example, the list <code class="docutils literal notranslate"><span class="pre">['John',</span> <span class="pre">'Jane',</span> <span class="pre">'Kevin']</span></code> has three elements. The first one is at index position 0, the second at index 1, and the third at index 2.</p>
+<figure class="align-center" id="id1">
+<img alt="python book image" src="_images/positiveindex.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 13 </span><span class="caption-text">Positive index in lists</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Let’s access each element of the list of names using index notation:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;John&#39;</span><span class="p">,</span> <span class="s1">&#39;Jane&#39;</span><span class="p">,</span> <span class="s1">&#39;Kevin&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">names</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="go">&#39;John&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">names</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="go">&#39;Jane&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">names</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="go">&#39;Kevin&#39;</span>
+</pre></div>
+</div>
+<p>List index can be negative. Negative indexes start at -1 for the last element in the list, -2 for the previous to last, and so on.</p>
+<figure class="align-center" id="id2">
+<img alt="python book image" src="_images/negativeindex.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 14 </span><span class="caption-text">Negative index in lists</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>If you try to access an index that is not valid, Python will throw an error:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;John&#39;</span><span class="p">,</span> <span class="s1">&#39;Jane&#39;</span><span class="p">,</span> <span class="s1">&#39;Kevin&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">names</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+<span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
+<span class="gr">IndexError</span>: <span class="n">list index out of range</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">names</span><span class="p">[</span><span class="o">-</span><span class="mi">4</span><span class="p">]</span>
+<span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
+<span class="gr">IndexError</span>: <span class="n">list index out of range</span>
+</pre></div>
+</div>
+<section id="python-list-slice-notation">
+<h3>Python list slice notation<a class="headerlink" href="#python-list-slice-notation" title="Link to this heading">#</a></h3>
+<p>Imagine you have a large list of items and you need to retrieve a specific subset of them. For example, each item may correspond to the mean price of BTC of each day on a given week. In the following example the list <code class="docutils literal notranslate"><span class="pre">prices</span></code> has seven elements, each one being a number corresponding to the price of each day of the week:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">prices</span> <span class="o">=</span> <span class="p">[</span><span class="mi">16500</span><span class="p">,</span> <span class="mi">16550</span><span class="p">,</span> <span class="mi">16600</span><span class="p">,</span> <span class="mi">16650</span><span class="p">,</span> <span class="mi">16700</span><span class="p">,</span> <span class="mi">16750</span><span class="p">,</span> <span class="mi">16800</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>The first item at index position 0 corresponds to the price on Sunday, second item at index position 1 is the price on Monday, and so on. Say you want to extract the prices ranging from Monday through Friday. Then you need to go from index 1 up to index 5, inclusive. For this you can use the square bracket index slice notation with two integer numbers separated by a colon:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">prices</span><span class="p">[</span><span class="n">start</span><span class="p">:</span><span class="n">stop</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>The first integer number <code class="docutils literal notranslate"><span class="pre">start</span></code> is the starting index, which is <em>included</em>, and the second number <code class="docutils literal notranslate"><span class="pre">stop</span></code> is the stopping index which is <em>not included</em>. The result will be a new list ranging from <code class="docutils literal notranslate"><span class="pre">start</span></code> through <code class="docutils literal notranslate"><span class="pre">stop-1</span></code>. The number of items in the resulting list is the difference <code class="docutils literal notranslate"><span class="pre">stop-start</span></code>.</p>
+<p>For the current example you have to use 1 and 6 for the starting and stopping positions, both separated by a colon:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">prices</span> <span class="o">=</span> <span class="p">[</span><span class="mi">16500</span><span class="p">,</span> <span class="mi">16550</span><span class="p">,</span> <span class="mi">16600</span><span class="p">,</span> <span class="mi">16650</span><span class="p">,</span> <span class="mi">16700</span><span class="p">,</span> <span class="mi">16750</span><span class="p">,</span> <span class="mi">16800</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">prices</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">6</span><span class="p">]</span>
+<span class="go">[16550, 16600, 16650, 16700, 16750]</span>
+</pre></div>
+</div>
+<p>The start and stop indices can be left blank. The default value for the start index is 0, while the default for the stop is the length of the list minus one (which corresponds to the last element).</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">prices</span> <span class="o">=</span> <span class="p">[</span><span class="mi">16500</span><span class="p">,</span> <span class="mi">16550</span><span class="p">,</span> <span class="mi">16600</span><span class="p">,</span> <span class="mi">16650</span><span class="p">,</span> <span class="mi">16700</span><span class="p">,</span> <span class="mi">16750</span><span class="p">,</span> <span class="mi">16800</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">prices</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span>
+<span class="go">[16500, 16550, 16600, 16650, 16700]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">prices</span><span class="p">[</span><span class="mi">3</span><span class="p">:]</span>
+<span class="go">[16650, 16700, 16750, 16800]</span>
+</pre></div>
+</div>
+<p>A third parameter can be used in slice notation, which is the <code class="docutils literal notranslate"><span class="pre">step</span></code>. The step parameter is also an integer number, and indicates how many elements should the resulting list skip from the starting position. For example, you may want to start from the second element (index 1) all the way to the previous to last (index 5) and skipping one element on each step. Thi way the step parameter should be 2, while the start and stop parameters are 1 and 6 (remember the stop parameter is not included, that’s why it should be 6, and not 5).</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">prices</span> <span class="o">=</span> <span class="p">[</span><span class="mi">16500</span><span class="p">,</span> <span class="mi">16550</span><span class="p">,</span> <span class="mi">16600</span><span class="p">,</span> <span class="mi">16650</span><span class="p">,</span> <span class="mi">16700</span><span class="p">,</span> <span class="mi">16750</span><span class="p">,</span> <span class="mi">16800</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">prices</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">6</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
+<span class="go">[16550, 16650, 16750]</span>
+</pre></div>
+</div>
+</section>
+<section id="lists-can-contain-other-lists">
+<h3>Lists can contain other lists<a class="headerlink" href="#lists-can-contain-other-lists" title="Link to this heading">#</a></h3>
+<p>Remember that the list data type can contain elements with mixed data types. The same list can contain integer numbers, floats, and even strings. As you may remember from a previous article of this course, there is a great number of data types Python has to offer. Lists can contain any of those data types as its elements.</p>
+<p>One very useful technique that is often used among developers is to place <em>lists inside other lists</em>. This can be handy in many situations, for example if you need to store information in table format. Let’s work on an example where only one of the elements of the list is another list.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">student</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Jonh&#39;</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="p">[</span><span class="mi">73</span><span class="p">,</span> <span class="mi">49</span><span class="p">,</span> <span class="mi">94</span><span class="p">]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">student</span>
+<span class="go">[&#39;Jonh&#39;, 23, [73, 49, 94]]</span>
+</pre></div>
+</div>
+<p>In this example you have a list containing a first element indicating the name of a student (a string), a second element being the age of the student (an integer) and a third element which can be a list of scores on a given course. Let’s check the type of the <code class="docutils literal notranslate"><span class="pre">student</span></code> variable:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">student</span><span class="p">)</span>
+<span class="go">&lt;class &#39;list&#39;&gt;</span>
+</pre></div>
+</div>
+<p>As expected, the variable <code class="docutils literal notranslate"><span class="pre">student</span></code> is of type <code class="docutils literal notranslate"><span class="pre">list</span></code>. Now let’s check the length of this variable. What do you expect to be the length? Is it 3? Or should you also count the number of elements of the inner list? In the latter case the total length should be 5, since you have the name, the age, and the three notes.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">student</span><span class="p">)</span>
+<span class="go">3</span>
+</pre></div>
+</div>
+<p>As you can see, the length returns only 3. The inner list is counted as only one element for the outer list. You can check the length of the inner list by accessing it with index notation and calling <code class="docutils literal notranslate"><span class="pre">len()</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">student</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+<span class="go">3</span>
+</pre></div>
+</div>
+<p>This way you are only returning the length of the inner list. What happens if you call <code class="docutils literal notranslate"><span class="pre">len()</span></code> on the other elements?</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">student</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="go">4</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">student</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
+<span class="gr">TypeError</span>: <span class="n">object of type &#39;int&#39; has no len()</span>
+</pre></div>
+</div>
+<p>The length of the first element is 4, since the string <code class="docutils literal notranslate"><span class="pre">'John'</span></code> has four characters. But the length of the second element throws an error, since the length of an integer is not defined.</p>
+<p>Finally, let’s see how you can access the elements of the inner list. The inner list is at index position 2, so you have to start writing the name of the variable <code class="docutils literal notranslate"><span class="pre">student</span></code> followed by the index 2 inside square brackets. Next, each element of the inner list also have indexes, in this case 0, 1 and 2. Add the corresponding index inside square brackets after the previous statement. You will end up with something like <code class="docutils literal notranslate"><span class="pre">student[inner_list_index][element_index]</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">student</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Jonh&#39;</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="p">[</span><span class="mi">73</span><span class="p">,</span> <span class="mi">49</span><span class="p">,</span> <span class="mi">94</span><span class="p">]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">student</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+<span class="go">73</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">student</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
+<span class="go">49</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">student</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span>
+<span class="go">94</span>
+</pre></div>
+</div>
+<p>In cases where more lists are inside other lists, you can use multiple square bracket notation to access inner elements like in this example.</p>
+<blockquote>
+<div><p><strong>List of lists</strong>. In this section you learned that lists can contain other lists. In the case that <em>all</em> the elements of a list are also other lists, it is said that you have a <em>list of lists</em>. For example, a list of lists can look like <code class="docutils literal notranslate"><span class="pre">[[1,</span> <span class="pre">2,</span> <span class="pre">3],</span> <span class="pre">[4,</span> <span class="pre">5,</span> <span class="pre">6],</span> <span class="pre">[7,</span> <span class="pre">8,</span> <span class="pre">9]]</span></code>. This is one of the ways to organize data that comes in table like format.</p>
+</div></blockquote>
+</section>
+</section>
+<section id="python-lists-are-mutable">
+<h2>Python lists are mutable<a class="headerlink" href="#python-lists-are-mutable" title="Link to this heading">#</a></h2>
+<p>Each of the elements of a list can be changed for another value. Let’s go back to the <code class="docutils literal notranslate"><span class="pre">student</span></code> example and modify the name of the student.</p>
+<p>The name of the student (string) is at index position 0. To change its value, write the name of the variable <code class="docutils literal notranslate"><span class="pre">student</span></code> followed by the index between square brackets. Let’s assign the value <code class="docutils literal notranslate"><span class="pre">'Oliver'</span></code> to the first element of that list:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">student</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Jonh&#39;</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="p">[</span><span class="mi">73</span><span class="p">,</span> <span class="mi">49</span><span class="p">,</span> <span class="mi">94</span><span class="p">]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">student</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Oliver&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">student</span>
+<span class="go">[&#39;Oliver&#39;, 23, [73, 49, 94]]</span>
+</pre></div>
+</div>
+<p>As you can see, the list itself has changed (mutated) after the re-assignment. You can also try to edit the second score, which is the second item inside the inner list. That is, first index is 2 (the position of the inner list) and the second index is 1 (the second position inside the inner list):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">student</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">88</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">student</span>
+<span class="go">[&#39;Oliver&#39;, 23, [73, 88, 94]]</span>
+</pre></div>
+</div>
+<p>You can also add and remove elements from a list. For this you have to make use of methods and functions. You will learn about those in later tutorials.</p>
+</section>
+<section id="python-lists-vs-strings">
+<h2>Python Lists vs Strings<a class="headerlink" href="#python-lists-vs-strings" title="Link to this heading">#</a></h2>
+<p>Python lists are very similar to strings. They are both sequences of data. While a string can only contain a sequence of characters, lists can contain any type of data as its elements, even another list.</p>
+<p>You can convert a string into a list by using the <code class="docutils literal notranslate"><span class="pre">list()</span></code> function:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;hello world&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+<span class="go">&lt;class &#39;str&#39;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">list_type</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">list_type</span>
+<span class="go">[&#39;h&#39;, &#39;e&#39;, &#39;l&#39;, &#39;l&#39;, &#39;o&#39;, &#39; &#39;, &#39;w&#39;, &#39;o&#39;, &#39;r&#39;, &#39;l&#39;, &#39;d&#39;]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">list_type</span><span class="p">)</span>
+<span class="go">&lt;class &#39;list&#39;&gt;</span>
+</pre></div>
+</div>
+<p>You could try to convert a list into a string, but is not so easy. We will cover such techniques in later chapters of the course.</p>
+<p>A big difference between lists and strings is that the elements of a list can be changed (the list is mutable), while a string is immutable.</p>
+</section>
+<section id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h2>
+<p>In this article you learned some of the basics of a very important data type: lists. You learned how to create a list, which elements can be stored in a list, how to extract information from a list using index and slice notation and how to compute the length of a given list. You have also learned how to mutate a list, that is, how to change the values of certain elements by assigning new values using index notation.</p>
+<p>There is a lot more you can do with Python lists, such as remove items, add new items, construct a list in a programmatic way using loops, sort its values, and more. You will learn these techniques and more in later tutorials.</p>
+</section>
+<section id="exercises">
+<h2>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
+<p>After you read the article on lists, you can practice what you have learned with the following exercises. Let’s get to work!</p>
+<ol class="arabic simple">
+<li><p>In your own words, what is a list? What is the difference between a list and a string? What are their similarities?</p></li>
+<li><p>Create a list of places you want to visit, for example countries or cities. Start with the ones you want to visit the most, so the list is ordered from best to worse in that sense. Save the list in a variable. Check the type of your variable.</p></li>
+<li><p>How many elements are on your list? Check your answer with the <code class="docutils literal notranslate"><span class="pre">len()</span></code> function, which computes the length of a list.</p></li>
+<li><p>Retrieve the first element of the list, that is, the place you want to visit the most. Use the square bracket index notation to do this.</p></li>
+<li><p>Repeat the exercise #4 for the last element of the list.</p></li>
+<li><p>Make use of the square bracket slice index notation to retrieve the three most wanted places to visit.</p></li>
+<li><p>Given the list <code class="docutils literal notranslate"><span class="pre">numbers</span> <span class="pre">=</span> <span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">[4,</span> <span class="pre">5,</span> <span class="pre">6,</span> <span class="pre">[7,</span> <span class="pre">8,</span> <span class="pre">9,</span> <span class="pre">[10]]],</span> <span class="pre">11]</span></code>, how would you access each of the numbers it contains? For example, to obtain the number 1 you would do <code class="docutils literal notranslate"><span class="pre">numbers[0]</span></code>, for the number 2 <code class="docutils literal notranslate"><span class="pre">numbers[1]</span></code>, and so on.</p></li>
+<li><p>Try to convert a list of characters to a string. For example, your list can look something like <code class="docutils literal notranslate"><span class="pre">['h',</span> <span class="pre">'e',</span> <span class="pre">'l',</span> <span class="pre">'l',</span> <span class="pre">'o']</span></code>. To convert the list to a string, use the <code class="docutils literal notranslate"><span class="pre">str()</span></code> function. What happened? Did it throw an error. If not, is the result what you expected?</p></li>
+</ol>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="chapter5.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Chapter 5: Working with strings</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="chapter7.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Chapter 7: Working with dictionaries</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-lists">Python lists</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-length-of-a-list">What is the length of a list?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#list-index-notation">List index notation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-list-slice-notation">Python list slice notation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#lists-can-contain-other-lists">Lists can contain other lists</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-lists-are-mutable">Python lists are mutable</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-lists-vs-strings">Python Lists vs Strings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Carlos
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026, Carlos.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

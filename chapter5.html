@@ -1,0 +1,655 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Chapter 5: Working with strings &#8212; Pyntroduction To Python 1.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="_static/documentation_options.js?v=a681ed88"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapter5';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Chapter 6: Working with lists" href="chapter6.html" />
+    <link rel="prev" title="Chapter 4: Data Types" href="chapter4.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Pyntroduction To Python 1.0 documentation</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="intro.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter1.html">Chapter 1: Installation &amp; Setup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter2.html">Chapter 2: Using the terminal and Python interpreter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter3.html">Chapter 3: Using text editors and IDEs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter4.html">Chapter 4: Data Types</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Chapter 5: Working with strings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter6.html">Chapter 6: Working with lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter7.html">Chapter 7: Working with dictionaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter8.html">Chapter 8: Conditional statements: if, elif, else</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter9.html">Chapter 9: Loops, for and while, break and continue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter10.html">Chapter 10: Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter11.html">Chapter 11: Built-in Methods</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter12.html">Chapter 12: Modules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="chapter13.html">Chapter 13: Practice Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="final.html">Thank you for reading</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/chapter5.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Chapter 5: Working with strings</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-strings-the-basics">Python strings: the basics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-python-strings">What are Python strings?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-length-of-a-string">What is the length of a string?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#string-index-notation">String index notation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-index-of-a-string">What is the index of a string?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#string-slice-notation">String slice notation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-strings-are-immutable">Python strings are immutable</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#format-strings">Format strings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="chapter-5-working-with-strings">
+<h1>Chapter 5: Working with strings<a class="headerlink" href="#chapter-5-working-with-strings" title="Link to this heading">#</a></h1>
+<p>Python strings are everywhere. Most of your Python programs will work with strings in one way or the other. For example, you can use strings to work with large textual data, analyze it, retrieve specific information from text files, etc. You can also use strings to print part of the information that comes from a program, debugging and more.</p>
+<p>In this article you are going to learn what are the most common use cases of Python strings, how to retrieve basic parts of a string and different ways in which you can show information using the <code class="docutils literal notranslate"><span class="pre">print()</span></code> function.</p>
+<section id="python-strings-the-basics">
+<h2>Python strings: the basics<a class="headerlink" href="#python-strings-the-basics" title="Link to this heading">#</a></h2>
+<p>In a previous article you learned the basic data types Python has to offer. One of them are strings, which is the topic of the present article.</p>
+<section id="what-are-python-strings">
+<h3>What are Python strings?<a class="headerlink" href="#what-are-python-strings" title="Link to this heading">#</a></h3>
+<p>Strings are sequences of <strong>characters</strong> which are enclosed in either single, double or triple quotes.</p>
+<p>Open a new terminal and enter the Python interpreter (if you don’t know how to do this, refer to the article on using the <a class="reference internal" href="chapter2.html"><span class="doc std std-doc">terminal and Python interpreter</span></a>). Create a new variable called <code class="docutils literal notranslate"><span class="pre">my_string</span></code> and assign the string value “Hello World!”:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">my_string</span> <span class="o">=</span> <span class="s2">&quot;Hello World!&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">my_string</span>
+<span class="go">&#39;Hello World!&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">my_string</span><span class="p">)</span>
+<span class="go">Hello World!</span>
+</pre></div>
+</div>
+<p>If you write the name of the variable and hit Enter, the terminal will output the value assigned to the variable. Note that the terminal includes single quotes around <em>Hello World!</em>. But if you use the <code class="docutils literal notranslate"><span class="pre">print()</span></code> function to show the value instead, the terminal now shows the value <em>Hello World!</em> without quotes.</p>
+<p>Python strings can even be empty. This can be useful in some cases as you will see in later chapters. To create an <strong>empty string</strong>, open and close quotes with nothing in between:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">empty_string</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">empty_string</span>
+<span class="go">&#39;&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">empty_string</span><span class="p">)</span>
+
+<span class="gp">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>You can see that the same thing happened as with the previous example. If you define the empty string with double quotes, writing the name of the variable and hitting Enter will show the empty string with single quotes. If you use the <code class="docutils literal notranslate"><span class="pre">print()</span></code> function instead, the quotes are not shown, and in this case there is an empty space in the screen as the output.</p>
+</section>
+<section id="what-is-the-length-of-a-string">
+<h3>What is the length of a string?<a class="headerlink" href="#what-is-the-length-of-a-string" title="Link to this heading">#</a></h3>
+<p>Every string has different properties. One of the most commonly used property is the number of characters, or the <strong>length</strong> of the string.</p>
+<p>To obtain the length of a string, use the <code class="docutils literal notranslate"><span class="pre">len()</span></code> function. Let’s continue with our example string “Hello World!”. If you manually count the number of characters of this string (including the whitespace between both words) you will find there are 12 of them. Let’s check this with the <code class="docutils literal notranslate"><span class="pre">len()</span></code> function:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">my_string</span> <span class="o">=</span> <span class="s1">&#39;Hello World!&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">my_string</span><span class="p">)</span>
+<span class="go">12</span>
+</pre></div>
+</div>
+<p>There are other functions to work with strings. You will learn more about them in later chapters.</p>
+</section>
+</section>
+<section id="string-index-notation">
+<h2>String index notation<a class="headerlink" href="#string-index-notation" title="Link to this heading">#</a></h2>
+<p>You can retrieve specific characters of a string by using the <strong>index notation</strong>.  To access a specific character from a string, write the name of the variable followed by square brackets. Inside the square brackets enter the <strong>index</strong> corresponding to the position of the character.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">my_string</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
+</pre></div>
+</div>
+<section id="what-is-the-index-of-a-string">
+<h3>What is the index of a string?<a class="headerlink" href="#what-is-the-index-of-a-string" title="Link to this heading">#</a></h3>
+<p>The index is an <strong>integer</strong> value indicating the position of the character in the string. Index values start at 0 for the first position, then 1 for the second position, 2 for the third, and so on.</p>
+<figure class="align-center" id="id1">
+<img alt="python book image" src="_images/positiveindex.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 9 </span><span class="caption-text">Index (positive) in a string</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Note that the index of the last element is not equal to the number of characters in the string, but one less. This is because the index starts with 0 instead of 1. In this example the number of characters (the length of the string) is 12, while the index of the last character is 11.</p>
+<p>For example, if you want to access the first character of the string (in this case it is the letter H) use the index value of 0 inside the square brackets:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">my_string</span>  <span class="o">=</span> <span class="s1">&#39;Hello World!&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">my_string</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="go">&#39;H&#39;</span>
+</pre></div>
+</div>
+<p>If you want to retrieve the fifth element, this corresponds to the index 4:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">my_string</span>  <span class="o">=</span> <span class="s1">&#39;Hello World!&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">my_string</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>
+<span class="go">&#39;o&#39;</span>
+</pre></div>
+</div>
+<p>Index can also be negative. For the case of negative indexes you have to think in reverse: -1 is the last character in the string, -2 is the previous to last, etc.</p>
+<figure class="align-center" id="id2">
+<img alt="python book image" src="_images/negativeindex.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 10 </span><span class="caption-text">Index (negative) in a string</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>In this case, the first character of the string can be retrieved using a negative index with a value equal to the length of the string, which is -12:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">my_string</span>  <span class="o">=</span> <span class="s1">&#39;Hello World!&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">my_string</span><span class="p">[</span><span class="o">-</span><span class="mi">12</span><span class="p">]</span>
+<span class="go">&#39;H&#39;</span>
+</pre></div>
+</div>
+<p>What would happen if you try to access an element whose index goes out of range?</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">my_string</span> <span class="o">=</span> <span class="s1">&#39;Hello World!&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">my_string</span><span class="p">[</span><span class="mi">12</span><span class="p">]</span>
+<span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
+<span class="gr">IndexError</span>: <span class="n">string index out of range</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">my_string</span><span class="p">[</span><span class="o">-</span><span class="mi">13</span><span class="p">]</span>
+<span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
+<span class="gr">IndexError</span>: <span class="n">string index out of range</span>
+</pre></div>
+</div>
+<p>As expected, the Python interpreter throws an <code class="docutils literal notranslate"><span class="pre">IndexError</span></code> indicating that the index is <em>out of range</em>.</p>
+</section>
+<section id="string-slice-notation">
+<h3>String slice notation<a class="headerlink" href="#string-slice-notation" title="Link to this heading">#</a></h3>
+<p>You can do more than select just one specific character from a string. The square bracket notation lets you retrieve a specified <em>range</em> of values from a string. For example, you may want to select the “World” part of the string (without the last exclamation character).</p>
+<p>In order to do that you need to use two index values: the <em>starting</em> and <em>stopping</em> positions separated by a colon:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">my_string</span><span class="p">[</span><span class="n">start</span><span class="p">:</span><span class="n">stop</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>This will return a string ranging from the <code class="docutils literal notranslate"><span class="pre">start</span></code> index all the way through <code class="docutils literal notranslate"><span class="pre">stop-1</span></code>. The second index <code class="docutils literal notranslate"><span class="pre">stop</span></code> is not included in the output. One way to remember this rule is to think of the number of characters returned as the difference between <code class="docutils literal notranslate"><span class="pre">stop</span></code> and <code class="docutils literal notranslate"><span class="pre">start</span></code>.</p>
+<p>The rules are:</p>
+<ul class="simple">
+<li><p>First index <code class="docutils literal notranslate"><span class="pre">start</span></code> is included</p></li>
+<li><p>Second index <code class="docutils literal notranslate"><span class="pre">stop</span></code> is not included</p></li>
+<li><p>number of characters = <code class="docutils literal notranslate"><span class="pre">stop</span></code> - <code class="docutils literal notranslate"><span class="pre">start</span></code></p></li>
+</ul>
+<p>To retrieve the “World” part of your string, you need to go from index 6 through index 10 (included).</p>
+<figure class="align-center" id="id3">
+<img alt="python book image" src="_images/slicenotation.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 11 </span><span class="caption-text">Slice notation in strings</span><a class="headerlink" href="#id3" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>So the first index will be 6, and the second index will be 11 (one more).</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">my_string</span>  <span class="o">=</span> <span class="s1">&#39;Hello World!&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">my_string</span><span class="p">[</span><span class="mi">6</span><span class="p">:</span><span class="mi">11</span><span class="p">]</span>
+<span class="go">&#39;World&#39;</span>
+</pre></div>
+</div>
+<p>The difference between 11 and 6 is 5, which is the number of characters in the string “World”.</p>
+<p>You can leave the <em>start</em> or <em>end</em> parameters empty. If you omit the <em>start</em> parameter, it will default to zero, while omitting the <em>end</em> parameter will default to the last character of the string.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">my_string</span><span class="p">[:</span><span class="mi">5</span><span class="p">]</span>
+<span class="go">&#39;Hello&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">my_string</span><span class="p">[</span><span class="mi">6</span><span class="p">:]</span>
+<span class="go">&#39;World!&#39;</span>
+</pre></div>
+</div>
+<p>You can also retrieve a substring and skipping certain characters from it. For example, say you want the substring “World” but only the characters that have an even index. In this case they are 6, 8 and 10. The output should be “Wrd”.</p>
+<figure class="align-center" id="id4">
+<img alt="python book image" src="_images/slicewithstep.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 12 </span><span class="caption-text">Slice notation with step</span><a class="headerlink" href="#id4" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>There is a third parameter in slice notation which is the <code class="docutils literal notranslate"><span class="pre">step</span></code>. This is also an integer parameter and indicates how many indices to avoid on each pass (the default value of the step is 1).</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">my_string</span> <span class="o">=</span> <span class="s1">&#39;Hello World!&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">my_string</span><span class="p">[</span><span class="mi">6</span><span class="p">:</span><span class="mi">11</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
+<span class="go">&#39;Wrd&#39;</span>
+</pre></div>
+</div>
+<p>The <em>step</em> parameter can also be negative. A negative step makes the output of the substring go backwards. For example, if you want the string “World” become “dlroW”, use a step value of -1, a start of 10 and a stop of 5:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">my_string</span> <span class="o">=</span> <span class="s1">&#39;Hello World!&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">my_string</span><span class="p">[</span><span class="mi">10</span><span class="p">:</span><span class="mi">5</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="go">&#39;dlroW&#39;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="python-strings-are-immutable">
+<h2>Python strings are immutable<a class="headerlink" href="#python-strings-are-immutable" title="Link to this heading">#</a></h2>
+<p>You may be wondering if you can modify the elements of a string. For example in the string “Hello World!”, the character “W” needs to change to lowercase: “w”. You could try to assign the character “w” to the string at index position 6 (where the “W” character is located):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">my_string</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;w&#39;</span>
+<span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
+<span class="gr">TypeError</span>: <span class="n">&#39;str&#39; object does not support item assignment</span>
+</pre></div>
+</div>
+<p>Python throws an error saying that a <em>string object does not support item assignment</em>. So one possible solution is to simply create a new variable and make the desired string using the old variable. For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">my_new_string</span> <span class="o">=</span> <span class="n">my_string</span><span class="p">[:</span><span class="mi">6</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;w&#39;</span> <span class="o">+</span> <span class="n">my_string</span><span class="p">[</span><span class="mi">7</span><span class="p">:]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">my_new_string</span>
+<span class="go">&#39;Hello world!&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="format-strings">
+<h2>Format strings<a class="headerlink" href="#format-strings" title="Link to this heading">#</a></h2>
+<p>There are different ways in which a string can be constructed given some variables. For example, say you want to make a string with a welcoming message for a given user and inform their age.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">user</span> <span class="o">=</span> <span class="s1">&#39;John&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">age</span> <span class="o">=</span> <span class="mi">23</span>
+</pre></div>
+</div>
+<p>To make an automatic welcoming text string given these variables, you can make use of <em>format strings</em>. The welcoming message can be something like “Welcome John ! You are 23 years old”. Instead of directly writing the strings <em>John</em> and <em>23</em>, let’s use the variables just defined. This can be useful in cases where the variable changes, and the welcoming message needs to change automatically without the need to write everything from scratch.</p>
+<p>To make  a format string, use curly braces <code class="docutils literal notranslate"><span class="pre">{}</span></code> where the variables should be located. At the end of the string use a dot followed by “format”. The format method takes two parameters in this case: the <code class="docutils literal notranslate"><span class="pre">user</span></code> and the <code class="docutils literal notranslate"><span class="pre">age</span></code>. Each of these variables will be replaced where the curly braces are placed, in order.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">user</span> <span class="o">=</span> <span class="s1">&#39;John&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">age</span> <span class="o">=</span> <span class="mi">23</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s1">&#39;Welcome </span><span class="si">{}</span><span class="s1"> ! You are </span><span class="si">{}</span><span class="s1"> years old.&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">user</span><span class="p">,</span> <span class="n">age</span><span class="p">)</span>
+<span class="go">&#39;Welcome John ! You are 23 years old.&#39;</span>
+</pre></div>
+</div>
+<p>This is a very basic example of Python format strings. There is a lot more you can do with this, but that is something for another time. For more information you can read <a class="reference external" href="https://www.w3schools.com/python/ref_string_format.asp">this article</a>.</p>
+</section>
+<section id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h2>
+<p>In this article you have learned the basics of Python strings. Python strings are one of the most important data types, and many programs use them in one way or another. Here is a list of the topics covered on this article:</p>
+<ul class="simple">
+<li><p>What is a string</p></li>
+<li><p>How to compute the length of a string</p></li>
+<li><p>String index and slice notation</p></li>
+<li><p>Immutability of strings</p></li>
+<li><p>Format strings: the basics</p></li>
+</ul>
+</section>
+<section id="exercises">
+<h2>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h2>
+<p>Once you read about the basics of Python strings, get ready to practice with this set of exercises. Don’t give up!</p>
+<ol class="arabic simple">
+<li><p>In your own words, explain what is a Python string, and what is it used for. Think of different use cases where you may want or need to work with Python strings.</p></li>
+<li><p>Create a new string and save it to a variable. The contents of the string can be anything you like, such as <em>‘Hello! I am learning about Python strings.’</em>.</p></li>
+<li><p>What is the length of the string you created in exercise #2? Count the characters manually and check your answer by using the <code class="docutils literal notranslate"><span class="pre">len()</span></code> function.</p></li>
+<li><p>Use the square bracket index notation to retrieve the first and last characters of the string. Use non-negative index values for this exercise.</p></li>
+<li><p>Repeat exercise #4, but this time use only negative index values.</p></li>
+<li><p>Use the slice notation to retrieve a substring. For example, if the string was <em>‘Hello! I am learning about Python strings.’</em> you could retrieve the word <em>Python</em>. Use non-negative index values for this exercise.</p></li>
+<li><p>Repeat exercise #6 using only negative index values.</p></li>
+<li><p>Use the slice notation to return the complete string in reverse order.</p></li>
+</ol>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="chapter4.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Chapter 4: Data Types</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="chapter6.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Chapter 6: Working with lists</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-strings-the-basics">Python strings: the basics</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-python-strings">What are Python strings?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-length-of-a-string">What is the length of a string?</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#string-index-notation">String index notation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-the-index-of-a-string">What is the index of a string?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#string-slice-notation">String slice notation</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-strings-are-immutable">Python strings are immutable</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#format-strings">Format strings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises">Exercises</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Carlos
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026, Carlos.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
